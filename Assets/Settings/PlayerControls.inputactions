@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Trigger Trail",
+                    "type": "Button",
+                    "id": "f940be1d-5db7-4503-8212-baab7dafd2dd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -81,6 +90,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "1930f3aa-67ae-4a17-b468-85f37bac534e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger Trail",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
