@@ -10,40 +10,42 @@ public class EnemyMovement : MonoBehaviour
         PlayerAttacker
     }
 
+    private Enemy _enemy;
     [SerializeField] private EnemyType _enemyType;
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _movementSpeed;
-    
-    //PLACE HOLDERS
-    [SerializeField] private Transform _hive;
-    [SerializeField] private Transform[] _players;
 
     private Transform _target;
+
+    public bool IsMoving { get; set; }
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        IsMoving = true;
+        _enemy = GetComponent<Enemy>();
         SelectTarget();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        RotateTowardsTarget();
-        Move();
+        if (IsMoving)
+        {
+            RotateTowardsTarget();
+            Move();
+        }
     }
 
     private void SelectTarget()
     {
-        if (_enemyType == EnemyType.PlayerAttacker)
+        _target = _enemyType switch
         {
-            // TO DO: Make it pick randomly between the two players
-            _target = _players[Random.Range(0, _players.Length)];
-        }
-        else if (_enemyType == EnemyType.HiveAttacker)
-        {
-            // Pick hive
-            _target = _hive;
-        }
+            EnemyType.PlayerAttacker => GameManager.Instance.Players[Random.Range(0, GameManager.Instance.Players.Length)].transform,
+            EnemyType.HiveAttacker => GameManager.Instance.Hive.transform,
+            _ => GameManager.Instance.Hive.transform
+        };
+
+        _enemy.EnemyAttacking.Target = _target.gameObject;
     }
 
     private void RotateTowardsTarget()
