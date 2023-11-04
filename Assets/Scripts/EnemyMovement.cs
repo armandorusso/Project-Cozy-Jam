@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     
     //PLACE HOLDERS
     [SerializeField] private Transform _hive;
-    [SerializeField] private Transform _player;
+    [SerializeField] private Transform[] _players;
 
     private Transform _target;
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class EnemyMovement : MonoBehaviour
         if (_enemyType == EnemyType.PlayerAttacker)
         {
             // TO DO: Make it pick randomly between the two players
-            _target = _player;
+            _target = _players[Random.Range(0, _players.Length)];
         }
         else if (_enemyType == EnemyType.HiveAttacker)
         {

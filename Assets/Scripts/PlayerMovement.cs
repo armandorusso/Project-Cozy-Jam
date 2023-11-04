@@ -37,9 +37,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (_playerType == PlayerType.Main)
-        {
-            transform.Translate(_inputMovement * _movementSpeed * Time.deltaTime);
-        }
+        transform.Translate(_inputMovement * _movementSpeed * Time.deltaTime);
     }
 }
