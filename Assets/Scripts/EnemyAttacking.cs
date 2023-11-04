@@ -31,6 +31,7 @@ public class EnemyAttacking : MonoBehaviour
     private IEnumerator Attack()
     {
         _spriteRenderer.color = Color.green;
+        Target.GetComponent<PlayerHurt>().GetHurt(_enemy.EnemyMovement.EnemyDirection);
         yield return new WaitForSeconds(1.0f);
         _spriteRenderer.color = Color.red;
         _enemy.EnemyMovement.IsMoving = true;

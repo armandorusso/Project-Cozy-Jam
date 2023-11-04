@@ -227,7 +227,9 @@ GameObject:
   - component: {fileID: 347807685}
   - component: {fileID: 347807684}
   - component: {fileID: 347807686}
+  - component: {fileID: 347807689}
   - component: {fileID: 347807683}
+  - component: {fileID: 347807688}
   - component: {fileID: 347807682}
   - component: {fileID: 347807687}
   m_Layer: 0
@@ -277,8 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerType: 0
-  _rigidbody2D: {fileID: 0}
+  _rigidbody2D: {fileID: 347807682}
   _movementSpeed: 2.5
+  IsMoving: 0
 --- !u!212 &347807684
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -431,6 +434,35 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.55, y: 0.7652174}
   m_Direction: 0
+--- !u!114 &347807688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347807681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557222a27c5571f40b2ef73f2080434d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 347807682}
+  _hurtTime: 1
+  isHurt: 0
+--- !u!114 &347807689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347807681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cd321ba30965440b9e5708409cb643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMovement: {fileID: 347807683}
+  _playerHurt: {fileID: 347807688}
 --- !u!1 &407903750
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +987,9 @@ GameObject:
   - component: {fileID: 1926366834}
   - component: {fileID: 1926366833}
   - component: {fileID: 1926366832}
+  - component: {fileID: 1926366836}
   - component: {fileID: 1926366831}
+  - component: {fileID: 1926366835}
   - component: {fileID: 1926366830}
   - component: {fileID: 1926366829}
   m_Layer: 0
@@ -1039,9 +1073,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e450f33ba841c458c267cfb0df7e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerType: 0
-  _rigidbody2D: {fileID: 0}
+  _playerType: 1
+  _rigidbody2D: {fileID: 1926366830}
   _movementSpeed: 2.5
+  IsMoving: 0
 --- !u!114 &1926366832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,6 +1194,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1926366835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926366828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557222a27c5571f40b2ef73f2080434d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 1926366830}
+  _hurtTime: 1
+  isHurt: 0
+--- !u!114 &1926366836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926366828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cd321ba30965440b9e5708409cb643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMovement: {fileID: 1926366831}
+  _playerHurt: {fileID: 1926366835}
 --- !u!1001 &1948505435
 PrefabInstance:
   m_ObjectHideFlags: 0

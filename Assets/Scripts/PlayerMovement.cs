@@ -10,24 +10,32 @@ public class PlayerMovement : MonoBehaviour
         Main,
         Secondary
     };
-    
+
+    private Player _player;
     [SerializeField] private PlayerType _playerType;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private float _movementSpeed;
     private Vector2 _inputMovement;
+    public bool IsMoving;
     // Start is called before the first frame update
     private void Start()
     {
+        _player = GetComponent<Player>();
         if (!_rigidbody2D)
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
+
+        IsMoving = true;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        MovePlayer();
+        if (IsMoving)
+        {
+            MovePlayer();
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)

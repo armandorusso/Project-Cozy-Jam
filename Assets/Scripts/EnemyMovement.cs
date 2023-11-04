@@ -16,6 +16,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _movementSpeed;
 
     private Transform _target;
+    private Vector3 _enemyDirection;
+    public Vector3 EnemyDirection => _enemyDirection;
 
     public bool IsMoving { get; set; }
     // Start is called before the first frame update
@@ -51,8 +53,8 @@ public class EnemyMovement : MonoBehaviour
     private void RotateTowardsTarget()
     {
         var distance = _target.transform.position - transform.position;
-        var direction = distance.normalized;
-        var angleToTarget = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        _enemyDirection = distance.normalized;
+        var angleToTarget = Mathf.Atan2(_enemyDirection.y, _enemyDirection.x) * Mathf.Rad2Deg;
         var targetRotation = Quaternion.Euler(0.0f, 0.0f, angleToTarget);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _rotationSpeed);
     }

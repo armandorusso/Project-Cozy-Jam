@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public EnemyAttacking EnemyAttacking => _enemyAttacking;
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (!_enemyMovement) _enemyMovement = GetComponent<EnemyMovement>();
         if (!_enemyAttacking) _enemyAttacking = GetComponent<EnemyAttacking>();
