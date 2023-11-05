@@ -140,6 +140,7 @@ MonoBehaviour:
   _hiveMovement: {fileID: 4602009120890455512}
   _hiveHurt: {fileID: 1101765159677310901}
   _animator: {fileID: 2966084638451914934}
+  _rigidbody2D: {fileID: 1813388856779173286}
 --- !u!114 &4602009120890455512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,9 +159,10 @@ MonoBehaviour:
   _hiveDetectionRange: 0.2
   _calmPositionPickerTimerMin: 3
   _calmPositionPickerTimerMax: 4
-  _calmingDownTimer: 3
+  _calmingDownTimer: 2
   Behavior: 0
   _currentSpeed: 0
+  IsMoving: 0
 --- !u!114 &1101765159677310901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,8 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8881a0468d9d9124e9efbe99376077cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 300
   _currentHealth: 0
+  _hurtTime: 1
 --- !u!50 &1813388856779173286
 Rigidbody2D:
   serializedVersion: 4

@@ -35,7 +35,7 @@ public class EnemyAttacking : MonoBehaviour
         }
         else if (Target.TryGetComponent<Hive>(out var hive))
         {
-            hive.HiveHurt.GetHurt(_damage);
+            hive.HiveHurt.GetHurt(_enemy.EnemyMovement.EnemyDirection, _damage);
         }
         yield return new WaitForSeconds(1.0f);
         _enemy.EnemyMovement.IsMoving = true;

@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -23,13 +19,15 @@ public class HiveMovement : MonoBehaviour
     [SerializeField] private float _calmPositionPickerTimerMax;
     [SerializeField] private float _calmingDownTimer;
     private Vector3 _hiveDirection;
+    public Vector3 HiveDirection => _hiveDirection;
     [SerializeField] private BehaviorState Behavior;
     [SerializeField] private float _currentSpeed;
     private float _currentCalmPositionPickerCountdown;
     private float _calmingDownCountdown;
+    public bool IsMoving;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _hive = GetComponent<Hive>();
         _currentSpeed = _movementSpeed;
@@ -37,18 +35,20 @@ public class HiveMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (!GameManager.Instance.HasGameStarted) return;
-        
+        if (!GameManager.Instance.HasGameStarted || _hive.HiveHurt.IsHurt) return;
+
         if (Vector3.Distance(transform.position, _hivePointToMove.position) >= _hiveDetectionRange)
         {
+            if (!IsMoving) return;
             MoveHive();
         }
         else
         {
             UpdateDirectionBoolean();
-            _hive.AnimatorComponent.SetBool("IsMoving", false);
+            IsMoving = false;
+            _hive.AnimatorComponent.SetBool("IsMoving", IsMoving);
             if (Behavior == BehaviorState.Calm)
             {
                 if (_currentCalmPositionPickerCountdown > 0)
@@ -57,11 +57,12 @@ public class HiveMovement : MonoBehaviour
                 }
                 else if (_currentCalmPositionPickerCountdown <= 0)
                 {
+                    IsMoving = true;
                     PickPointToMove();
                     _currentCalmPositionPickerCountdown = Random.Range(_calmPositionPickerTimerMin, _calmPositionPickerTimerMax);
                 }
             }
-            else if (Behavior == BehaviorState.Panicked)
+            if (Behavior == BehaviorState.Panicked)
             {
                 if (_calmingDownCountdown > 0)
                 {
@@ -80,11 +81,11 @@ public class HiveMovement : MonoBehaviour
 
     public void GetHurt()
     {
+        _hive.Rigidbody.velocity = Vector3.zero;
         _currentSpeed = _panickedSpeed;
         Behavior = BehaviorState.Panicked;
         _calmingDownCountdown = _calmingDownTimer;
-        _hive.AnimatorComponent.SetBool("IsCalm", false);
-        UpdateDirectionBoolean();
+        _currentCalmPositionPickerCountdown = Random.Range(_calmPositionPickerTimerMin, _calmPositionPickerTimerMax);
         PickPointToMove();
     }
     
@@ -93,14 +94,13 @@ public class HiveMovement : MonoBehaviour
         var pointX = Random.Range(GameManager.Instance.HiveMovementXMinimum, GameManager.Instance.HiveMovementXMaximum);
         var pointY = Random.Range(GameManager.Instance.HiveMovementYMinimum, GameManager.Instance.HiveMovementYMaximum);
         _hivePointToMove.position = new Vector3(pointX, pointY, 0.0f);
-        _hiveDirection = _hivePointToMove.position - transform.position;
-        _hiveDirection.Normalize();
+        UpdateHiveDirection();
+        UpdateDirectionBoolean();
     }
-    
+
     private void MoveHive()
     {
-        transform.Translate(_hiveDirection * (_currentSpeed * Time.deltaTime));
-        UpdateDirectionBoolean();
+        transform.Translate(_hiveDirection.normalized * (_currentSpeed * Time.deltaTime));
         _hive.AnimatorComponent.SetBool("IsMoving", true);
     }
 
@@ -114,5 +114,11 @@ public class HiveMovement : MonoBehaviour
         {
             _hive.AnimatorComponent.SetBool("IsRight", false);
         }
+    }
+
+    private void UpdateHiveDirection()
+    {
+        _hiveDirection = _hivePointToMove.position - transform.position;
+        _hiveDirection.Normalize();
     }
 }

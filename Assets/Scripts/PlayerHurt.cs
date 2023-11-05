@@ -34,7 +34,7 @@ public class PlayerHurt : MonoBehaviour
         }
     }
 
-    public void GetHurt(Vector3 _enemyDirection)
+    public void GetHurt(Vector3 enemyDirection)
     {
         isHurt = true;
         if (isHurt && _player.PlayerMovement.IsMoving)
@@ -42,7 +42,7 @@ public class PlayerHurt : MonoBehaviour
             _hurtCountdown = _hurtTime;
             _player.PlayerMovement.IsMoving = false;
             _player.AnimatorComponent.SetBool("IsMoving", false);
-            _rigidbody2D.AddForce(100f * _enemyDirection);
+            _rigidbody2D.AddForce(100f * enemyDirection);
             _player.AnimatorComponent.Play("Stun");
         }
     }
