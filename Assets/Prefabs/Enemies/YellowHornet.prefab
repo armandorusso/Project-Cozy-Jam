@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 10
   _attackRange: 2
-  _strikingMovementSpeed: 5
+  _strikingMovementSpeed: 3
   _strikingWaitTime: 0.5
 --- !u!114 &570575883321832720
 MonoBehaviour:
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 4695649244301708078}
+  _shadowSpriteRenderer: {fileID: 1837116162664858175}
   _animator: {fileID: 5414418668073483881}
 --- !u!58 &2344178730332811791
 CircleCollider2D:
@@ -258,6 +259,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bb3ce2ce4cc11144ae202104ee71c30, type: 3}
+--- !u!212 &1837116162664858175 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3609867534041369209, guid: 2bb3ce2ce4cc11144ae202104ee71c30, type: 3}
+  m_PrefabInstance: {fileID: 3127305806861879366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &4695649244301708078 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7659532336629515112, guid: 2bb3ce2ce4cc11144ae202104ee71c30, type: 3}

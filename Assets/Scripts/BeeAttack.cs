@@ -25,21 +25,26 @@ public class BeeAttack : MonoBehaviour
             ForceFieldParticles.enabled = false;
         }
         _hitboxPosition = hitboxPosition;
-        _forceFieldRadius = forceFieldRadius + 1.5f;
+        _forceFieldRadius = forceFieldRadius + 7.0f;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (((1 << col.gameObject.layer) & AttackLayer) != 0)
-        {
-            Debug.Log("Red Enemy Detected!");
-
-            ActivateForceField();
-            
-            KillEnemyAction?.Invoke(col.gameObject);
-        }
+        StartCoroutine(DetectEnemiesInCollider(col.gameObject));
     }
 
+    private IEnumerator DetectEnemiesInCollider(GameObject go)
+    {
+        if (go == null) yield break;
+        
+        if (((1 << go.layer) & AttackLayer) != 0)
+        {
+            ActivateForceField();
+            yield return new WaitForSeconds(0.5f);
+            KillEnemyAction?.Invoke(go);
+        }
+    }
+    
     private void ActivateForceField()
     {
         ForceFieldParticles.enabled = true;

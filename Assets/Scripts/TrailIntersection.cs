@@ -14,6 +14,7 @@ public class TrailIntersection : MonoBehaviour
     [SerializeField] public float TimeBetweenPoints;
     [SerializeField] public float PointLifeTime;
     [SerializeField] private ParticleSystem BeeParticles;
+    [SerializeField] private float ForceFieldLifeTime;
     
 
     private float _currentTime;
@@ -171,10 +172,10 @@ public class TrailIntersection : MonoBehaviour
 
     private IEnumerator DisableHitbox()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(ForceFieldLifeTime);
         TrailHitbox.pathCount = 0;
         TrailHitbox.enabled = false;
-        BeeSwarmAction?.Invoke(false, TrailHitbox.transform.position, 0);
+        BeeSwarmAction?.Invoke(false, TailSprite.transform.position, 0);
     }
 
     private void RemoveTrail()

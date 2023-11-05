@@ -4,9 +4,11 @@ public class EnemyAnimator : MonoBehaviour
 {
     private Enemy _enemy;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private SpriteRenderer _shadowSpriteRenderer;
     [SerializeField] private Animator _animator;
     public Animator AnimatorComponent => _animator;
     public SpriteRenderer SpriteRendererComponent => _spriteRenderer;
+    public SpriteRenderer ShadowSpriteRendererComponent => _shadowSpriteRenderer;
 
     private Transform _hornetAnimator;
     // Start is called before the first frame update

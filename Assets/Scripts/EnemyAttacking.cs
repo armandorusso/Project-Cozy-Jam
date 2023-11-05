@@ -53,9 +53,18 @@ public class EnemyAttacking : MonoBehaviour
         _strikingCountdown = 0.0f;
         _isStriking = false;
         _enemy.EnemyAnimator.AnimatorComponent.SetTrigger("Recover");
+        // Reset shadow again just in case
+        if (_enemy.EnemyAnimator.ShadowSpriteRendererComponent)
+        {
+            _enemy.EnemyAnimator.ShadowSpriteRendererComponent.transform.rotation = Quaternion.identity;
+        }
         yield return new WaitForSeconds(_strikingWaitTime);
         _enemy.EnemyMovement.IsMoving = true;
         _enemy.EnemyAnimator.AnimatorComponent.SetTrigger("Recover");
+        if (_enemy.EnemyAnimator.ShadowSpriteRendererComponent)
+        {
+            _enemy.EnemyAnimator.ShadowSpriteRendererComponent.transform.rotation = Quaternion.identity;
+        }
     }
     
     private void StrikeMove()
@@ -75,6 +84,10 @@ public class EnemyAttacking : MonoBehaviour
         {
             var angle = Mathf.Atan2(_enemy.EnemyMovement.EnemyDirection.y, _enemy.EnemyMovement.EnemyDirection.x) * Mathf.Rad2Deg;
             _enemy.EnemyAnimator.SetSpriteDirectionWhenCharging(angle);
+            if (_enemy.EnemyAnimator.ShadowSpriteRendererComponent)
+            {
+                _enemy.EnemyAnimator.ShadowSpriteRendererComponent.transform.rotation = Quaternion.identity;
+            }
         }
     }
 

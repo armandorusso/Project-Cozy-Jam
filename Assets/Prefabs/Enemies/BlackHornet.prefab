@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 10
   _attackRange: 2
-  _strikingMovementSpeed: 5
+  _strikingMovementSpeed: 3
   _strikingWaitTime: 0.5
 --- !u!114 &996927857635547485
 MonoBehaviour:
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 6522628926899210386}
+  _shadowSpriteRenderer: {fileID: 0}
   _animator: {fileID: 5804195988112408021}
 --- !u!58 &2344178730332811791
 CircleCollider2D:
