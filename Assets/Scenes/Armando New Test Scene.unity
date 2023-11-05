@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 24662488}
   - component: {fileID: 24662489}
   m_Layer: 0
-  m_Name: TrailHitbox
+  m_Name: TrailHitbox (Non PF)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2167,6 +2167,72 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2045654787
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961339244055448813, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241282758211345307, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_Name
+      value: TrailHitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8646782854216797650, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+--- !u!60 &2045654788 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3176884426249123927, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+  m_PrefabInstance: {fileID: 2045654787}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4658574635499064546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2230,7 +2296,7 @@ PrefabInstance:
     - target: {fileID: 6077990591744707216, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: TrailHitbox
       value: 
-      objectReference: {fileID: 24662486}
+      objectReference: {fileID: 2045654788}
     - target: {fileID: 9202837855265806893, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: m_Name
       value: PlayerPuppet
@@ -2373,3 +2439,4 @@ SceneRoots:
   - {fileID: 24662487}
   - {fileID: 443378161}
   - {fileID: 1025598364}
+  - {fileID: 2045654787}
