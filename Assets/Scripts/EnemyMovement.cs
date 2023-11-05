@@ -7,7 +7,8 @@ public class EnemyMovement : MonoBehaviour
     public enum EnemyType
     {
         HiveAttacker,
-        PlayerAttacker
+        PlayerMainAttacker,
+        PlayerSecondaryAttacker
     }
 
     private Enemy _enemy;
@@ -43,7 +44,8 @@ public class EnemyMovement : MonoBehaviour
     {
         _target = _enemyType switch
         {
-            EnemyType.PlayerAttacker => GameManager.Instance.Players[Random.Range(0, GameManager.Instance.Players.Length)].transform,
+            EnemyType.PlayerMainAttacker => GameManager.Instance.Players[0].transform,
+            EnemyType.PlayerSecondaryAttacker => GameManager.Instance.Players[1].transform,
             EnemyType.HiveAttacker => GameManager.Instance.Hive.transform,
             _ => GameManager.Instance.Hive.transform
         };

@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: GameManagerCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,8 +702,13 @@ MonoBehaviour:
   - {fileID: 6606398556531059601}
   - {fileID: 1926366836}
   _enemyPrefabs:
-  - {fileID: 3896714409148050613, guid: bf16f3a450ee6a041b5d45599e823171, type: 3}
   - {fileID: 3896714409148050613, guid: 6fbd0f9fad5c491458218c21902bd157, type: 3}
+  - {fileID: 3896714409148050613, guid: 9685675522dcc9049acfafc323280a36, type: 3}
+  - {fileID: 3896714409148050613, guid: bf16f3a450ee6a041b5d45599e823171, type: 3}
+  _enemyAnimatorPrefabs:
+  - {fileID: 5155826822773404365, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
+  - {fileID: 4477368432255136615, guid: 22db3942f74bd5849bc64d2fed5992dd, type: 3}
+  - {fileID: 743149905115906832, guid: 2bb3ce2ce4cc11144ae202104ee71c30, type: 3}
   _hiveCharacter: {fileID: 1063770104}
   HiveMovementXMinimum: -7
   HiveMovementXMaximum: 7
@@ -721,7 +726,7 @@ MonoBehaviour:
   - {fileID: 419592402}
   - {fileID: 1695350740}
   - {fileID: 346561122}
-  _maximumEnemiesOnScene: 15
+  _maximumEnemiesOnScene: 10
   _spawnTimerMin: 0.5
   _spawnTimerMax: 1.5
   CurrentEnemiesOnScene: 0

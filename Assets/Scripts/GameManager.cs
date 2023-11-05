@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Enemies")]
     [SerializeField] private GameObject[] _enemyPrefabs;
+    [SerializeField] private GameObject[] _enemyAnimatorPrefabs;
     private List<GameObject> _enemies = new List<GameObject>();
     public List<GameObject> Enemies => _enemies;
 
@@ -98,7 +99,11 @@ public class GameManager : MonoBehaviour
         var spawnerPicker = Random.Range(0, _enemySpawners.Count);
         var enemyPicker = Random.Range(0, _enemyPrefabs.Length);
 
-        var go = Instantiate(_enemyPrefabs[enemyPicker], _enemySpawners[spawnerPicker].position, Quaternion.identity);
+        var hornetBase = Instantiate(_enemyPrefabs[enemyPicker], _enemySpawners[spawnerPicker].position, Quaternion.identity);
+        var hornetAnimator = hornetBase.transform.GetChild(0);
+        hornetAnimator.SetParent(null);
+        hornetBase.GetComponent<EnemyAnimator>().SetHornetAnimator(hornetAnimator);
+        
         CurrentEnemiesOnScene++;
     }
 }
