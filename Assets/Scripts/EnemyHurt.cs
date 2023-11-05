@@ -6,9 +6,12 @@ using UnityEngine;
 public class EnemyHurt : MonoBehaviour
 {
     private Enemy _enemy;
+
+    public static Action<GameObject> EnemyDeathAction;
+    
     void Start()
     {
-        BeeAttack.KillRedEnemyAction += OnEnemySwarmed;
+        BeeAttack.KillEnemyAction += OnEnemySwarmed;
         _enemy = GetComponent<Enemy>();
     }
 
@@ -17,6 +20,7 @@ public class EnemyHurt : MonoBehaviour
         if (gameObject == enemy && enemy.TryGetComponent<Enemy>(out var enemyComponent))
         {
             GameManager.Instance.CurrentEnemiesOnScene--;
+            EnemyDeathAction?.Invoke(enemy);
             Destroy(enemyComponent.EnemyAnimator.AnimatorComponent.gameObject);
             Destroy(enemy);
         }
@@ -24,6 +28,6 @@ public class EnemyHurt : MonoBehaviour
 
     private void OnDestroy()
     {
-        BeeAttack.KillRedEnemyAction -= OnEnemySwarmed;
+        BeeAttack.KillEnemyAction -= OnEnemySwarmed;
     }
 }

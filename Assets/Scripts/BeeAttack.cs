@@ -12,7 +12,7 @@ public class BeeAttack : MonoBehaviour
     private Vector2 _hitboxPosition;
     private float _forceFieldRadius;
     private bool _isEnabled;
-    public static Action<GameObject> KillRedEnemyAction;
+    public static Action<GameObject> KillEnemyAction;
 
     private void Start()
     {
@@ -39,7 +39,7 @@ public class BeeAttack : MonoBehaviour
             
             ActivateForceField();
             
-            KillRedEnemyAction?.Invoke(col.gameObject);
+            KillEnemyAction?.Invoke(col.gameObject);
         }
     }
 

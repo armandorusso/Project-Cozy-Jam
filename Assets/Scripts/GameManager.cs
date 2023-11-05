@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,11 +52,34 @@ public class GameManager : MonoBehaviour
     private bool _hasGameStarted;
     public bool HasGameStarted => _hasGameStarted;
 
+    public static Action<int> ScoreIncrementedAction; 
+
     // Start is called before the first frame update
     void Start()
     {
         _spawnCountdown = SetRandomSpawnTime();
         StartCoroutine(StartGame());
+
+        EnemyHurt.EnemyDeathAction += OnEnemyKilled;
+    }
+
+    private void OnEnemyKilled(GameObject enemy)
+    {
+        switch (enemy.tag)
+        {
+            case "Yellow Hornet": _currentScore += 10;
+                break;
+            case "Black Hornet": _currentScore += 10;
+                break;
+            case "Big Hornet": _currentScore += 15;
+                break;
+            case "Tank Hornet": _currentScore += 40;
+                break;
+            default: _currentScore += 0;
+                break;
+        }
+        
+        ScoreIncrementedAction?.Invoke(_currentScore);
     }
 
     private IEnumerator StartGame()
@@ -105,5 +131,10 @@ public class GameManager : MonoBehaviour
         hornetBase.GetComponent<EnemyAnimator>().SetHornetAnimator(hornetAnimator);
         
         CurrentEnemiesOnScene++;
+    }
+
+    private void OnDestroy()
+    {
+        EnemyHurt.EnemyDeathAction -= OnEnemyKilled;
     }
 }
