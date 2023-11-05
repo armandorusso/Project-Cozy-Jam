@@ -392,10 +392,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LineRenderer: {fileID: 5954870047099417741}
   TrailHitbox: {fileID: 0}
-  TailSprite: {fileID: 8851368427293109174, guid: 617423c7ba4f3274187f844a19acc905, type: 3}
+  TailSprite: {fileID: 0}
   TailDistanceThreshold: 1
-  TimeBetweenPoints: 0
-  PointLifeTime: 0
+  TimeBetweenPoints: 0.2
+  PointLifeTime: 0.3
+  BeeParticles: {fileID: 651886748072934941}
 --- !u!1001 &6596071320451659153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,6 +454,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab9cb7819b8a6d94191813785838d437, type: 3}
+--- !u!198 &651886748072934941 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5945319268513106828, guid: ab9cb7819b8a6d94191813785838d437, type: 3}
+  m_PrefabInstance: {fileID: 6596071320451659153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4994134424810472030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2217821776573462479, guid: ab9cb7819b8a6d94191813785838d437, type: 3}

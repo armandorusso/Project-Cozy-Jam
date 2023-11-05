@@ -13,6 +13,8 @@ public class TrailIntersection : MonoBehaviour
     [SerializeField] private float TailDistanceThreshold;
     [SerializeField] public float TimeBetweenPoints;
     [SerializeField] public float PointLifeTime;
+    [SerializeField] private ParticleSystem BeeParticles;
+    
 
     private float _currentTime;
     private float _activePointLifetime;
@@ -45,6 +47,8 @@ public class TrailIntersection : MonoBehaviour
                 _currentTime = 0f;
             }
 
+            TuneParticleLifetime();
+            
             if (_activePointLifetime >= PointLifeTime || _currentIndex >= 19)
             {
                 RemovePoint();
@@ -58,6 +62,31 @@ public class TrailIntersection : MonoBehaviour
                     CreateHitbox();
                     RemoveTrail();
                 }
+            }
+        }
+    }
+
+    private void TuneParticleLifetime()
+    {
+        switch (_currentIndex)
+        {
+            case <= 10:
+            {
+                var main = BeeParticles.main;
+                main.startLifetime = 0.75f;
+                break;
+            }
+            case >= 10 and <= 15:
+            {
+                var main = BeeParticles.main;
+                main.startLifetime = 1.45f;
+                break;
+            }
+            default:
+            {
+                var main = BeeParticles.main;
+                main.startLifetime = 1.56f;
+                break;
             }
         }
     }

@@ -8,7 +8,6 @@ public class BeeAttack : MonoBehaviour
     [SerializeField] private LayerMask AttackLayer;
     [SerializeField] private ParticleSystemForceField ForceFieldParticles;
 
-    private bool _isEnemyInside;
     private Vector2 _hitboxPosition;
     private float _forceFieldRadius;
     private bool _isEnabled;
@@ -35,8 +34,6 @@ public class BeeAttack : MonoBehaviour
         {
             Debug.Log("Red Enemy Detected!");
 
-            _isEnemyInside = true;
-            
             ActivateForceField();
             
             KillEnemyAction?.Invoke(col.gameObject);
@@ -48,8 +45,6 @@ public class BeeAttack : MonoBehaviour
         ForceFieldParticles.enabled = true;
         ForceFieldParticles.transform.position = _hitboxPosition;
         ForceFieldParticles.endRange = _forceFieldRadius;
-
-        _isEnemyInside = false;
     }
 
     private void OnDestroy()
