@@ -122,6 +122,7 @@ MonoBehaviour:
   _enemyType: 1
   _rotationSpeed: 5
   _movementSpeed: 0.8
+  _attackSpeed: 0
 --- !u!114 &129385526398708054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +136,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  _attackRange: 0.5
+  _attackRange: 2
+  _strikingMovementSpeed: 5
+  _strikingWaitTime: 0.5
 --- !u!114 &570575883321832720
 MonoBehaviour:
   m_ObjectHideFlags: 0

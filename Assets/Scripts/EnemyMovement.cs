@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private EnemyType _enemyType;
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _attackSpeed;
 
     private Transform _target;
     private Vector3 _enemyDirection;

@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 5736506541190652264}
   _playerHurt: {fileID: 8214062693175936961}
+  _trailIntersection: {fileID: 0}
   _animator: {fileID: 7879055908672972677}
   _spriteRenderer: {fileID: 1301134014570152224}
 --- !u!114 &5736506541190652264
@@ -172,6 +173,7 @@ MonoBehaviour:
   _playerType: 1
   _rigidbody2D: {fileID: 8316679994815046528}
   _movementSpeed: 2.5
+  _acceleratedSpeed: 0
   IsMoving: 0
 --- !u!114 &8214062693175936961
 MonoBehaviour:
@@ -244,7 +246,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

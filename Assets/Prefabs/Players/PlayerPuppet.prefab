@@ -249,7 +249,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -394,6 +394,8 @@ MonoBehaviour:
   TrailHitbox: {fileID: 0}
   TailSprite: {fileID: 8851368427293109174, guid: 617423c7ba4f3274187f844a19acc905, type: 3}
   TailDistanceThreshold: 1
+  TimeBetweenPoints: 0
+  PointLifeTime: 0
 --- !u!1001 &6596071320451659153
 PrefabInstance:
   m_ObjectHideFlags: 0

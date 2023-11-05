@@ -122,6 +122,7 @@ MonoBehaviour:
   _enemyType: 2
   _rotationSpeed: 5
   _movementSpeed: 0.8
+  _attackSpeed: 0
 --- !u!114 &129385526398708054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,8 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0176cbfb8ed4440b0c416c9a3a32a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
-  _attackRange: 0.5
+  _damage: 10
+  _attackRange: 2
+  _strikingMovementSpeed: 5
+  _strikingWaitTime: 0.5
 --- !u!114 &996927857635547485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,8 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c3b8b775dd6924b826bd83ae93a2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spriteRenderer: {fileID: 0}
-  _animator: {fileID: 0}
+  _spriteRenderer: {fileID: 6522628926899210386}
+  _animator: {fileID: 5804195988112408021}
 --- !u!58 &2344178730332811791
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -223,15 +226,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 56035081554658060, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 56035081554658060, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 56035081554658060, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 56035081554658060, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -254,6 +257,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
+--- !u!95 &5804195988112408021 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3285537365759477746, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
+  m_PrefabInstance: {fileID: 9012889967498770983}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6522628926899210386 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2851130266346451637, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
+  m_PrefabInstance: {fileID: 9012889967498770983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9066630264669911339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 56035081554658060, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}

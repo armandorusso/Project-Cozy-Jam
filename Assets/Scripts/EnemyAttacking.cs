@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,11 @@ public class EnemyAttacking : MonoBehaviour
 
     [SerializeField] private int _damage;
     [SerializeField] private float _attackRange;
+    [SerializeField] private float _strikingMovementSpeed;
+    [SerializeField] private float _strikingWaitTime;
+    private bool _isStriking;
+    private float _strikingCountdown;
+    public bool IsStriking => _isStriking;
 
     // Start is called before the first frame update
     void Start()
@@ -20,14 +26,67 @@ public class EnemyAttacking : MonoBehaviour
     void Update()
     {
         var distanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
-        if (distanceFromTarget <= _attackRange && _enemy.EnemyMovement.IsMoving)
+        if (distanceFromTarget <= _attackRange && _enemy.EnemyMovement.IsMoving && !_isStriking)
         {
             _enemy.EnemyMovement.IsMoving = false;
             StartCoroutine(Attack());
         }
+        else
+        {
+            if (_strikingCountdown > 0.0f)
+            {
+                StrikeMove();
+                _strikingCountdown -= Time.deltaTime;
+            }
+            else if (_strikingCountdown <= 0.0f && _isStriking)
+            {
+                StartCoroutine(RecoverMissedCharge());
+            }
+        }
+
+    }
+
+    private IEnumerator RecoverMissedCharge()
+    {
+        _enemy.EnemyAnimator.AnimatorComponent.transform.rotation = Quaternion.identity;
+        _enemy.EnemyAnimator.SetSpriteDirection();
+        _strikingCountdown = 0.0f;
+        _isStriking = false;
+        _enemy.EnemyAnimator.AnimatorComponent.SetTrigger("Recover");
+        yield return new WaitForSeconds(_strikingWaitTime);
+        _enemy.EnemyMovement.IsMoving = true;
+        _enemy.EnemyAnimator.AnimatorComponent.SetTrigger("Recover");
+    }
+    
+    private void StrikeMove()
+    {
+        transform.Translate(_strikingMovementSpeed * Time.deltaTime, 0.0f, 0.0f);
     }
 
     private IEnumerator Attack()
+    {
+        _enemy.EnemyAnimator.AnimatorComponent.SetTrigger("Prepare");
+        yield return new WaitForSeconds(_strikingWaitTime);
+        _strikingCountdown = _strikingWaitTime;
+        _isStriking = true;
+        _enemy.EnemyAnimator.AnimatorComponent.SetTrigger("Charge");
+        
+        if (_enemy.EnemyMovement.EnemyTargetingType == EnemyMovement.EnemyType.PlayerMainAttacker)
+        {
+            var angle = Mathf.Atan2(_enemy.EnemyMovement.EnemyDirection.y, _enemy.EnemyMovement.EnemyDirection.x) * Mathf.Rad2Deg;
+            _enemy.EnemyAnimator.SetSpriteDirectionWhenCharging(angle);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject == Target && !_enemy.EnemyMovement.IsMoving && _isStriking)
+        {
+            StartCoroutine(HurtTarget());
+        }
+    }
+
+    private IEnumerator HurtTarget()
     {
         if (Target.TryGetComponent<Player>(out var player))
         {
@@ -37,7 +96,12 @@ public class EnemyAttacking : MonoBehaviour
         {
             hive.HiveHurt.GetHurt(_enemy.EnemyMovement.EnemyDirection, _damage);
         }
-        yield return new WaitForSeconds(1.0f);
+
+        _isStriking = false;
+        _enemy.EnemyAnimator.AnimatorComponent.SetTrigger("Recover");
+        yield return new WaitForSeconds(_strikingWaitTime);
         _enemy.EnemyMovement.IsMoving = true;
+        _strikingCountdown = _strikingWaitTime;
+        _enemy.EnemyAnimator.AnimatorComponent.SetTrigger("Recover");
     }
 }

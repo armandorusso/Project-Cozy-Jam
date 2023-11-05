@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAnimator : MonoBehaviour
@@ -9,6 +6,7 @@ public class EnemyAnimator : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Animator _animator;
     public Animator AnimatorComponent => _animator;
+    public SpriteRenderer SpriteRendererComponent => _spriteRenderer;
 
     private Transform _hornetAnimator;
     // Start is called before the first frame update
@@ -24,7 +22,7 @@ public class EnemyAnimator : MonoBehaviour
             _hornetAnimator.position = transform.position;
         }
 
-        if (_spriteRenderer)
+        if (_spriteRenderer && !_enemy.EnemyAttacking.IsStriking)
         {
             SetSpriteDirection();
         }
@@ -37,7 +35,7 @@ public class EnemyAnimator : MonoBehaviour
         _spriteRenderer = _hornetAnimator.gameObject.GetComponent<SpriteRenderer>();
     }
 
-    private void SetSpriteDirection()
+    public void SetSpriteDirection()
     {
         if (_enemy.EnemyMovement.EnemyDirection.x < 0.0f)
         {
@@ -47,5 +45,11 @@ public class EnemyAnimator : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
+    }
+    
+    public void SetSpriteDirectionWhenCharging(float angle)
+    {
+        _animator.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle + 180);
+        _spriteRenderer.flipX = _animator.transform.rotation.z is < 270.0f or > 90.0f;
     }
 }
