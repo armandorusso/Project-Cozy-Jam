@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6165140798307023771}
   - component: {fileID: 4330417527811765385}
   - component: {fileID: 129385526398708054}
+  - component: {fileID: 2344178730332811791}
   m_Layer: 0
   m_Name: RedEnemy
   m_TagString: Untagged
@@ -113,9 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428e6a990d4b09c418202dd8adfa6e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyType: 1
+  _enemyType: 0
   _rotationSpeed: 5
-  _movementSpeed: 1.5
+  _movementSpeed: 0.8
 --- !u!114 &129385526398708054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,4 +131,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 5057930805786551026}
   _hiveDamage: 0
-  _attackRange: 0
+  _attackRange: 0.5
+--- !u!58 &2344178730332811791
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3896714409148050613}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

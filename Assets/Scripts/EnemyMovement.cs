@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private enum EnemyType
+    public enum EnemyType
     {
         HiveAttacker,
         PlayerAttacker
@@ -17,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
 
     private Transform _target;
     private Vector3 _enemyDirection;
+    public EnemyType EnemyTargetingType => _enemyType;
     public Vector3 EnemyDirection => _enemyDirection;
 
     public bool IsMoving { get; set; }

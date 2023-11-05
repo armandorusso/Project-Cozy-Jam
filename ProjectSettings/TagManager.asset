@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - BorderHorizontal
+  - BorderVertical
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 4176267057
+    locked: 0
+  - name: BorderHorizontal
+    uniqueID: 4269723893
+    locked: 0
+  - name: BorderVertical
+    uniqueID: 4080574481
     locked: 0
