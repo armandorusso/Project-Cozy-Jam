@@ -173,7 +173,7 @@ MonoBehaviour:
   _playerType: 1
   _rigidbody2D: {fileID: 8316679994815046528}
   _movementSpeed: 2.5
-  _acceleratedSpeed: 0
+  _acceleratedSpeed: 4
   IsMoving: 0
 --- !u!114 &8214062693175936961
 MonoBehaviour:
@@ -262,7 +262,7 @@ Animator:
   m_GameObject: {fileID: 2389844102743402488}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c9da27ef3d335f04aac088b67f5ea7f7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 468796a268cc9414c8f671c4bf7cbdc6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -176,7 +176,7 @@ MonoBehaviour:
   _playerType: 0
   _rigidbody2D: {fileID: 6248995634468351421}
   _movementSpeed: 2.5
-  _acceleratedSpeed: 0
+  _acceleratedSpeed: 4
   IsMoving: 0
 --- !u!114 &7665820926156603588
 MonoBehaviour:
