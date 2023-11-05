@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hivePointToMove: {fileID: 0}
-  _movementSpeed: 2.5
+  _movementSpeed: 4
   _hiveDetectionRange: 0.2
 --- !u!50 &1813388856779173286
 Rigidbody2D:

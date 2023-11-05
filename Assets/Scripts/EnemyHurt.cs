@@ -14,13 +14,13 @@ public class EnemyHurt : MonoBehaviour
     {
         if (gameObject == enemy)
         {
+            GameManager.Instance.CurrentEnemiesOnScene--;
             Destroy(enemy);
         }
     }
 
     private void OnDestroy()
     {
-        GameManager.Instance.CurrentEnemiesOnScene--;
         BeeAttack.KillRedEnemyAction -= OnEnemySwarmed;
     }
 }

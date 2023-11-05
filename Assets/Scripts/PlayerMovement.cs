@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerType _playerType;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _acceleratedSpeed;
+    private float _currentSpeed;
     private Vector2 _playerDirection;
     public bool IsMoving;
     // Start is called before the first frame update
@@ -37,6 +40,9 @@ public class PlayerMovement : MonoBehaviour
         {
             _player.SpriteRendererComponent.flipX = true;
         }
+        
+        UpdateMovementDirectionSprites();
+        _currentSpeed = _movementSpeed;
     }
 
     // Update is called once per frame
@@ -55,12 +61,24 @@ public class PlayerMovement : MonoBehaviour
             _playerDirection = context.ReadValue<Vector2>();
             _playerDirection.Normalize();
             UpdateMovementDirectionSprites();
+            _currentSpeed = _acceleratedSpeed;
+            _player.AnimatorComponent.speed = 1.6f;
+        }
+        else
+        {
+            _currentSpeed = _movementSpeed;
+            _player.AnimatorComponent.speed = 1.0f;
+        }
+
+        if (_player.PlayerHurt.isHurt)
+        {
+            _player.AnimatorComponent.speed = 1.0f;
         }
     }
     
     private void MovePlayer()
     {
-        transform.Translate(_playerDirection * (_movementSpeed * Time.deltaTime));
+        transform.Translate(_playerDirection * (_currentSpeed * Time.deltaTime));
     }
     
     public void UpdateMovementDirectionSprites()

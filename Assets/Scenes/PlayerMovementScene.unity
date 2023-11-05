@@ -1490,6 +1490,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 270572533759393116, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: _acceleratedSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1720305527670571943, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -1623,6 +1627,10 @@ PrefabInstance:
     - target: {fileID: 2389844102743402488, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
       propertyPath: m_Name
       value: PlayerPuppet2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736506541190652264, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: _acceleratedSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7037991095852253928, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
       propertyPath: m_LocalPosition.x
