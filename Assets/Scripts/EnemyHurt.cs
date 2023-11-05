@@ -21,6 +21,15 @@ public class EnemyHurt : MonoBehaviour
         {
             GameManager.Instance.CurrentEnemiesOnScene--;
             EnemyDeathAction?.Invoke(enemy);
+
+            var hurtEffectTransform = _enemy.transform.GetChild(0);
+            hurtEffectTransform.gameObject.SetActive(true);
+            hurtEffectTransform.parent = null;
+            hurtEffectTransform.localScale = Vector3.one;
+            if (hurtEffectTransform.TryGetComponent<HurtEffect>(out var hurtEffect))
+            {
+                hurtEffect.EnableObject();
+            }
             Destroy(enemyComponent.EnemyAnimator.AnimatorComponent.gameObject);
             Destroy(enemy);
         }
