@@ -226,17 +226,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1472285677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &347807689 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1947860228540131187, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
-  m_PrefabInstance: {fileID: 4658574635499064546}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51cd321ba30965440b9e5708409cb643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &352819834
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _players:
-  - {fileID: 347807689}
+  - {fileID: 6606398556531059601}
   - {fileID: 1926366836}
   _enemyPrefabs:
   - {fileID: 3896714409148050613, guid: bf16f3a450ee6a041b5d45599e823171, type: 3}
@@ -1500,6 +1489,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 651886748072934941, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 651886748072934941, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: ExternalForcesModule.influenceList.Array.data[0]
       value: 
       objectReference: {fileID: 1886918922}
@@ -1555,6 +1548,14 @@ PrefabInstance:
       propertyPath: TrailHitbox
       value: 
       objectReference: {fileID: 167365034}
+    - target: {fileID: 6077990591744707216, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: PointLifeTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077990591744707216, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: TimeBetweenPoints
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 9202837855265806893, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: m_Name
       value: PlayerPuppet
@@ -1625,6 +1626,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+--- !u!114 &6606398556531059601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1947860228540131187, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+  m_PrefabInstance: {fileID: 4658574635499064546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cd321ba30965440b9e5708409cb643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7225241378534928880
 PrefabInstance:
   m_ObjectHideFlags: 0

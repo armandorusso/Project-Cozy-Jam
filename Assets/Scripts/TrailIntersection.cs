@@ -11,10 +11,10 @@ public class TrailIntersection : MonoBehaviour
     [SerializeField] public PolygonCollider2D TrailHitbox;
     [SerializeField] private SpriteRenderer TailSprite;
     [SerializeField] private float TailDistanceThreshold;
-    
+    [SerializeField] public float TimeBetweenPoints;
+    [SerializeField] public float PointLifeTime;
+
     private float _currentTime;
-    private float _timeBetweenPoints = 1f;
-    private float _pointLifeTime = 4f;
     private float _activePointLifetime;
 
     private int _currentIndex;
@@ -39,13 +39,13 @@ public class TrailIntersection : MonoBehaviour
             _currentTime += Time.deltaTime;
             _activePointLifetime += Time.deltaTime;
 
-            if (_currentTime >= _timeBetweenPoints)
+            if (_currentTime >= TimeBetweenPoints)
             {
                 SetNewLineRendererPoint();
                 _currentTime = 0f;
             }
 
-            if (_activePointLifetime >= _pointLifeTime)
+            if (_activePointLifetime >= PointLifeTime)
             {
                 RemovePoint();
             }
@@ -142,7 +142,7 @@ public class TrailIntersection : MonoBehaviour
 
     private IEnumerator DisableHitbox()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.8f);
         TrailHitbox.pathCount = 0;
         TrailHitbox.enabled = false;
         BeeSwarmAction?.Invoke(false, TrailHitbox.transform.position, 0);
