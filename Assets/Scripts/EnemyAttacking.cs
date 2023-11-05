@@ -7,7 +7,6 @@ public class EnemyAttacking : MonoBehaviour
     private Enemy _enemy;
     public GameObject Target { get; set; }
 
-    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private int _hiveDamage;
     [SerializeField] private float _attackRange;
 
@@ -30,7 +29,6 @@ public class EnemyAttacking : MonoBehaviour
 
     private IEnumerator Attack()
     {
-        _spriteRenderer.color = Color.green;
         if (Target.TryGetComponent<Player>(out var player))
         {
             player.PlayerHurt.GetHurt(_enemy.EnemyMovement.EnemyDirection);
@@ -40,7 +38,6 @@ public class EnemyAttacking : MonoBehaviour
             hive.HiveMovement.PickPointToMove();
         }
         yield return new WaitForSeconds(1.0f);
-        _spriteRenderer.color = Color.red;
         _enemy.EnemyMovement.IsMoving = true;
     }
 }

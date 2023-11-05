@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 4330417527811765385}
   - component: {fileID: 129385526398708054}
   - component: {fileID: 2344178730332811791}
-  m_Layer: 0
-  m_Name: RedEnemy 1
+  - component: {fileID: 996927857635547485}
+  m_Layer: 10
+  m_Name: BlueEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.5217905, a: 1}
+  m_Color: {r: 0, g: 0.022967339, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyMovement: {fileID: 4330417527811765385}
   _enemyAttacking: {fileID: 129385526398708054}
+  _enemyHurt: {fileID: 996927857635547485}
 --- !u!114 &4330417527811765385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +169,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &996927857635547485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3896714409148050613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5261b25ed819d545abfbfda23e1ddf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

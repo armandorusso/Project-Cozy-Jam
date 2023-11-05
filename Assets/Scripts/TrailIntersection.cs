@@ -12,7 +12,7 @@ public class TrailIntersection : MonoBehaviour
     [SerializeField] private float TailDistanceThreshold;
     
     private float _currentTime;
-    private float _timeBetweenPoints = 0.5f;
+    private float _timeBetweenPoints = 1f;
     private float _pointLifeTime = 4f;
     private float _activePointLifetime;
 
@@ -24,6 +24,9 @@ public class TrailIntersection : MonoBehaviour
     void Start()
     {
         points = new List<Vector2>();
+
+        StartTrail();
+        TailSprite.enabled = false;
     }
 
     void Update()
@@ -70,25 +73,23 @@ public class TrailIntersection : MonoBehaviour
         _activePointLifetime = 0;
     }
 
-    public void OnTrailTrigger(InputAction.CallbackContext context)
+    private void StartTrail()
     {
-        if (context.started && !_hasTriggeredTrail)
-        {
-            _hasTriggeredTrail = true;
-            SetNewLineRendererPoint();
-            TailSprite.transform.position = LineRenderer.GetPosition(0);
-            LineRenderer.enabled = true;
-        }
+        _hasTriggeredTrail = true;
+        SetNewLineRendererPoint();
+        TailSprite.transform.position = LineRenderer.GetPosition(0);
+        LineRenderer.enabled = true;
     }
 
     private void SetNewLineRendererPoint()
     {
+        TailSprite.enabled = true;
         LineRenderer.positionCount++;
         LineRenderer.SetPosition(_currentIndex, transform.position);
         
         points.Add(transform.position);
         
-        TrailHitbox.SetPath(0, points);
+        // TrailHitbox.SetPath(0, points);
 
         if(_currentIndex >= 1)
             Debug.DrawLine(LineRenderer.GetPosition(_currentIndex - 1), LineRenderer.GetPosition(_currentIndex), Color.green);
@@ -132,6 +133,8 @@ public class TrailIntersection : MonoBehaviour
         LineRenderer.enabled = false;
         LineRenderer.positionCount = 0;
         points.Clear();
+
+        StartTrail();
     }
 
     private Vector2 FindPointOfIntersection(Vector3 line1Start, Vector3 line1End, Vector3 line2Start, Vector3 line2End)
