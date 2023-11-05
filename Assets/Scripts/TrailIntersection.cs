@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ public class TrailIntersection : MonoBehaviour
     private bool _hasTriggeredTrail;
 
     private List<Vector2> points;
+
+    public static Action<bool, Vector2, float> BeeSwarmAction;
     
     void Start()
     {
@@ -111,9 +114,29 @@ public class TrailIntersection : MonoBehaviour
             points.Add(LineRenderer.GetPosition(i));
         }
 
-        TrailHitbox.enabled = true;
-        
         TrailHitbox.SetPath(0, points);
+        TrailHitbox.enabled = true;
+        Vector2 midpoint = Vector2.zero;
+
+        foreach (var point in TrailHitbox.points)
+        {
+            midpoint += point;
+        }
+
+        var pointsLength = TrailHitbox.points.Length;
+        midpoint /= pointsLength;
+        
+        // Average distance between the midpoint and each point
+        float averageDistance = 0;
+        
+        foreach (var point in TrailHitbox.points)
+        {
+            averageDistance += Vector2.Distance(point, midpoint);
+        }
+
+        averageDistance /= pointsLength;
+
+        BeeSwarmAction?.Invoke(true, midpoint, averageDistance);
         StartCoroutine(DisableHitbox());
     }
 
@@ -122,6 +145,7 @@ public class TrailIntersection : MonoBehaviour
         yield return new WaitForSeconds(2f);
         TrailHitbox.pathCount = 0;
         TrailHitbox.enabled = false;
+        BeeSwarmAction?.Invoke(false, TrailHitbox.transform.position, 0);
     }
 
     private void RemoveTrail()
