@@ -15,8 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerType _playerType;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private float _movementSpeed;
-    private Vector2 _inputMovement;
-    private Vector3 _playerDirection;
+    private Vector2 _playerDirection;
     public bool IsMoving;
     // Start is called before the first frame update
     private void Start()
@@ -49,56 +48,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnMoveUp(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            if (_playerDirection.y == 1.0f)
-            {
-                _playerDirection.x = 0.0f;
-            }
-            _playerDirection.y = 1.0f;
-            UpdateMovementDirectionSprites();
+            _playerDirection = context.ReadValue<Vector2>();
         }
-    }
-    
-    public void OnMoveDown(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            if (_playerDirection.y == -1.0f)
-            {
-                _playerDirection.x = 0.0f;
-            }
-            _playerDirection.y = -1.0f;
-            UpdateMovementDirectionSprites();
-        }
-    }
-    
-    public void OnMoveLeft(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            if (_playerDirection.x == -1.0f)
-            {
-                _playerDirection.y = 0.0f;
-            }
-            _playerDirection.x = -1.0f;
-            UpdateMovementDirectionSprites();
-        }
-    }
-    
-    public void OnMoveRight(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            if (_playerDirection.x == 1.0f)
-            {
-                _playerDirection.y = 0.0f;
-            }
-            _playerDirection.x = 1.0f;
-            UpdateMovementDirectionSprites();
-        }
+        _playerDirection.Normalize();
+        if (_playerType == PlayerType.Main) Debug.Log(_playerDirection);
     }
     
     private void MovePlayer()
@@ -111,47 +68,47 @@ public class PlayerMovement : MonoBehaviour
         if (!IsMoving) return;
         
         // Right
-        if (_playerDirection is { x: 1.0f, y: 0.0f })
+        if (_playerDirection is { x: <=1.0f, x: > 0.0f, y: 0.0f })
         {
             _player.AnimatorComponent.Play("RunSide");
             _player.SpriteRendererComponent.flipX = false;
         }
         // Left
-        else if (_playerDirection is { x: -1.0f, y: 0.0f })
+        else if (_playerDirection is { x: >=-1.0f, x: < 0.0f, y: 0.0f })
         {
             _player.AnimatorComponent.Play("RunSide");
             _player.SpriteRendererComponent.flipX = true;
         }
         // North
-        else if (_playerDirection is { x: 0.0f, y: 1.0f })
+        else if (_playerDirection is { x: 0.0f, y: <=1.0f, y: >0.0f })
         {
             _player.AnimatorComponent.Play("RunNorth");
         }
         // South
-        else if (_playerDirection is { x: 0.0f, y: -1.0f })
+        else if (_playerDirection is { x: 0.0f, y: >=-1.0f, y: <0.0f })
         {
             _player.AnimatorComponent.Play("RunSouth");
         }
         // Right-Up
-        else if (_playerDirection is { x: 1.0f, y: 1.0f })
+        else if (_playerDirection is { x: <=1.0f, x: > 0.0f, y: <=1.0f, y: > 0.0f })
         {
             _player.AnimatorComponent.Play("RunNorthSide");
             _player.SpriteRendererComponent.flipX = false;
         }
         // Left-Up
-        else if (_playerDirection is { x: -1.0f, y: 1.0f })
+        else if (_playerDirection is { x: >=-1.0f, x: < 0.0f, y: <=1.0f, y: > 0.0f })
         {
             _player.AnimatorComponent.Play("RunNorthSide");
             _player.SpriteRendererComponent.flipX = true;
         }
         // Right-Down
-        else if (_playerDirection is { x: 1.0f, y: -1.0f })
+        else if (_playerDirection is { x: <=1.0f, x: > 0.0f, y: >=-1.0f, y: < 0.0f })
         {
             _player.AnimatorComponent.Play("RunSouthSide");
             _player.SpriteRendererComponent.flipX = false;
         }
         // Left-Down
-        else if (_playerDirection is { x: -1.0f, y: -1.0f })
+        else if (_playerDirection is { x: >=-1.0f, x: < 0.0f, y: >=-1.0f, y: < 0.0f })
         {
             _player.AnimatorComponent.Play("RunSouthSide");
             _player.SpriteRendererComponent.flipX = true;

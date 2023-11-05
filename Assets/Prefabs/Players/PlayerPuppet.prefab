@@ -120,7 +120,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 270572533759393116}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnMoveUp
+        m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -130,72 +130,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 6b8e8653-4caa-44d6-9a0e-86df14eef806
+    m_ActionId: 02c70a67-771c-4074-9075-9da74262b890
     m_ActionName: Player 1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 270572533759393116}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnMoveDown
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: dd28a6ad-0ace-4862-9f89-9de59cef7db0
-    m_ActionName: Player 1/MoveDown[/Keyboard/s]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 270572533759393116}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnMoveLeft
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 127212c0-bdad-4c6f-990d-736b72afa832
-    m_ActionName: Player 1/MoveLeft[/Keyboard/a]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 270572533759393116}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnMoveRight
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4166ca90-2a53-443d-a8b7-92da9e85a5fd
-    m_ActionName: Player 1/MoveRight[/Keyboard/d]
-  - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 867bf1b4-d8a5-4416-97db-a12fedacb1d6
-    m_ActionName: Player 2/MoveRight[/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bd3a0c04-1d5c-497a-912d-70d2407f9d7c
-    m_ActionName: Player 2/MoveLeft[/Keyboard/leftArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a523033d-1fe5-420e-873d-fc2f9f777ecf
-    m_ActionName: Player 2/MoveDown[/Keyboard/downArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8f9b9808-7698-42b6-a7a3-dead21abc314
-    m_ActionName: Player 2/MoveUp[/Keyboard/upArrow]
+    m_ActionId: e9503b2e-3944-48df-a374-95f527f392e9
+    m_ActionName: Player 2/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player 1
