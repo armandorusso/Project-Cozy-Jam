@@ -53,9 +53,9 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed)
         {
             _playerDirection = context.ReadValue<Vector2>();
+            _playerDirection.Normalize();
+            UpdateMovementDirectionSprites();
         }
-        _playerDirection.Normalize();
-        if (_playerType == PlayerType.Main) Debug.Log(_playerDirection);
     }
     
     private void MovePlayer()
