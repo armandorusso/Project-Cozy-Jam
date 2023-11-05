@@ -150,8 +150,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hivePointToMove: {fileID: 0}
-  _movementSpeed: 4
+  _movementSpeed: 1
+  _panickedSpeed: 3
   _hiveDetectionRange: 0.2
+  _calmPositionPickerTimerMin: 3
+  _calmPositionPickerTimerMax: 4
+  _calmingDownTimer: 3
+  Behavior: 0
+  _currentSpeed: 0
 --- !u!50 &1813388856779173286
 Rigidbody2D:
   serializedVersion: 4
