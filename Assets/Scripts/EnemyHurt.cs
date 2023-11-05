@@ -20,6 +20,7 @@ public class EnemyHurt : MonoBehaviour
 
     private void OnDestroy()
     {
+        GameManager.Instance.CurrentEnemiesOnScene--;
         BeeAttack.KillRedEnemyAction -= OnEnemySwarmed;
     }
 }

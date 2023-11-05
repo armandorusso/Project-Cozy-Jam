@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _maximumEnemiesOnScene;
     [SerializeField] private float _spawnTimerMin;
     [SerializeField] private float _spawnTimerMax;
-    private int _currentEnemiesOnScene;
+    public int CurrentEnemiesOnScene;
     private float _spawnCountdown;
 
     private bool _hasGameStarted;
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (_currentEnemiesOnScene <= _maximumEnemiesOnScene)
+            if (CurrentEnemiesOnScene <= _maximumEnemiesOnScene)
             {
                 SpawnEnemy();
                 _spawnCountdown = SetRandomSpawnTime();
@@ -97,6 +97,6 @@ public class GameManager : MonoBehaviour
         var enemyPicker = Random.Range(0, _enemyPrefabs.Length);
 
         var go = Instantiate(_enemyPrefabs[enemyPicker], _enemySpawners[spawnerPicker].position, Quaternion.identity);
-        _currentEnemiesOnScene++;
+        CurrentEnemiesOnScene++;
     }
 }
