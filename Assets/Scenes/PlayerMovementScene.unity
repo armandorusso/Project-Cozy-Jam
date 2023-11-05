@@ -2672,6 +2672,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 33539
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.11740828
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.46188024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.6415094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0.7254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.11764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_NumAlphaKeys
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954870047099417741, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.11068535
+      objectReference: {fileID: 0}
     - target: {fileID: 6077990591744707216, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: TailSprite
       value: 
@@ -2682,7 +2738,7 @@ PrefabInstance:
       objectReference: {fileID: 167365034}
     - target: {fileID: 6077990591744707216, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: PointLifeTime
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6077990591744707216, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: TimeBetweenPoints

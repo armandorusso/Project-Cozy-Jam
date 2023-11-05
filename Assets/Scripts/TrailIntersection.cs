@@ -45,12 +45,12 @@ public class TrailIntersection : MonoBehaviour
                 _currentTime = 0f;
             }
 
-            if (_activePointLifetime >= PointLifeTime)
+            if (_activePointLifetime >= PointLifeTime || _currentIndex >= 19)
             {
                 RemovePoint();
             }
             
-            if (_hasTriggeredTrail && _currentIndex >= 4 && _currentIndex <= 100)
+            if (_hasTriggeredTrail && _currentIndex >= 4 && _currentIndex <= 19)
             {
                 if (IsOverlapWithTail())
                 {
