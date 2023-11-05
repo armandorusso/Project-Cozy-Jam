@@ -4,6 +4,8 @@ public class Hive : MonoBehaviour
 {
     [SerializeField] private HiveMovement _hiveMovement;
     public HiveMovement HiveMovement => _hiveMovement;
+    [SerializeField] private HiveHurt _hiveHurt;
+    public HiveHurt HiveHurt => _hiveHurt;
 
     [SerializeField] private Animator _animator;
     public Animator AnimatorComponent => _animator;
@@ -12,6 +14,7 @@ public class Hive : MonoBehaviour
     void Start()
     {
         if (!_hiveMovement) _hiveMovement = GetComponent<HiveMovement>();
+        if (!_hiveHurt) _hiveHurt = GetComponent<HiveHurt>();
     }
     
     private void OnDrawGizmos()

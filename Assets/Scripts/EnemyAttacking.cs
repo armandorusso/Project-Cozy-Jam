@@ -7,7 +7,7 @@ public class EnemyAttacking : MonoBehaviour
     private Enemy _enemy;
     public GameObject Target { get; set; }
 
-    [SerializeField] private int _hiveDamage;
+    [SerializeField] private int _damage;
     [SerializeField] private float _attackRange;
 
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class EnemyAttacking : MonoBehaviour
         }
         else if (Target.TryGetComponent<Hive>(out var hive))
         {
-            hive.HiveMovement.GetHurt();
+            hive.HiveHurt.GetHurt(_damage);
         }
         yield return new WaitForSeconds(1.0f);
         _enemy.EnemyMovement.IsMoving = true;
