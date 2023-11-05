@@ -33,6 +33,7 @@ public class HiveMovement : MonoBehaviour
     {
         _hive = GetComponent<Hive>();
         _currentSpeed = _movementSpeed;
+        _currentCalmPositionPickerCountdown = Random.Range(_calmPositionPickerTimerMin, _calmPositionPickerTimerMax);
     }
 
     // Update is called once per frame
@@ -46,6 +47,8 @@ public class HiveMovement : MonoBehaviour
         }
         else
         {
+            UpdateDirectionBoolean();
+            _hive.AnimatorComponent.SetBool("IsMoving", false);
             if (Behavior == BehaviorState.Calm)
             {
                 if (_currentCalmPositionPickerCountdown > 0)
@@ -58,18 +61,19 @@ public class HiveMovement : MonoBehaviour
                     _currentCalmPositionPickerCountdown = Random.Range(_calmPositionPickerTimerMin, _calmPositionPickerTimerMax);
                 }
             }
-        }
-        
-        if (Behavior == BehaviorState.Panicked)
-        {
-            if (_calmingDownCountdown > 0)
+            else if (Behavior == BehaviorState.Panicked)
             {
-                _calmingDownCountdown -= Time.deltaTime;
-            }
-            else if (_calmingDownCountdown <= 0)
-            {
-                Behavior = BehaviorState.Calm;
-                _currentSpeed = _movementSpeed;
+                if (_calmingDownCountdown > 0)
+                {
+                    _calmingDownCountdown -= Time.deltaTime;
+                }
+                else if (_calmingDownCountdown <= 0)
+                {
+                    Behavior = BehaviorState.Calm;
+                    _currentSpeed = _movementSpeed;
+                    _hive.AnimatorComponent.SetBool("IsCalm", true);
+                    UpdateDirectionBoolean();
+                }
             }
         }
     }
@@ -79,6 +83,8 @@ public class HiveMovement : MonoBehaviour
         _currentSpeed = _panickedSpeed;
         Behavior = BehaviorState.Panicked;
         _calmingDownCountdown = _calmingDownTimer;
+        _hive.AnimatorComponent.SetBool("IsCalm", false);
+        UpdateDirectionBoolean();
         PickPointToMove();
     }
     
@@ -94,5 +100,19 @@ public class HiveMovement : MonoBehaviour
     private void MoveHive()
     {
         transform.Translate(_hiveDirection * (_currentSpeed * Time.deltaTime));
+        UpdateDirectionBoolean();
+        _hive.AnimatorComponent.SetBool("IsMoving", true);
+    }
+
+    private void UpdateDirectionBoolean()
+    {
+        if (_hiveDirection.x > 0.0f)
+        {
+            _hive.AnimatorComponent.SetBool("IsRight", true);
+        }
+        else if (_hiveDirection.x < 0.0f)
+        {
+            _hive.AnimatorComponent.SetBool("IsRight", false);
+        }
     }
 }

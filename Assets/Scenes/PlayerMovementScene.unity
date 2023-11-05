@@ -704,7 +704,7 @@ MonoBehaviour:
   _enemyPrefabs:
   - {fileID: 3896714409148050613, guid: bf16f3a450ee6a041b5d45599e823171, type: 3}
   - {fileID: 3896714409148050613, guid: 6fbd0f9fad5c491458218c21902bd157, type: 3}
-  _hive: {fileID: 1063770100}
+  _hiveCharacter: {fileID: 1063770104}
   HiveMovementXMinimum: -7
   HiveMovementXMaximum: 7
   HiveMovementYMinimum: -4
@@ -838,11 +838,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1472285677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1063770100 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2361624665103044647, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+--- !u!114 &1063770104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7096705733757123617, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
   m_PrefabInstance: {fileID: 4752197537062801471}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2a0716d7788d94c84bf1f8078c94eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1106877468
 GameObject:
   m_ObjectHideFlags: 0

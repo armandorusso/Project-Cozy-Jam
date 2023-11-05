@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7096705733757123617}
   - component: {fileID: 4602009120890455512}
   - component: {fileID: 1813388856779173286}
+  - component: {fileID: 2966084638451914934}
   m_Layer: 0
   m_Name: Hive
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 899078400, guid: 547a8d03379801c4d9927e58194411cc, type: 3}
   m_Color: {r: 1, g: 0.6729084, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2a0716d7788d94c84bf1f8078c94eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _circleCollider: {fileID: 3805017807646544035}
   _hiveMovement: {fileID: 4602009120890455512}
+  _animator: {fileID: 2966084638451914934}
 --- !u!114 &4602009120890455512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +186,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &2966084638451914934
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361624665103044647}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8bf00b6d38f08224f9398c1ab4910b33, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

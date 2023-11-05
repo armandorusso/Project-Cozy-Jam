@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> Enemies => _enemies;
 
     [Header("Hive")]
-    [SerializeField] private GameObject _hive;
-    public GameObject Hive => _hive;
+    [SerializeField] private Hive _hiveCharacter;
+    public Hive Hive => _hiveCharacter;
     [Range(-10.0f, -3.0f)] public float HiveMovementXMinimum;
     [Range(3.0f, 10.0f)] public float HiveMovementXMaximum;
     [Range(-6.0f, -1.0f)] public float HiveMovementYMinimum;
@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
             player.PlayerMovement.IsMoving = true;
             player.PlayerMovement.UpdateMovementDirectionSprites();
         }
+        
+        _hiveCharacter.AnimatorComponent.SetTrigger("StartGame");
     }
 
     // Update is called once per frame

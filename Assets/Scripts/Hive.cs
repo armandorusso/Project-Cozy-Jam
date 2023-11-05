@@ -1,14 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Hive : MonoBehaviour
 {
-    [SerializeField] private CircleCollider2D _circleCollider;
     [SerializeField] private HiveMovement _hiveMovement;
-
     public HiveMovement HiveMovement => _hiveMovement;
+
+    [SerializeField] private Animator _animator;
+    public Animator AnimatorComponent => _animator;
     
     // Start is called before the first frame update
     void Start()
