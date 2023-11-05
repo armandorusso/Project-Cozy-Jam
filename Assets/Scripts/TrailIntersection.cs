@@ -8,18 +8,22 @@ public class TrailIntersection : MonoBehaviour
 {
     [SerializeField] public LineRenderer LineRenderer;
     [SerializeField] public PolygonCollider2D TrailHitbox;
+    [SerializeField] private SpriteRenderer TailSprite;
+    [SerializeField] private float TailDistanceThreshold;
     
     private float _currentTime;
     private float _timeBetweenPoints = 0.5f;
-    private float _pointLifeTime = 2f;
+    private float _pointLifeTime = 4f;
     private float _activePointLifetime;
 
     private int _currentIndex;
     private bool _hasTriggeredTrail;
+
+    private List<Vector2> points;
     
     void Start()
     {
-        
+        points = new List<Vector2>();
     }
 
     void Update()
@@ -39,17 +43,30 @@ public class TrailIntersection : MonoBehaviour
             {
                 RemovePoint();
             }
+            
+            if (_hasTriggeredTrail && _currentIndex >= 4 && _currentIndex <= 100)
+            {
+                if (IsOverlapWithTail())
+                {
+                    Debug.Log("Tail Hit!");
+                    CreateHitbox();
+                    RemoveTrail();
+                }
+            }
         }
     }
 
     private void RemovePoint()
     {
-        Vector3[] points = new Vector3[LineRenderer.positionCount];
-        LineRenderer.GetPositions(points);
-        var pointList = points.ToList();
+        Vector3[] pointsArr = new Vector3[LineRenderer.positionCount];
+        LineRenderer.GetPositions(pointsArr);
+        var pointList = pointsArr.ToList();
         pointList.RemoveAt(0);
+        _currentIndex--;
         
         LineRenderer.SetPositions(pointList.ToArray());
+        LineRenderer.positionCount--;
+        TailSprite.transform.position = LineRenderer.GetPosition(0);
         _activePointLifetime = 0;
     }
 
@@ -59,15 +76,8 @@ public class TrailIntersection : MonoBehaviour
         {
             _hasTriggeredTrail = true;
             SetNewLineRendererPoint();
+            TailSprite.transform.position = LineRenderer.GetPosition(0);
             LineRenderer.enabled = true;
-        }
-
-        if (context.started && _hasTriggeredTrail)
-        {
-            if (_currentIndex >= 4 && _currentIndex <= 100)
-            {
-                FindIntersection();
-            }
         }
     }
 
@@ -75,6 +85,10 @@ public class TrailIntersection : MonoBehaviour
     {
         LineRenderer.positionCount++;
         LineRenderer.SetPosition(_currentIndex, transform.position);
+        
+        points.Add(transform.position);
+        
+        TrailHitbox.SetPath(0, points);
 
         if(_currentIndex >= 1)
             Debug.DrawLine(LineRenderer.GetPosition(_currentIndex - 1), LineRenderer.GetPosition(_currentIndex), Color.green);
@@ -82,25 +96,11 @@ public class TrailIntersection : MonoBehaviour
         _currentIndex++;
     }
 
-    private void FindIntersection()
+    public bool IsOverlapWithTail()
     {
-        var line1Start = LineRenderer.GetPosition(0);
-        var line1End = LineRenderer.GetPosition(1);
-        
-        var line2Start = LineRenderer.GetPosition(_currentIndex - 2);
-        var line2End = LineRenderer.GetPosition(_currentIndex - 1);
-
-        var pointOfIntersection = FindPointOfIntersection(line1Start, line1End, line2Start, line2End);
-
-        if (Vector2.Distance(pointOfIntersection, line1Start) <= 3f)
-        {
-            Debug.Log("Created Loop!");
-            CreateHitbox();
-        }
-
-        TurnOffTrail();
+        return Mathf.Abs(Vector2.Distance(TailSprite.transform.position, transform.position)) <= TailDistanceThreshold;
     }
-    
+
     private void CreateHitbox()
     {
         List<Vector2> points = new List<Vector2>();
@@ -123,7 +123,7 @@ public class TrailIntersection : MonoBehaviour
         TrailHitbox.enabled = false;
     }
 
-    private void TurnOffTrail()
+    private void RemoveTrail()
     {
         _currentIndex = 0;
         _activePointLifetime = 0f;
@@ -131,6 +131,7 @@ public class TrailIntersection : MonoBehaviour
         _hasTriggeredTrail = false;
         LineRenderer.enabled = false;
         LineRenderer.positionCount = 0;
+        points.Clear();
     }
 
     private Vector2 FindPointOfIntersection(Vector3 line1Start, Vector3 line1End, Vector3 line2Start, Vector3 line2End)
@@ -159,5 +160,26 @@ public class TrailIntersection : MonoBehaviour
     private float CalculateSlope(Vector3 firstPoint, Vector3 secondPoint)
     {
         return (secondPoint.y - firstPoint.y) / (secondPoint.x - firstPoint.x);
+    }
+
+    private void FindIntersection()
+    {
+        var line1Start = LineRenderer.GetPosition(0);
+        Debug.Log(LineRenderer.GetPosition(0));
+        var line1End = LineRenderer.GetPosition(1);
+
+        Debug.Log("Current index " + _currentIndex);
+        Debug.Log("Current line renderer count " + LineRenderer.positionCount++);
+        var line2Start = LineRenderer.GetPosition(_currentIndex - 1);
+        var line2End = LineRenderer.GetPosition(_currentIndex);
+
+        var pointOfIntersection = FindPointOfIntersection(line1Start, line1End, line2Start, line2End);
+
+        if (Vector2.Distance(pointOfIntersection, line1Start) <= 1f)
+        {
+            Debug.Log("Created Loop!");
+            // CreateHitbox(i - 1, pointOfIntersection);
+            RemoveTrail();
+        }
     }
 }
