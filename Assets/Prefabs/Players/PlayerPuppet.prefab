@@ -215,6 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 270572533759393116}
   _playerHurt: {fileID: 7665820926156603588}
+  _animator: {fileID: 7981175874752668537}
+  _spriteRenderer: {fileID: 1720305527670571943}
 --- !u!114 &270572533759393116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,8 +232,6 @@ MonoBehaviour:
   _playerType: 0
   _rigidbody2D: {fileID: 6248995634468351421}
   _movementSpeed: 2.5
-  _animator: {fileID: 7981175874752668537}
-  _spriteRenderer: {fileID: 1720305527670571943}
   IsMoving: 0
 --- !u!114 &7665820926156603588
 MonoBehaviour:

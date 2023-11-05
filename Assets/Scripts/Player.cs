@@ -9,6 +9,11 @@ public class Player : MonoBehaviour
 
     public PlayerMovement PlayerMovement => _playerMovement;
     public PlayerHurt PlayerHurt => _playerHurt;
+    
+    [SerializeField] private Animator _animator;
+    public Animator AnimatorComponent => _animator;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    public SpriteRenderer SpriteRendererComponent => _spriteRenderer;
 
     // Start is called before the first frame update
     private void Start()

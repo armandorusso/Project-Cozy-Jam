@@ -30,6 +30,7 @@ public class PlayerHurt : MonoBehaviour
             _hurtCountdown = 0.0f;
             isHurt = false;
             _player.PlayerMovement.IsMoving = true;
+            _player.AnimatorComponent.SetBool("IsMoving", true);
         }
     }
 
@@ -40,7 +41,9 @@ public class PlayerHurt : MonoBehaviour
         {
             _hurtCountdown = _hurtTime;
             _player.PlayerMovement.IsMoving = false;
+            _player.AnimatorComponent.SetBool("IsMoving", false);
             _rigidbody2D.AddForce(100f * _enemyDirection);
+            _player.AnimatorComponent.Play("Stun");
         }
     }
 }

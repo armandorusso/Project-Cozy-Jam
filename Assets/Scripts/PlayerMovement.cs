@@ -15,8 +15,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerType _playerType;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private float _movementSpeed;
-    [SerializeField] private Animator _animator;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
     private Vector2 _inputMovement;
     private Vector3 _playerDirection;
     public bool IsMoving;
@@ -101,59 +99,61 @@ public class PlayerMovement : MonoBehaviour
             UpdateMovementDirectionSprites();
         }
     }
-
+    
     private void MovePlayer()
     {
         transform.Translate(_playerDirection * (_movementSpeed * Time.deltaTime));
     }
-
+    
     private void UpdateMovementDirectionSprites()
     {
+        if (!IsMoving) return;
+        
         // Right
         if (_playerDirection is { x: 1.0f, y: 0.0f })
         {
-            _animator.Play("RunSide");
-            _spriteRenderer.flipX = false;
+            _player.AnimatorComponent.Play("RunSide");
+            _player.SpriteRendererComponent.flipX = false;
         }
         // Left
         else if (_playerDirection is { x: -1.0f, y: 0.0f })
         {
-            _animator.Play("RunSide");
-            _spriteRenderer.flipX = true;
+            _player.AnimatorComponent.Play("RunSide");
+            _player.SpriteRendererComponent.flipX = true;
         }
         // North
         else if (_playerDirection is { x: 0.0f, y: 1.0f })
         {
-            _animator.Play("RunNorth");
+            _player.AnimatorComponent.Play("RunNorth");
         }
         // South
         else if (_playerDirection is { x: 0.0f, y: -1.0f })
         {
-            _animator.Play("RunSouth");
+            _player.AnimatorComponent.Play("RunSouth");
         }
         // Right-Up
         else if (_playerDirection is { x: 1.0f, y: 1.0f })
         {
-            _animator.Play("RunNorthSide");
-            _spriteRenderer.flipX = false;
+            _player.AnimatorComponent.Play("RunNorthSide");
+            _player.SpriteRendererComponent.flipX = false;
         }
         // Left-Up
         else if (_playerDirection is { x: -1.0f, y: 1.0f })
         {
-            _animator.Play("RunNorthSide");
-            _spriteRenderer.flipX = true;
+            _player.AnimatorComponent.Play("RunNorthSide");
+            _player.SpriteRendererComponent.flipX = true;
         }
         // Right-Down
         else if (_playerDirection is { x: 1.0f, y: -1.0f })
         {
-            _animator.Play("RunSouthSide");
-            _spriteRenderer.flipX = false;
+            _player.AnimatorComponent.Play("RunSouthSide");
+            _player.SpriteRendererComponent.flipX = false;
         }
         // Left-Down
         else if (_playerDirection is { x: -1.0f, y: -1.0f })
         {
-            _animator.Play("RunSouthSide");
-            _spriteRenderer.flipX = true;
+            _player.AnimatorComponent.Play("RunSouthSide");
+            _player.SpriteRendererComponent.flipX = true;
         }
     }
 }
