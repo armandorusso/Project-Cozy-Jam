@@ -27,14 +27,17 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
-        IsMoving = true;
-
         _playerDirection = _playerType switch
         {
             PlayerType.Main => Vector3.left,
             PlayerType.Secondary => Vector3.right,
             _ => _playerDirection = Vector3.zero
         };
+        
+        if (_playerType == PlayerType.Main)
+        {
+            _player.SpriteRendererComponent.flipX = true;
+        }
     }
 
     // Update is called once per frame
@@ -46,14 +49,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        if (context.ReadValue<Vector2>() != Vector2.zero)
-        {
-            _inputMovement = context.ReadValue<Vector2>();
-        }
-    }
-    
     public void OnMoveUp(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -63,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
                 _playerDirection.x = 0.0f;
             }
             _playerDirection.y = 1.0f;
+            UpdateMovementDirectionSprites();
         }
     }
     
@@ -75,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
                 _playerDirection.x = 0.0f;
             }
             _playerDirection.y = -1.0f;
+            UpdateMovementDirectionSprites();
         }
     }
     
@@ -87,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
                 _playerDirection.y = 0.0f;
             }
             _playerDirection.x = -1.0f;
+            UpdateMovementDirectionSprites();
         }
     }
     
@@ -99,11 +97,64 @@ public class PlayerMovement : MonoBehaviour
                 _playerDirection.y = 0.0f;
             }
             _playerDirection.x = 1.0f;
+            UpdateMovementDirectionSprites();
         }
     }
-
+    
     private void MovePlayer()
     {
         transform.Translate(_playerDirection * (_movementSpeed * Time.deltaTime));
+    }
+    
+    public void UpdateMovementDirectionSprites()
+    {
+        if (!IsMoving) return;
+        
+        // Right
+        if (_playerDirection is { x: 1.0f, y: 0.0f })
+        {
+            _player.AnimatorComponent.Play("RunSide");
+            _player.SpriteRendererComponent.flipX = false;
+        }
+        // Left
+        else if (_playerDirection is { x: -1.0f, y: 0.0f })
+        {
+            _player.AnimatorComponent.Play("RunSide");
+            _player.SpriteRendererComponent.flipX = true;
+        }
+        // North
+        else if (_playerDirection is { x: 0.0f, y: 1.0f })
+        {
+            _player.AnimatorComponent.Play("RunNorth");
+        }
+        // South
+        else if (_playerDirection is { x: 0.0f, y: -1.0f })
+        {
+            _player.AnimatorComponent.Play("RunSouth");
+        }
+        // Right-Up
+        else if (_playerDirection is { x: 1.0f, y: 1.0f })
+        {
+            _player.AnimatorComponent.Play("RunNorthSide");
+            _player.SpriteRendererComponent.flipX = false;
+        }
+        // Left-Up
+        else if (_playerDirection is { x: -1.0f, y: 1.0f })
+        {
+            _player.AnimatorComponent.Play("RunNorthSide");
+            _player.SpriteRendererComponent.flipX = true;
+        }
+        // Right-Down
+        else if (_playerDirection is { x: 1.0f, y: -1.0f })
+        {
+            _player.AnimatorComponent.Play("RunSouthSide");
+            _player.SpriteRendererComponent.flipX = false;
+        }
+        // Left-Down
+        else if (_playerDirection is { x: -1.0f, y: -1.0f })
+        {
+            _player.AnimatorComponent.Play("RunSouthSide");
+            _player.SpriteRendererComponent.flipX = true;
+        }
     }
 }
