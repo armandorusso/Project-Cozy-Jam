@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Animations;
@@ -20,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private float _currentSpeed;
     private Vector2 _playerDirection;
     public bool IsMoving;
+    
+    private bool _isColliding;
+    private float _collidingCountdown;
+    
     // Start is called before the first frame update
     private void Start()
     {
@@ -52,11 +57,24 @@ public class PlayerMovement : MonoBehaviour
         {
             MovePlayer();
         }
+
+        if (_isColliding)
+        {
+            if (_collidingCountdown > 0.0f)
+            {
+                _collidingCountdown -= Time.deltaTime;
+            }
+            else if (_collidingCountdown <= 0.0f)
+            {
+                _collidingCountdown = 0.0f;
+                _isColliding = false;
+            }
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !_isColliding)
         {
             _playerDirection = context.ReadValue<Vector2>();
             _playerDirection.Normalize();
@@ -75,7 +93,28 @@ public class PlayerMovement : MonoBehaviour
             _player.AnimatorComponent.speed = 1.0f;
         }
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.layer == LayerMask.NameToLayer("BorderHorizontal"))
+        {
+            _playerDirection.x = -_playerDirection.x;
+            ActivateBorderCollisionState();
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("BorderVertical"))
+        {
+            _playerDirection.y = -_playerDirection.y;
+            ActivateBorderCollisionState();
+        }
+    }
+
+    private void ActivateBorderCollisionState()
+    {
+        _isColliding = true;
+        _collidingCountdown = 0.3f;
+        UpdateMovementDirectionSprites();
+    }
+
     private void MovePlayer()
     {
         transform.Translate(_playerDirection * (_currentSpeed * Time.deltaTime));
