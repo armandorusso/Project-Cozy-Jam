@@ -82,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 731b0d23adbfbcb4db848efe4a5788e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -339,8 +339,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.6415094, g: 0.46188024, b: 0.11740828, a: 1}
-      key1: {r: 0.6431373, g: 0.4627451, b: 0.11764706, a: 0.7254902}
+      key0: {r: 0.45882356, g: 0.2627451, b: 0.2392157, a: 1}
+      key1: {r: 0.45882356, g: 0.2627451, b: 0.2392157, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
