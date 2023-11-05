@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,9 @@ public class HiveHurt : MonoBehaviour
     private bool _isHurt;
 
     public bool IsHurt => _isHurt;
+
+    public static Action<int, int> HiveDamagedAction;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +60,8 @@ public class HiveHurt : MonoBehaviour
                 _hive.AnimatorComponent.SetBool("IsCalm", false);
                 _hive.Rigidbody.AddForce(100f * enemyDirection);
                 _currentHealth -= damage;
+                HiveDamagedAction?.Invoke(_currentHealth, _maxHealth);
+                
                 if (_hive.HiveMovement.HiveDirection.x > 0.0f)
                 {
                     _hive.AnimatorComponent.Play("StunRight");
@@ -68,7 +74,7 @@ public class HiveHurt : MonoBehaviour
         }
         else
         {
-            _maxHealth = 0;
+            _currentHealth = 0;
             Die();
         }
     }
