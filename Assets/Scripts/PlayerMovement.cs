@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerType _playerType;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private float _movementSpeed;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     private Vector2 _inputMovement;
     private Vector3 _playerDirection;
     public bool IsMoving;
@@ -35,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
             PlayerType.Secondary => Vector3.right,
             _ => _playerDirection = Vector3.zero
         };
+        UpdateMovementDirectionSprites();
+        
     }
 
     // Update is called once per frame
@@ -46,14 +50,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        if (context.ReadValue<Vector2>() != Vector2.zero)
-        {
-            _inputMovement = context.ReadValue<Vector2>();
-        }
-    }
-    
     public void OnMoveUp(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -63,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
                 _playerDirection.x = 0.0f;
             }
             _playerDirection.y = 1.0f;
+            UpdateMovementDirectionSprites();
         }
     }
     
@@ -75,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
                 _playerDirection.x = 0.0f;
             }
             _playerDirection.y = -1.0f;
+            UpdateMovementDirectionSprites();
         }
     }
     
@@ -87,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
                 _playerDirection.y = 0.0f;
             }
             _playerDirection.x = -1.0f;
+            UpdateMovementDirectionSprites();
         }
     }
     
@@ -99,11 +98,62 @@ public class PlayerMovement : MonoBehaviour
                 _playerDirection.y = 0.0f;
             }
             _playerDirection.x = 1.0f;
+            UpdateMovementDirectionSprites();
         }
     }
 
     private void MovePlayer()
     {
         transform.Translate(_playerDirection * (_movementSpeed * Time.deltaTime));
+    }
+
+    private void UpdateMovementDirectionSprites()
+    {
+        // Right
+        if (_playerDirection is { x: 1.0f, y: 0.0f })
+        {
+            _animator.Play("RunSide");
+            _spriteRenderer.flipX = false;
+        }
+        // Left
+        else if (_playerDirection is { x: -1.0f, y: 0.0f })
+        {
+            _animator.Play("RunSide");
+            _spriteRenderer.flipX = true;
+        }
+        // North
+        else if (_playerDirection is { x: 0.0f, y: 1.0f })
+        {
+            _animator.Play("RunNorth");
+        }
+        // South
+        else if (_playerDirection is { x: 0.0f, y: -1.0f })
+        {
+            _animator.Play("RunSouth");
+        }
+        // Right-Up
+        else if (_playerDirection is { x: 1.0f, y: 1.0f })
+        {
+            _animator.Play("RunNorthSide");
+            _spriteRenderer.flipX = false;
+        }
+        // Left-Up
+        else if (_playerDirection is { x: -1.0f, y: 1.0f })
+        {
+            _animator.Play("RunNorthSide");
+            _spriteRenderer.flipX = true;
+        }
+        // Right-Down
+        else if (_playerDirection is { x: 1.0f, y: -1.0f })
+        {
+            _animator.Play("RunSouthSide");
+            _spriteRenderer.flipX = false;
+        }
+        // Left-Down
+        else if (_playerDirection is { x: -1.0f, y: -1.0f })
+        {
+            _animator.Play("RunSouthSide");
+            _spriteRenderer.flipX = true;
+        }
     }
 }

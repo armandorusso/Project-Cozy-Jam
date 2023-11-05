@@ -1018,9 +1018,9 @@ MonoBehaviour:
   - {fileID: 419592402}
   - {fileID: 1695350740}
   - {fileID: 346561122}
-  _maximumEnemiesOnScene: 5
-  _spawnTimerMin: 0.1
-  _spawnTimerMax: 0.5
+  _maximumEnemiesOnScene: 10
+  _spawnTimerMin: 1
+  _spawnTimerMax: 3
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
