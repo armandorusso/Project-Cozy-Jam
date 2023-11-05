@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 27bec98ff28cb9f4a8d784bef74253de
+guid: d10fc4b3c65d97747a109b18f2543aeb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hive_death_right_0
+      name: hive_tear_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 310
-        height: 147
+        width: 15
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7314fb43d587dd049a6b0ab72f6d6900
-      internalID: 282518329
+      spriteID: 544f872823e21fd47b501d03ee90eb07
+      internalID: -1137421106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_1
+      name: hive_tear_1
       rect:
         serializedVersion: 2
-        x: 310
+        x: 15
         y: 0
-        width: 310
-        height: 147
+        width: 15
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdaa2856a0996a64e89d715e0fe3df32
-      internalID: 1460352767
+      spriteID: 66ba185517fd8b445844ce511d114537
+      internalID: -812932849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_2
+      name: hive_tear_2
       rect:
         serializedVersion: 2
-        x: 620
+        x: 30
         y: 0
-        width: 310
-        height: 147
+        width: 15
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,134 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a55ec7f8b1495c14d9985bcc201bd02f
-      internalID: -1780778550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_right_3
-      rect:
-        serializedVersion: 2
-        x: 930
-        y: 0
-        width: 310
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a790e1f6abcaf0148b577487bfd582ac
-      internalID: 1171462379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_right_4
-      rect:
-        serializedVersion: 2
-        x: 1240
-        y: 0
-        width: 310
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec050febb58dfce4285072982993df4b
-      internalID: -1260266275
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_right_5
-      rect:
-        serializedVersion: 2
-        x: 1550
-        y: 0
-        width: 310
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 361983a1b998bd942b71c577d6c3e13e
-      internalID: 1682239787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_right_6
-      rect:
-        serializedVersion: 2
-        x: 1860
-        y: 0
-        width: 310
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7cbb2e8180dbbe949a7d8cdb220d4aa6
-      internalID: 873715684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_right_7
-      rect:
-        serializedVersion: 2
-        x: 2170
-        y: 0
-        width: 310
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66fc4e4ca7c2b8a49818792c4319aca8
-      internalID: -368292131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_right_8
-      rect:
-        serializedVersion: 2
-        x: 2480
-        y: 0
-        width: 310
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d24c273c88799d479929c460e1dd647
-      internalID: 1344062903
+      spriteID: fbf9fa745ec65af48b88a5e922e8bb9c
+      internalID: -553367028
       vertices: []
       indices: 
       edges: []
@@ -335,15 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hive_death_right_0: 282518329
-      hive_death_right_1: 1460352767
-      hive_death_right_2: -1780778550
-      hive_death_right_3: 1171462379
-      hive_death_right_4: -1260266275
-      hive_death_right_5: 1682239787
-      hive_death_right_6: 873715684
-      hive_death_right_7: -368292131
-      hive_death_right_8: 1344062903
+      hive_tear_0: -1137421106
+      hive_tear_1: -812932849
+      hive_tear_2: -553367028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

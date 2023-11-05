@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 27bec98ff28cb9f4a8d784bef74253de
+guid: 6ce108b7a79deeb4dae12015475bdbd1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hive_death_right_0
+      name: hive_death_left_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7314fb43d587dd049a6b0ab72f6d6900
-      internalID: 282518329
+      spriteID: 4a4df9f2994457340b76e8ed49c8588a
+      internalID: 443910801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_1
+      name: hive_death_left_1
       rect:
         serializedVersion: 2
         x: 310
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdaa2856a0996a64e89d715e0fe3df32
-      internalID: 1460352767
+      spriteID: 2249385fcd4d44a41ba0444e25a84e6b
+      internalID: 83446977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_2
+      name: hive_death_left_2
       rect:
         serializedVersion: 2
         x: 620
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a55ec7f8b1495c14d9985bcc201bd02f
-      internalID: -1780778550
+      spriteID: e528964ce0e5b1949b50d7909b855ef7
+      internalID: 155337316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_3
+      name: hive_death_left_3
       rect:
         serializedVersion: 2
         x: 930
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a790e1f6abcaf0148b577487bfd582ac
-      internalID: 1171462379
+      spriteID: 20e88c6b5b9f588419264680c0918fcb
+      internalID: 1597823302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_4
+      name: hive_death_left_4
       rect:
         serializedVersion: 2
         x: 1240
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec050febb58dfce4285072982993df4b
-      internalID: -1260266275
+      spriteID: 48d99fbdd5bab34448320d050158456c
+      internalID: -317754099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_5
+      name: hive_death_left_5
       rect:
         serializedVersion: 2
         x: 1550
@@ -255,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 361983a1b998bd942b71c577d6c3e13e
-      internalID: 1682239787
+      spriteID: edfcea80844d9c8499fecddd41bd97ca
+      internalID: -247838473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_6
+      name: hive_death_left_6
       rect:
         serializedVersion: 2
         x: 1860
@@ -276,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cbb2e8180dbbe949a7d8cdb220d4aa6
-      internalID: 873715684
+      spriteID: e4aa268ffb4e3b5428d5c20a6127d5ec
+      internalID: 1961029597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_7
+      name: hive_death_left_7
       rect:
         serializedVersion: 2
         x: 2170
@@ -297,14 +297,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66fc4e4ca7c2b8a49818792c4319aca8
-      internalID: -368292131
+      spriteID: 47e14611f32e03c4b8cfe59388162941
+      internalID: -2037074804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_8
+      name: hive_death_left_8
       rect:
         serializedVersion: 2
         x: 2480
@@ -318,8 +318,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d24c273c88799d479929c460e1dd647
-      internalID: 1344062903
+      spriteID: ee345e7a743c56246bf560cf83b2665c
+      internalID: -340114793
       vertices: []
       indices: 
       edges: []
@@ -335,15 +335,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hive_death_right_0: 282518329
-      hive_death_right_1: 1460352767
-      hive_death_right_2: -1780778550
-      hive_death_right_3: 1171462379
-      hive_death_right_4: -1260266275
-      hive_death_right_5: 1682239787
-      hive_death_right_6: 873715684
-      hive_death_right_7: -368292131
-      hive_death_right_8: 1344062903
+      hive_death_left_0: 443910801
+      hive_death_left_1: 83446977
+      hive_death_left_2: 155337316
+      hive_death_left_3: 1597823302
+      hive_death_left_4: -317754099
+      hive_death_left_5: -247838473
+      hive_death_left_6: 1961029597
+      hive_death_left_7: -2037074804
+      hive_death_left_8: -340114793
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

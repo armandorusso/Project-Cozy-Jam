@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 27bec98ff28cb9f4a8d784bef74253de
+guid: c807fc7555353144ea4c549e5ccaca5e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hive_death_right_0
+      name: hive_calm_run_left_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 310
-        height: 147
+        width: 73
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7314fb43d587dd049a6b0ab72f6d6900
-      internalID: 282518329
+      spriteID: 2f66592e122e22c408f58319b529fc95
+      internalID: 395881848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_1
+      name: hive_calm_run_left_1
       rect:
         serializedVersion: 2
-        x: 310
+        x: 73
         y: 0
-        width: 310
-        height: 147
+        width: 73
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdaa2856a0996a64e89d715e0fe3df32
-      internalID: 1460352767
+      spriteID: 5070c13d82f96a64e98fcc4cd174b2e3
+      internalID: 278916050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_2
+      name: hive_calm_run_left_2
       rect:
         serializedVersion: 2
-        x: 620
+        x: 146
         y: 0
-        width: 310
-        height: 147
+        width: 73
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a55ec7f8b1495c14d9985bcc201bd02f
-      internalID: -1780778550
+      spriteID: 50b534b20500b6f43ba56c20f5cfdb18
+      internalID: -193735991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_3
+      name: hive_calm_run_left_3
       rect:
         serializedVersion: 2
-        x: 930
+        x: 219
         y: 0
-        width: 310
-        height: 147
+        width: 73
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a790e1f6abcaf0148b577487bfd582ac
-      internalID: 1171462379
+      spriteID: bf206e6cb6c70354d892f5006cee76c8
+      internalID: 498973043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_4
+      name: hive_calm_run_left_4
       rect:
         serializedVersion: 2
-        x: 1240
+        x: 292
         y: 0
-        width: 310
-        height: 147
+        width: 73
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec050febb58dfce4285072982993df4b
-      internalID: -1260266275
+      spriteID: ce7a2a3f2f475e94cb3112ffdb18886f
+      internalID: -1982203841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_5
+      name: hive_calm_run_left_5
       rect:
         serializedVersion: 2
-        x: 1550
+        x: 365
         y: 0
-        width: 310
-        height: 147
+        width: 73
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 361983a1b998bd942b71c577d6c3e13e
-      internalID: 1682239787
+      spriteID: b167b14d9a282384889238b829c999d3
+      internalID: -1056194452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_6
+      name: hive_calm_run_left_6
       rect:
         serializedVersion: 2
-        x: 1860
+        x: 438
         y: 0
-        width: 310
-        height: 147
+        width: 73
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cbb2e8180dbbe949a7d8cdb220d4aa6
-      internalID: 873715684
+      spriteID: f3c5ba139270d4a4495e2d869aaa10a3
+      internalID: 1696192295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_7
+      name: hive_calm_run_left_7
       rect:
         serializedVersion: 2
-        x: 2170
+        x: 511
         y: 0
-        width: 310
-        height: 147
+        width: 73
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +297,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66fc4e4ca7c2b8a49818792c4319aca8
-      internalID: -368292131
+      spriteID: c25ab4e3b0f34394cb28740449a692b5
+      internalID: 1534298783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_right_8
+      name: hive_calm_run_left_8
       rect:
         serializedVersion: 2
-        x: 2480
+        x: 584
         y: 0
-        width: 310
-        height: 147
+        width: 73
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,8 +318,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d24c273c88799d479929c460e1dd647
-      internalID: 1344062903
+      spriteID: 68de2a2b0c15ea54ca04c2688717d45f
+      internalID: 1866832682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hive_calm_run_left_9
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 0
+        width: 73
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d6ddb1a83ad5a4fbd8ef242fefc436
+      internalID: 1650173523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hive_calm_run_left_10
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 0
+        width: 73
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88809f9e1e07e624bac5d3998fff53ee
+      internalID: 1914599230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hive_calm_run_left_11
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 0
+        width: 73
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a45cace47438b34e905bedd637f4c49
+      internalID: 1432278467
       vertices: []
       indices: 
       edges: []
@@ -335,15 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hive_death_right_0: 282518329
-      hive_death_right_1: 1460352767
-      hive_death_right_2: -1780778550
-      hive_death_right_3: 1171462379
-      hive_death_right_4: -1260266275
-      hive_death_right_5: 1682239787
-      hive_death_right_6: 873715684
-      hive_death_right_7: -368292131
-      hive_death_right_8: 1344062903
+      hive_calm_run_left_0: 395881848
+      hive_calm_run_left_1: 278916050
+      hive_calm_run_left_10: 1914599230
+      hive_calm_run_left_11: 1432278467
+      hive_calm_run_left_2: -193735991
+      hive_calm_run_left_3: 498973043
+      hive_calm_run_left_4: -1982203841
+      hive_calm_run_left_5: -1056194452
+      hive_calm_run_left_6: 1696192295
+      hive_calm_run_left_7: 1534298783
+      hive_calm_run_left_8: 1866832682
+      hive_calm_run_left_9: 1650173523
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
