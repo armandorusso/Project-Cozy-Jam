@@ -1,11 +1,12 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class HiveMovement : MonoBehaviour
 {
-    private Hive _hive;
+    public Hive _hive;
 
-    private enum BehaviorState
+    public enum BehaviorState
     {
         Calm,
         Panicked
@@ -25,6 +26,8 @@ public class HiveMovement : MonoBehaviour
     private float _currentCalmPositionPickerCountdown;
     private float _calmingDownCountdown;
     public bool IsMoving;
+
+    public static Action<BehaviorState> BehaviorChangeAction;
 
     // Start is called before the first frame update
     private void Start()
@@ -71,6 +74,7 @@ public class HiveMovement : MonoBehaviour
                 else if (_calmingDownCountdown <= 0)
                 {
                     Behavior = BehaviorState.Calm;
+                    BehaviorChangeAction?.Invoke(Behavior);
                     _currentSpeed = _movementSpeed;
                     _hive.AnimatorComponent.SetBool("IsCalm", true);
                     UpdateDirectionBoolean();
@@ -84,6 +88,7 @@ public class HiveMovement : MonoBehaviour
         _hive.Rigidbody.velocity = Vector3.zero;
         _currentSpeed = _panickedSpeed;
         Behavior = BehaviorState.Panicked;
+        BehaviorChangeAction?.Invoke(Behavior);
         _calmingDownCountdown = _calmingDownTimer;
         _currentCalmPositionPickerCountdown = Random.Range(_calmPositionPickerTimerMin, _calmPositionPickerTimerMax);
         PickPointToMove();
