@@ -27,16 +27,17 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
-        IsMoving = true;
-
         _playerDirection = _playerType switch
         {
             PlayerType.Main => Vector3.left,
             PlayerType.Secondary => Vector3.right,
             _ => _playerDirection = Vector3.zero
         };
-        UpdateMovementDirectionSprites();
         
+        if (_playerType == PlayerType.Main)
+        {
+            _player.SpriteRendererComponent.flipX = true;
+        }
     }
 
     // Update is called once per frame
@@ -105,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(_playerDirection * (_movementSpeed * Time.deltaTime));
     }
     
-    private void UpdateMovementDirectionSprites()
+    public void UpdateMovementDirectionSprites()
     {
         if (!IsMoving) return;
         

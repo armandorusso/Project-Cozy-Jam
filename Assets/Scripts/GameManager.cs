@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
     }
 
     [Header("Players")]
-    [SerializeField] private GameObject[] _players;
-    public GameObject[] Players => _players;
+    [SerializeField] private Player[] _players;
+    public Player[] Players => _players;
 
     [Header("Enemies")]
     [SerializeField] private GameObject[] _enemyPrefabs;
@@ -45,15 +45,33 @@ public class GameManager : MonoBehaviour
     private int _currentEnemiesOnScene;
     private float _spawnCountdown;
 
+    private bool _hasGameStarted;
+    public bool HasGameStarted => _hasGameStarted;
+
     // Start is called before the first frame update
     void Start()
     {
         _spawnCountdown = SetRandomSpawnTime();
+        StartCoroutine(StartGame());
+    }
+
+    private IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(3.0f);
+        _hasGameStarted = true;
+        foreach (var player in _players)
+        {
+            player.AnimatorComponent.SetTrigger("StartGame");
+            player.PlayerMovement.IsMoving = true;
+            player.PlayerMovement.UpdateMovementDirectionSprites();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!_hasGameStarted) return;
+        
         if (_spawnCountdown > 0)
         {
             _spawnCountdown -= Time.deltaTime;
