@@ -2016,7 +2016,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 457665872, guid: b40aaaf633d484c4d9035699aff31477, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2255,7 +2255,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: cc7ee8996ee33b345880fd44270d2595, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2805,12 +2805,24 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4348180153299184571, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348180153299184571, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348180153299184571, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348180153299184571, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.73
+      value: -2.69
       objectReference: {fileID: 0}
     - target: {fileID: 4348180153299184571, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.93
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 4348180153299184571, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2926,12 +2938,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 70933612804519222, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 70933612804519222, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 70933612804519222, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 70933612804519222, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 70933612804519222, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 70933612804519222, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3054,12 +3078,24 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7037991095852253928, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037991095852253928, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037991095852253928, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037991095852253928, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.69
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 7037991095852253928, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.93
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 7037991095852253928, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
       propertyPath: m_LocalPosition.z

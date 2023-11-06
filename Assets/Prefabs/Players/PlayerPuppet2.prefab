@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 731b0d23adbfbcb4db848efe4a5788e3, type: 3}
+  m_Sprite: {fileID: 1174773696, guid: 82dad96bdf7d8d541a3fc26d57c6a68f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,6 +140,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e9503b2e-3944-48df-a374-95f527f392e9
     m_ActionName: Player 2/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a669c90-8a35-4f56-837b-5de6c7d8abea
+    m_ActionName: Player 1/Start Game[/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dfaf688f-4bc8-414b-a495-cd39fd0a1271
+    m_ActionName: Player 1/Game Over[/Keyboard/anyKey]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player 2
@@ -253,9 +261,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.55, y: 0.7652174}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.2}
+  m_Size: {x: 0.35, y: 0.3}
+  m_Direction: 1
 --- !u!95 &7879055908672972677
 Animator:
   serializedVersion: 5
