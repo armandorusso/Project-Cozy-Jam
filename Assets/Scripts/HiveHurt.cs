@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HiveHurt : MonoBehaviour
 {
@@ -81,7 +82,8 @@ public class HiveHurt : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Execute Death");
-        Application.Quit();
+        PlayerPrefs.SetInt("Score", GameManager.Instance._currentScore);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Game Over Screen");
     }
 }

@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     [Range(-6.0f, -1.0f)] public float HiveMovementYMinimum;
     [Range(1.0f, 6.0f)] public float HiveMovementYMaximum;
     public int _currentScore;
+    public int _highScore;
     
     [Header("Spawners")]
     [SerializeField] private List<Transform> _enemySpawners = new List<Transform>();
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
     private bool _hasGameStarted;
     public bool HasGameStarted => _hasGameStarted;
 
-    public static Action<int> ScoreIncrementedAction; 
+    public static Action<int> ScoreIncrementedAction;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +62,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartGame());
 
         EnemyHurt.EnemyDeathAction += OnEnemyKilled;
+        
+        _highScore = PlayerPrefs.GetInt("HighScore", 0);
+        ScoreIncrementedAction?.Invoke(_currentScore);
     }
 
     private void OnEnemyKilled(GameObject enemy)
@@ -92,7 +96,7 @@ public class GameManager : MonoBehaviour
             player.PlayerMovement.IsMoving = true;
             player.PlayerMovement.UpdateMovementDirectionSprites();
         }
-        
+
         _hiveCharacter.AnimatorComponent.SetTrigger("StartGame");
     }
 

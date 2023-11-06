@@ -1323,6 +1323,7 @@ MonoBehaviour:
   HiveMovementYMinimum: -4
   HiveMovementYMaximum: 4
   _currentScore: 0
+  _highScore: 0
   _enemySpawners:
   - {fileID: 1415699853}
   - {fileID: 928976524}
@@ -1570,6 +1571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 720200481}
+  _highScoreText: {fileID: 1758985057}
 --- !u!1 &928976523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +1969,7 @@ GameObject:
   - component: {fileID: 1298964423}
   - component: {fileID: 1298964422}
   - component: {fileID: 1298964424}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hive Health Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2035,7 +2037,7 @@ Transform:
   m_GameObject: {fileID: 1298964421}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -640, y: -355.45, z: -3.8339963}
+  m_LocalPosition: {x: -640, y: -355.45, z: 0}
   m_LocalScale: {x: 1.388, y: 1.388, z: 1.388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2206,7 +2208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1716904608}
   - component: {fileID: 1716904607}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Score UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2962,6 +2964,38 @@ PrefabInstance:
     - target: {fileID: 70933612804519222, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934867416052293052, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934867416052293052, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.36501044
+      objectReference: {fileID: 0}
+    - target: {fileID: 934867416052293052, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 934867416052293052, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934867416052293052, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.70298374
+      objectReference: {fileID: 0}
+    - target: {fileID: 934867416052293052, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 934867416052293052, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934867416052293052, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.3392067
       objectReference: {fileID: 0}
     - target: {fileID: 2361624665103044647, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
       propertyPath: m_Name
