@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class TrailIntersection : MonoBehaviour
 {
+    private Player _player;
     [SerializeField] public LineRenderer LineRenderer;
     [SerializeField] public PolygonCollider2D TrailHitbox;
     [SerializeField] private SpriteRenderer TailSprite;
@@ -29,6 +30,7 @@ public class TrailIntersection : MonoBehaviour
     
     void Start()
     {
+        _player = GetComponent<Player>();
         points = new List<Vector2>();
 
         StartTrail();
@@ -62,6 +64,7 @@ public class TrailIntersection : MonoBehaviour
                     Debug.Log("Tail Hit!");
                     CreateHitbox();
                     RemoveTrail();
+                    _player.AnimatorComponent.Play("Connect");
                 }
             }
         }
