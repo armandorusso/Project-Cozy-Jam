@@ -63,10 +63,10 @@ PrefabInstance:
     - target: {fileID: 3347628105246351086, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -335246971, guid: 597f896124f9acb489c01419517562c5, type: 3}
+      objectReference: {fileID: -1327465676, guid: 597f896124f9acb489c01419517562c5, type: 3}
     - target: {fileID: 3347628105246351086, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3347628105246351086, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5650109831599988374, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
       propertyPath: m_Name
-      value: MixedHornetAnimator
+      value: FuzzHornetAnimator
       objectReference: {fileID: 0}
     - target: {fileID: 7385184131174180713, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
       propertyPath: m_LocalScale.x
@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7385184131174180713, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.604
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
