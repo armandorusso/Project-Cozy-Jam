@@ -214,6 +214,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: YellowHornetAnimator
       objectReference: {fileID: 0}
+    - target: {fileID: 2469234580406942447, guid: 2bb3ce2ce4cc11144ae202104ee71c30, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469234580406942447, guid: 2bb3ce2ce4cc11144ae202104ee71c30, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469234580406942447, guid: 2bb3ce2ce4cc11144ae202104ee71c30, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5555766658395337425, guid: 2bb3ce2ce4cc11144ae202104ee71c30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

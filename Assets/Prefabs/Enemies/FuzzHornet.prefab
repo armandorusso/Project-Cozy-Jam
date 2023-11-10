@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -8645155920491518961}
   - component: {fileID: 2344178730332811791}
   m_Layer: 9
-  m_Name: MixedHornet
+  m_Name: FuzzHornet
   m_TagString: Big Hornet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,15 +212,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1600616251025377944, guid: 22db3942f74bd5849bc64d2fed5992dd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1600616251025377944, guid: 22db3942f74bd5849bc64d2fed5992dd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1600616251025377944, guid: 22db3942f74bd5849bc64d2fed5992dd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4477368432255136615, guid: 22db3942f74bd5849bc64d2fed5992dd, type: 3}
       propertyPath: m_Name

@@ -77,6 +77,18 @@ PrefabInstance:
       value: MixedHornetAnimator
       objectReference: {fileID: 0}
     - target: {fileID: 7385184131174180713, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385184131174180713, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385184131174180713, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385184131174180713, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.604
       objectReference: {fileID: 0}

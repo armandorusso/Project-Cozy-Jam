@@ -316,6 +316,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackHornetAnimator
       objectReference: {fileID: 0}
+    - target: {fileID: 8041568628385925938, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041568628385925938, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041568628385925938, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

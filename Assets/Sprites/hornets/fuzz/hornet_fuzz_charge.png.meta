@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ce762c20e70920e49aa09eaa7759d1bb
+guid: 21c1c7016d8273645af0f43d6edf3c8e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,91 +134,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: hornet_mix_fly_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 70
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6245115bcf54af45aa9e142f25ba796
-      internalID: -55273533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hornet_mix_fly_1
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 0
-        width: 70
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f15405cfa6731834f90dcb1b2b28fa1b
-      internalID: -100705216
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hornet_mix_fly_2
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 70
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52e5622804d03944ebbb2af7abb99a26
-      internalID: 1056533069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hornet_mix_fly_3
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 0
-        width: 70
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a54001db15e4e5844a6d93eb82588bb0
-      internalID: 815940175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -229,11 +145,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      hornet_mix_fly_0: -55273533
-      hornet_mix_fly_1: -100705216
-      hornet_mix_fly_2: 1056533069
-      hornet_mix_fly_3: 815940175
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
