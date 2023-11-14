@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7981175874752668537}
   - component: {fileID: 5954870047099417741}
   - component: {fileID: 6077990591744707216}
+  - component: {fileID: 6119806603537981428}
   m_Layer: 6
   m_Name: PlayerPuppet
   m_TagString: Untagged
@@ -407,6 +408,19 @@ MonoBehaviour:
   PointLifeTime: 0.3
   BeeParticles: {fileID: 651886748072934941}
   ForceFieldLifeTime: 1.5
+--- !u!114 &6119806603537981428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9202837855265806893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f629c09af180e0048a138c281d3bfc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeePool: {fileID: 11400000, guid: 559148d3dcd101940a198daa788e003d, type: 2}
 --- !u!1001 &5282695265356934193
 PrefabInstance:
   m_ObjectHideFlags: 0
