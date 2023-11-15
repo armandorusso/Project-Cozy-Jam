@@ -141,7 +141,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 68
+        width: 67
         height: 77
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -160,9 +160,9 @@ TextureImporter:
       name: yellow_stunned_1
       rect:
         serializedVersion: 2
-        x: 68
+        x: 67
         y: 0
-        width: 68
+        width: 67
         height: 77
       alignment: 7
       pivot: {x: 0.5, y: 0}

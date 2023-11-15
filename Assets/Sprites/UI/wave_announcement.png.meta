@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6602ea86ded012448a61673c9c4c5a49
+guid: 29a695bd84b4c6c4aa56de75018af0d2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -136,43 +136,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: black_stunned_0
+      name: wave_announcement_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 72
-        height: 79
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 604
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fb9f4c727be42d4897fe11702eb65f0
-      internalID: -1541254930
+      spriteID: 7b1bc1d3b19e4f842bb5cdad37286adc
+      internalID: -1298560311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: black_stunned_1
+      name: wave_announcement_1
       rect:
         serializedVersion: 2
-        x: 72
+        x: 604
         y: 0
-        width: 72
-        height: 79
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 604
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e03b51ce63874e47af3e9099fdec34d
-      internalID: 125477698
+      spriteID: 1139be1e091eaba4297f7453e31c7187
+      internalID: 1720668545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wave_announcement_2
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 0
+        width: 604
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30307fb3a065b046af1ee6dfbdb3acc
+      internalID: -342970748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wave_announcement_3
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 0
+        width: 604
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c19598cd83ba1a4f92f9f2cba2380b6
+      internalID: -2061236401
       vertices: []
       indices: 
       edges: []
@@ -188,8 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      black_stunned_0: -1541254930
-      black_stunned_1: 125477698
+      wave_announcement_0: -1298560311
+      wave_announcement_1: 1720668545
+      wave_announcement_2: -342970748
+      wave_announcement_3: -2061236401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

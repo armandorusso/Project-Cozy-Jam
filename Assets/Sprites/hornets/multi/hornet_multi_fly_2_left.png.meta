@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6602ea86ded012448a61673c9c4c5a49
+guid: 1b8faf02fa3a5a34a9fe73a80bf6874b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: black_stunned_0
+      name: hornet_multi_fly_2_left_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 72
-        height: 79
+        width: 94
+        height: 138
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fb9f4c727be42d4897fe11702eb65f0
-      internalID: -1541254930
+      spriteID: e689d244ba8f20f4e97008804a2d2677
+      internalID: 1814398847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: black_stunned_1
+      name: hornet_multi_fly_2_left_1
       rect:
         serializedVersion: 2
-        x: 72
+        x: 94
         y: 0
-        width: 72
-        height: 79
+        width: 94
+        height: 138
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e03b51ce63874e47af3e9099fdec34d
-      internalID: 125477698
+      spriteID: 6c01d2728999b734bb6dc49f2305f3e8
+      internalID: -1054218925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hornet_multi_fly_2_left_2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 94
+        height: 138
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f8e195335dc2d4cad42a8546079b24
+      internalID: -1566216404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hornet_multi_fly_2_left_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 94
+        height: 138
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4844fd7cf04407469e929e7b691e13f
+      internalID: -1289597466
       vertices: []
       indices: 
       edges: []
@@ -188,8 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      black_stunned_0: -1541254930
-      black_stunned_1: 125477698
+      hornet_multi_fly_2_left_0: 1814398847
+      hornet_multi_fly_2_left_1: -1054218925
+      hornet_multi_fly_2_left_2: -1566216404
+      hornet_multi_fly_2_left_3: -1289597466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
