@@ -48,7 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Index: 0
   ObjectToFollow: {fileID: 0}
-  MovementSpeed: 5
+  MovementSpeed: 4
+  DistanceBetweenBees: 0.15
+  PreviousPosition: {x: 0, y: 0}
 --- !u!212 &4153605541310477687
 SpriteRenderer:
   m_ObjectHideFlags: 0

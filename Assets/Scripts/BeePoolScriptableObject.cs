@@ -5,28 +5,41 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BeeScriptableObject", menuName = "ScriptableObject/Bee")]
 public class BeePoolScriptableObject : ScriptableObject
 {
-    public Bee BeeObj;
-    public List<Bee> BeePool;
+    public BeeAlly BeeObj;
+    public List<BeeAlly> BeePool;
     public int TotalNumberOfBees;
+    private int TotalBeesSpawned;
 
-    public void SpawnBees(Transform playerPosition)
+    public void InstantiateCongoPool()
     {
-        BeePool = new List<Bee>(TotalNumberOfBees);
-        for (int i = 0; i < TotalNumberOfBees; i++)
+        BeePool = new List<BeeAlly>(TotalNumberOfBees);
+        TotalBeesSpawned = 0;
+    }
+    
+    public void SpawnBee(Transform playerPosition)
+    {
+        if (TotalBeesSpawned < TotalNumberOfBees)
         {
             var bee = Instantiate(BeeObj, playerPosition.position, Quaternion.identity);
-            bee.Index = i;
+            bee.Index = TotalBeesSpawned;
 
-            if (i == 0)
+            if (TotalBeesSpawned == 0)
             {
                 bee.ObjectToFollow = playerPosition;
             }
             else
             {
-                bee.ObjectToFollow = BeePool.Find(x => x.Index == i - 1).transform;
+                bee.ObjectToFollow = BeePool.Find(x => x.Index == TotalBeesSpawned - 1).transform;
+                bee.transform.position = bee.ObjectToFollow.position;
             }
 
-            BeePool.Add(bee.GetComponent<Bee>());
+            BeePool.Add(bee.GetComponent<BeeAlly>());
+            TotalBeesSpawned++;
         }
+    }
+
+    public void RemoveAllBees()
+    {
+        BeePool.Clear();
     }
 }

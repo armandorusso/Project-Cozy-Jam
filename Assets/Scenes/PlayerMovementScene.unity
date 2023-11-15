@@ -3010,6 +3010,10 @@ PrefabInstance:
       propertyPath: TrailHitbox
       value: 
       objectReference: {fileID: 167365034}
+    - target: {fileID: 6119806603537981428, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+      propertyPath: SpawnInterval
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9202837855265806893, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
       propertyPath: m_Name
       value: PlayerPuppet
