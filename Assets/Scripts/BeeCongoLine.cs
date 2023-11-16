@@ -5,25 +5,58 @@ using UnityEngine;
 
 public class BeeCongoLine : MonoBehaviour
 {
+    public enum BeeType
+    {
+        YellowBee,
+        BlackBee
+    }
+    
     [SerializeField] private BeePoolScriptableObject BeePool;
     [SerializeField] private float SpawnInterval;
+    [SerializeField] public BeeType BeeColor;
+    [SerializeField] public Transform PlayerFollowPoint;
+    [SerializeField] public float AngleAttackThreshold;
+    [SerializeField] private PlayerMovement _playerMovement;
 
+
+    private Vector2 _playerDirection => _playerMovement.PlayerDirection;
     private float _currentTime;
+    
+    public static Action<GameObject> BeeAttackAction;
     
     void Start()
     {
         BeePool.InstantiateCongoPool();
     }
 
-    // Update is called once per frame
     void Update()
     {
         _currentTime += Time.deltaTime;
 
         if (_currentTime >= SpawnInterval)
         {
-            BeePool.SpawnBee(transform);
+            BeePool.SpawnBee(PlayerFollowPoint);
             _currentTime = 0f;
+        }
+    }
+    
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        // Call event to trigger bee attack
+        if (col.gameObject.CompareTag(BeeColor.ToString()) && BeePool.TotalBeesSpawned >= 4)
+        {
+            col.gameObject.TryGetComponent(out BeeAlly bee);
+
+            if (bee != null && bee.Index >= 4)
+            {
+                var angleBetweenPlayerAndBee = Vector2.Dot(_playerDirection, bee.Direction);
+
+                if (Mathf.Abs(angleBetweenPlayerAndBee) >= AngleAttackThreshold && Mathf.Abs(angleBetweenPlayerAndBee) <= 0.99f)
+                {
+                    Debug.Log($"Attack Triggered. Angle: {angleBetweenPlayerAndBee}");
+                    BeeAttackAction?.Invoke(col.gameObject);   
+                }
+            }
         }
     }
 

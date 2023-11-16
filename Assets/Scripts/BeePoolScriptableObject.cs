@@ -8,7 +8,7 @@ public class BeePoolScriptableObject : ScriptableObject
     public BeeAlly BeeObj;
     public List<BeeAlly> BeePool;
     public int TotalNumberOfBees;
-    private int TotalBeesSpawned;
+    public int TotalBeesSpawned;
 
     public void InstantiateCongoPool()
     {
