@@ -22,7 +22,7 @@ public class BeeCongoLine : MonoBehaviour
     private Vector2 _playerDirection => _playerMovement.PlayerDirection;
     private float _currentTime;
     
-    public static Action<GameObject> BeeAttackAction;
+    public static Action<BeeAlly> BeeAttackAction;
     
     void Start()
     {
@@ -54,7 +54,7 @@ public class BeeCongoLine : MonoBehaviour
                 if (Mathf.Abs(angleBetweenPlayerAndBee) >= AngleAttackThreshold && Mathf.Abs(angleBetweenPlayerAndBee) <= 0.99f)
                 {
                     Debug.Log($"Attack Triggered. Angle: {angleBetweenPlayerAndBee}");
-                    BeeAttackAction?.Invoke(col.gameObject);   
+                    BeeAttackAction?.Invoke(bee);   
                 }
             }
         }
