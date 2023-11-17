@@ -141,9 +141,9 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 310
-        height: 147
-      alignment: 9
+        width: 123
+        height: 146
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -160,11 +160,11 @@ TextureImporter:
       name: hive_death_right_1
       rect:
         serializedVersion: 2
-        x: 310
+        x: 123
         y: 0
-        width: 310
-        height: 147
-      alignment: 9
+        width: 123
+        height: 146
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -181,11 +181,11 @@ TextureImporter:
       name: hive_death_right_2
       rect:
         serializedVersion: 2
-        x: 620
+        x: 246
         y: 0
-        width: 310
-        height: 147
-      alignment: 9
+        width: 123
+        height: 146
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -202,11 +202,11 @@ TextureImporter:
       name: hive_death_right_3
       rect:
         serializedVersion: 2
-        x: 930
+        x: 369
         y: 0
-        width: 310
-        height: 147
-      alignment: 9
+        width: 123
+        height: 146
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -223,11 +223,11 @@ TextureImporter:
       name: hive_death_right_4
       rect:
         serializedVersion: 2
-        x: 1240
+        x: 492
         y: 0
-        width: 310
-        height: 147
-      alignment: 9
+        width: 123
+        height: 146
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -244,11 +244,11 @@ TextureImporter:
       name: hive_death_right_5
       rect:
         serializedVersion: 2
-        x: 1550
+        x: 615
         y: 0
-        width: 310
-        height: 147
-      alignment: 9
+        width: 123
+        height: 146
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -265,11 +265,11 @@ TextureImporter:
       name: hive_death_right_6
       rect:
         serializedVersion: 2
-        x: 1860
+        x: 738
         y: 0
-        width: 310
-        height: 147
-      alignment: 9
+        width: 123
+        height: 146
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -286,11 +286,11 @@ TextureImporter:
       name: hive_death_right_7
       rect:
         serializedVersion: 2
-        x: 2170
+        x: 861
         y: 0
-        width: 310
-        height: 147
-      alignment: 9
+        width: 123
+        height: 146
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -307,11 +307,11 @@ TextureImporter:
       name: hive_death_right_8
       rect:
         serializedVersion: 2
-        x: 2480
+        x: 984
         y: 0
-        width: 310
-        height: 147
-      alignment: 9
+        width: 123
+        height: 146
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []

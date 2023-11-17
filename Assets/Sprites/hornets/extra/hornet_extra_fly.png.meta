@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6ce108b7a79deeb4dae12015475bdbd1
+guid: 480eea2716de17e41874505dd5aa203f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hive_death_left_0
+      name: hornet_extra_fly_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 123
-        height: 146
+        width: 109
+        height: 117
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a4df9f2994457340b76e8ed49c8588a
-      internalID: 443910801
+      spriteID: 041328e374c17e14eb10c7b29fec1a48
+      internalID: -1490728616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_left_1
+      name: hornet_extra_fly_1
       rect:
         serializedVersion: 2
-        x: 123
+        x: 109
         y: 0
-        width: 123
-        height: 146
+        width: 109
+        height: 117
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2249385fcd4d44a41ba0444e25a84e6b
-      internalID: 83446977
+      spriteID: 325bbd77a44dc994caa03d975d489c8d
+      internalID: 1379237780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_left_2
+      name: hornet_extra_fly_2
       rect:
         serializedVersion: 2
-        x: 246
+        x: 218
         y: 0
-        width: 123
-        height: 146
+        width: 109
+        height: 117
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e528964ce0e5b1949b50d7909b855ef7
-      internalID: 155337316
+      spriteID: 9e7f7dc110681194288ca33597e35430
+      internalID: 1664833911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hive_death_left_3
+      name: hornet_extra_fly_3
       rect:
         serializedVersion: 2
-        x: 369
+        x: 327
         y: 0
-        width: 123
-        height: 146
+        width: 109
+        height: 117
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,113 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20e88c6b5b9f588419264680c0918fcb
-      internalID: 1597823302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_left_4
-      rect:
-        serializedVersion: 2
-        x: 492
-        y: 0
-        width: 123
-        height: 146
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48d99fbdd5bab34448320d050158456c
-      internalID: -317754099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_left_5
-      rect:
-        serializedVersion: 2
-        x: 615
-        y: 0
-        width: 123
-        height: 146
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edfcea80844d9c8499fecddd41bd97ca
-      internalID: -247838473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_left_6
-      rect:
-        serializedVersion: 2
-        x: 738
-        y: 0
-        width: 123
-        height: 146
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4aa268ffb4e3b5428d5c20a6127d5ec
-      internalID: 1961029597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_left_7
-      rect:
-        serializedVersion: 2
-        x: 861
-        y: 0
-        width: 123
-        height: 146
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47e14611f32e03c4b8cfe59388162941
-      internalID: -2037074804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hive_death_left_8
-      rect:
-        serializedVersion: 2
-        x: 984
-        y: 0
-        width: 123
-        height: 146
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee345e7a743c56246bf560cf83b2665c
-      internalID: -340114793
+      spriteID: 30b413fa31b001f42b1951a68f794f33
+      internalID: 2143484262
       vertices: []
       indices: 
       edges: []
@@ -335,15 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hive_death_left_0: 443910801
-      hive_death_left_1: 83446977
-      hive_death_left_2: 155337316
-      hive_death_left_3: 1597823302
-      hive_death_left_4: -317754099
-      hive_death_left_5: -247838473
-      hive_death_left_6: 1961029597
-      hive_death_left_7: -2037074804
-      hive_death_left_8: -340114793
+      hornet_extra_fly_0: -1490728616
+      hornet_extra_fly_1: 1379237780
+      hornet_extra_fly_2: 1664833911
+      hornet_extra_fly_3: 2143484262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
