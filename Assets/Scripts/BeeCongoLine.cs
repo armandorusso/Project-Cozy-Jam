@@ -16,10 +16,10 @@ public class BeeCongoLine : MonoBehaviour
     [SerializeField] public BeeType BeeColor;
     [SerializeField] public Transform PlayerFollowPoint;
     [SerializeField] public float AngleAttackThreshold;
-    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private Player _player;
 
-
-    private Vector2 _playerDirection => _playerMovement.PlayerDirection;
+    private Vector2 _playerDirection => _player.PlayerMovement.PlayerDirection;
+    private bool _isPlayerHurt => _player.PlayerHurt.isHurt;
     private float _currentTime;
     
     public static Action<BeeAlly> BeeAttackAction;
@@ -42,6 +42,9 @@ public class BeeCongoLine : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D col)
     {
+        if (_isPlayerHurt)
+            return;
+        
         // Call event to trigger bee attack
         if (col.gameObject.CompareTag(BeeColor.ToString()) && BeePool.TotalBeesSpawned >= 4)
         {

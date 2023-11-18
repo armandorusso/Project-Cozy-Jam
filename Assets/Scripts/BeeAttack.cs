@@ -8,11 +8,16 @@ public class BeeAttack : MonoBehaviour
     [SerializeField] private LayerMask AttackLayer;
     [SerializeField] public BeePoolScriptableObject BeePool;
     [SerializeField] public PolygonCollider2D TrailHitbox;
+    [SerializeField] public Transform PlayerTransform;
+    
     
     private Vector2 _hitboxPosition;
+    private Transform newEnemyPosition;
     public List<GameObject> EnemiesInAttackZone;
     public List<BeeAlly> AttackingBees;
     private bool _isEnabled;
+    private bool _isAttackCommenced;
+    private int _startingBeeIndex;
     public static Action<GameObject> KillEnemyAction;
 
     private void Start()
@@ -24,14 +29,18 @@ public class BeeAttack : MonoBehaviour
 
     private void OnBeeAttack(BeeAlly beeHit)
     {
-        var beeIndex = beeHit.Index;
-
-        for(var i = beeIndex; i >= 0; i--)
+        if (!_isAttackCommenced)
         {
-            AttackingBees.Add(BeePool.BeePool[i]);
+            _isAttackCommenced = true;
+            _startingBeeIndex = beeHit.Index;
+
+            for (var i = _startingBeeIndex; i >= 0; i--)
+            {
+                AttackingBees.Add(BeePool.BeePool[i]);
+            }
+
+            CreateHitbox(AttackingBees);
         }
-        
-        CreateHitbox(AttackingBees);
     }
 
     private void CreateHitbox(List<BeeAlly> AttackingBees)
@@ -57,14 +66,86 @@ public class BeeAttack : MonoBehaviour
     private IEnumerator DisableHitbox()
     {
         yield return new WaitForSeconds(0.4f);
-        
-        if (EnemiesInAttackZone.Count >= 0)
-        {
-            // KillEnemyAction?.Invoke(AttackingBees, EnemiesInAttackZone);
-        }
-        
         TrailHitbox.pathCount = 0;
         TrailHitbox.enabled = false;
+
+        if (EnemiesInAttackZone.Count == 0)
+        {
+            Debug.Log("No enemies detected");
+            _isAttackCommenced = false;
+            AttackingBees.Clear();
+            StopCoroutine(DisableHitbox());
+            yield break;
+        }
+
+        CommenceAttack();
+        yield return new WaitForSeconds(1.5f);
+
+        if (EnemiesInAttackZone.Count > 0)
+        {
+            Debug.Log("Enemies detected! Swarm Attack!");
+            foreach (var enemy in EnemiesInAttackZone)
+            {
+                KillEnemyAction?.Invoke(enemy);
+            }
+
+            BeePool.RemoveAttackingBeesFromPool(_startingBeeIndex, PlayerTransform);
+
+            EnemiesInAttackZone.Clear();
+        }
+
+        _isAttackCommenced = false;
+        AttackingBees.Clear();
+    }
+
+    private void CommenceAttack()
+    {
+        if (EnemiesInAttackZone.Count == 1)
+        {
+            foreach (var enemy in EnemiesInAttackZone)
+            {
+                for(int i = 0; i < AttackingBees.Count; i++)
+                {
+                    // Move bee towards enemy position
+                    var bee = AttackingBees[i];
+                    bee.MoveToEnemyPosition(enemy.transform);
+                }
+            }
+        }
+        else if (EnemiesInAttackZone.Count >= 2 && AttackingBees.Count > EnemiesInAttackZone.Count)
+        {
+            var index = 0;
+            foreach (var enemy in EnemiesInAttackZone)
+            {
+                for(int i = 0; i < AttackingBees.Count / EnemiesInAttackZone.Count; i++)
+                {
+                    // Move bee towards enemy position
+                    var bee = AttackingBees[index];
+                    bee.MoveToEnemyPosition(enemy.transform);
+                    index++;
+                }
+            }
+        }
+        else if(EnemiesInAttackZone.Count >= 2 && EnemiesInAttackZone.Count > AttackingBees.Count)
+        {
+            // Take average position of all enemies and command all bees to that position
+            var midpoint = Vector3.zero;
+            foreach (var enemy in EnemiesInAttackZone)
+            {
+                midpoint += enemy.transform.position;
+            }
+
+            var enemyLength = EnemiesInAttackZone.Count;
+            midpoint /= enemyLength;
+            newEnemyPosition = EnemiesInAttackZone[0].transform;
+            newEnemyPosition.position = midpoint;
+            
+            foreach(var bee in AttackingBees)
+            {
+                // Move bees towards enemy position
+                bee.MoveToEnemyPosition(newEnemyPosition);
+            }
+        }
     }
 
     private void DetectEnemiesInAttackZone(GameObject go)

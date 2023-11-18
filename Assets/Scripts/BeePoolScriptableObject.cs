@@ -37,6 +37,43 @@ public class BeePoolScriptableObject : ScriptableObject
             TotalBeesSpawned++;
         }
     }
+    
+    public void RemoveAttackingBeesFromPool(int startingIndex, Transform playerPosition)
+    {
+        for (int i = startingIndex; i >= 0; i--)
+        {
+            var bee = BeePool[i];
+            BeePool.RemoveAt(i);
+            Destroy(bee.gameObject);
+        }
+
+        TotalBeesSpawned -= startingIndex + 1;
+        MoveRemainingBeesToFront(playerPosition);
+    }
+
+    private void MoveRemainingBeesToFront(Transform playerPosition)
+    {
+        if (BeePool.Count == 0)
+            return;
+        
+        var newIndex = 0;
+        
+        for (int i = 0; i < BeePool.Count; i++)
+        {
+            var bee = BeePool[i];
+            if (i == 0)
+            {
+                bee.ObjectToFollow = playerPosition;
+                bee.Index = i;
+            }
+            else
+            {
+                bee.ObjectToFollow = BeePool.Find(x => x.Index == i - 1).transform;
+                bee.Index = i;
+                bee.transform.position = bee.ObjectToFollow.position;
+            }
+        }
+    }
 
     public void RemoveAllBees()
     {

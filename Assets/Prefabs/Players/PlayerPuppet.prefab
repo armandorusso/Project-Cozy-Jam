@@ -459,7 +459,7 @@ MonoBehaviour:
   BeeColor: 0
   PlayerFollowPoint: {fileID: 8945966723024814922}
   AngleAttackThreshold: 0.25
-  _playerMovement: {fileID: 270572533759393116}
+  _player: {fileID: 1947860228540131187}
 --- !u!1001 &5282695265356934193
 PrefabInstance:
   m_ObjectHideFlags: 0

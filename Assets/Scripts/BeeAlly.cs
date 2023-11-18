@@ -48,4 +48,11 @@ public class BeeAlly : MonoBehaviour
             _currentTime = 0f;
         }
     }
+
+    public void MoveToEnemyPosition(Transform enemyPosition)
+    {
+        // Set ObjectToFollow to enemy position and change its speed
+        ObjectToFollow = enemyPosition;
+        PreviousPosition = ObjectToFollow.position;
+    }
 }
