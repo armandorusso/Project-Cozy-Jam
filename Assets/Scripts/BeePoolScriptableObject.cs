@@ -7,12 +7,14 @@ public class BeePoolScriptableObject : ScriptableObject
 {
     public BeeAlly BeeObj;
     public List<BeeAlly> BeePool;
+    private List<BeeAlly> BeesToDeallocate;
     public int TotalNumberOfBees;
     public int TotalBeesSpawned;
 
     public void InstantiateCongoPool()
     {
         BeePool = new List<BeeAlly>(TotalNumberOfBees);
+        BeesToDeallocate = new List<BeeAlly>(TotalNumberOfBees);
         TotalBeesSpawned = 0;
     }
     
@@ -38,25 +40,23 @@ public class BeePoolScriptableObject : ScriptableObject
         }
     }
     
-    public void RemoveAttackingBeesFromPool(int startingIndex, Transform playerPosition)
+    public void RemoveAttackingBeesFromPool(int startingIndex, Transform playerPosition, Transform[] BorderLocations)
     {
         for (int i = startingIndex; i >= 0; i--)
         {
             var bee = BeePool[i];
             BeePool.RemoveAt(i);
-            Destroy(bee.gameObject);
+            BeesToDeallocate.Add(bee);
         }
 
         TotalBeesSpawned -= startingIndex + 1;
-        MoveRemainingBeesToFront(playerPosition);
+        MoveRemainingBeesToFront(playerPosition, BorderLocations);
     }
 
-    private void MoveRemainingBeesToFront(Transform playerPosition)
+    private void MoveRemainingBeesToFront(Transform playerPosition, Transform[] BorderLocations)
     {
         if (BeePool.Count == 0)
             return;
-        
-        var newIndex = 0;
         
         for (int i = 0; i < BeePool.Count; i++)
         {
@@ -72,6 +72,14 @@ public class BeePoolScriptableObject : ScriptableObject
                 bee.Index = i;
                 bee.transform.position = bee.ObjectToFollow.position;
             }
+        }
+    }
+
+    public void MoveAttackingBeesToLocation(Transform[] BorderLocations)
+    {
+        foreach (var bee in BeesToDeallocate)
+        {
+            bee.MoveBackToCongoLine(BorderLocations);
         }
     }
 

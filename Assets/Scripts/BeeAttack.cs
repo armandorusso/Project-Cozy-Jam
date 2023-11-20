@@ -9,6 +9,7 @@ public class BeeAttack : MonoBehaviour
     [SerializeField] public BeePoolScriptableObject BeePool;
     [SerializeField] public PolygonCollider2D TrailHitbox;
     [SerializeField] public Transform PlayerTransform;
+    [SerializeField] public Transform[] BorderTransforms;
     
     
     private Vector2 _hitboxPosition;
@@ -79,7 +80,9 @@ public class BeeAttack : MonoBehaviour
         }
 
         CommenceAttack();
+        BeePool.RemoveAttackingBeesFromPool(_startingBeeIndex, PlayerTransform, BorderTransforms);
         yield return new WaitForSeconds(1.5f);
+        BeePool.MoveAttackingBeesToLocation(BorderTransforms);
 
         if (EnemiesInAttackZone.Count > 0)
         {
@@ -88,8 +91,6 @@ public class BeeAttack : MonoBehaviour
             {
                 KillEnemyAction?.Invoke(enemy);
             }
-
-            BeePool.RemoveAttackingBeesFromPool(_startingBeeIndex, PlayerTransform);
 
             EnemiesInAttackZone.Clear();
         }
