@@ -9,8 +9,6 @@ public class BeeAttack : MonoBehaviour
     [SerializeField] public BeePoolScriptableObject BeePool;
     [SerializeField] public PolygonCollider2D TrailHitbox;
     [SerializeField] public Transform PlayerTransform;
-    [SerializeField] public Transform[] BorderTransforms;
-    
     
     private Vector2 _hitboxPosition;
     private Transform newEnemyPosition;
@@ -80,10 +78,10 @@ public class BeeAttack : MonoBehaviour
         }
 
         CommenceAttack();
-        BeePool.RemoveAttackingBeesFromPool(_startingBeeIndex, PlayerTransform, BorderTransforms);
+        BeePool.RemoveAttackingBeesFromPool(_startingBeeIndex, PlayerTransform);
         yield return new WaitForSeconds(1.5f);
-        BeePool.MoveAttackingBeesToLocation(BorderTransforms);
-
+        BeePool.MoveAttackingBeesToCongoLine(PlayerTransform);
+        
         if (EnemiesInAttackZone.Count > 0)
         {
             Debug.Log("Enemies detected! Swarm Attack!");
@@ -105,24 +103,22 @@ public class BeeAttack : MonoBehaviour
         {
             foreach (var enemy in EnemiesInAttackZone)
             {
-                for(int i = 0; i < AttackingBees.Count; i++)
+                foreach (var bee in AttackingBees)
                 {
-                    // Move bee towards enemy position
-                    var bee = AttackingBees[i];
-                    bee.MoveToEnemyPosition(enemy.transform);
+                    bee.MoveTowardsEnemyPosition(enemy.transform);
                 }
             }
         }
-        else if (EnemiesInAttackZone.Count >= 2 && AttackingBees.Count > EnemiesInAttackZone.Count)
+        else if (EnemiesInAttackZone.Count >= 2 && EnemiesInAttackZone.Count < AttackingBees.Count)
         {
             var index = 0;
             foreach (var enemy in EnemiesInAttackZone)
             {
-                for(int i = 0; i < AttackingBees.Count / EnemiesInAttackZone.Count; i++)
+                for(var i = 0; i < AttackingBees.Count / EnemiesInAttackZone.Count; i++)
                 {
                     // Move bee towards enemy position
                     var bee = AttackingBees[index];
-                    bee.MoveToEnemyPosition(enemy.transform);
+                    bee.MoveTowardsEnemyPosition(enemy.transform);
                     index++;
                 }
             }
@@ -144,7 +140,7 @@ public class BeeAttack : MonoBehaviour
             foreach(var bee in AttackingBees)
             {
                 // Move bees towards enemy position
-                bee.MoveToEnemyPosition(newEnemyPosition);
+                bee.MoveTowardsEnemyPosition(newEnemyPosition);
             }
         }
     }

@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 
 public class BeeAlly : MonoBehaviour
 {
-    [SerializeField] private LayerMask BorderLayer;
     [SerializeField] public int Index;
     [SerializeField] public Transform ObjectToFollow;
     [SerializeField] private float MovementSpeed;
@@ -15,6 +14,7 @@ public class BeeAlly : MonoBehaviour
     public Vector2 PreviousPosition;
     public Vector2 Direction;
     private float _currentTime;
+    private bool _isAttacking;
 
     private void Start()
     {
@@ -51,29 +51,15 @@ public class BeeAlly : MonoBehaviour
         }
     }
 
-    public void MoveToEnemyPosition(Transform enemyPosition)
+    public void MoveTowardsEnemyPosition(Transform enemyPosition)
     {
         ChangeObjectToFollow(enemyPosition);
-    }
-
-    public void MoveBackToCongoLine(Transform[] BorderLocations)
-    {
-        ChangeObjectToFollow(BorderLocations[Random.Range(0, 3)]);
     }
 
     private void ChangeObjectToFollow(Transform enemyPosition)
     {
         // Set ObjectToFollow to enemy position and change its speed
         ObjectToFollow = enemyPosition;
-        PreviousPosition = ObjectToFollow.position;
-    }
-
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        var go = col.gameObject;
-        if (((1 << go.layer) & BorderLayer) != 0)
-        {
-            Destroy(gameObject);
-        }
+        PreviousPosition = transform.position;
     }
 }
