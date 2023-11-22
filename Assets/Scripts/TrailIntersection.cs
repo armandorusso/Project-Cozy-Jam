@@ -39,6 +39,8 @@ public class TrailIntersection : MonoBehaviour
 
     void Update()
     {
+        if (!_player.PlayerMovement.IsMoving) return;
+        
         if (_hasTriggeredTrail)
         {
             _currentTime += Time.deltaTime;

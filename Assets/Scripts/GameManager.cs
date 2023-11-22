@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour
         var enemyPicker = Random.Range(0, _enemyPrefabs.Length);
 
         var hornetBase = Instantiate(_enemyPrefabs[enemyPicker], _enemySpawners[spawnerPicker].position, Quaternion.identity);
+        _enemies.Add(hornetBase);
         var hornetAnimator = hornetBase.transform.GetChild(0);
         hornetAnimator.SetParent(null);
         hornetBase.GetComponent<EnemyAnimator>().SetHornetAnimator(hornetAnimator);

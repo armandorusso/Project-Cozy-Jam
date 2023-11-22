@@ -3144,6 +3144,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.3392067
       objectReference: {fileID: 0}
+    - target: {fileID: 1101765159677310901, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: _maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2361624665103044647, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
       propertyPath: m_Name
       value: Hive
@@ -3152,6 +3156,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4602009120890455512, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
+      propertyPath: _hive
+      value: 
+      objectReference: {fileID: 1063770104}
     - target: {fileID: 4602009120890455512, guid: 831ad33e1b67ddc40a22ed139b60f8d7, type: 3}
       propertyPath: _hivePointToMove
       value: 
@@ -3195,6 +3203,30 @@ PrefabInstance:
     - target: {fileID: 2389844102743402488, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
       propertyPath: m_Name
       value: PlayerPuppet2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241690892419583883, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.11999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241690892419583883, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3442915731177626936, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.11999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3442915731177626936, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984668867425207424, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.11999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984668867425207424, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5736506541190652264, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
       propertyPath: _acceleratedSpeed
@@ -3256,6 +3288,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7788355688702948666, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.11999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7788355688702948666, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455709266641471761, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455709266641471761, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8557582727331948190, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1.56
@@ -3264,6 +3312,22 @@ PrefabInstance:
       propertyPath: ExternalForcesModule.influenceList.Array.data[0]
       value: 
       objectReference: {fileID: 248013694}
+    - target: {fileID: 9046180735506603922, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.120000124
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046180735506603922, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134446449439136161, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.120000035
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134446449439136161, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

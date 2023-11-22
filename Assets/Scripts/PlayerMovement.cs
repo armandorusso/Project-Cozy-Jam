@@ -70,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (!IsMoving) return;
+        
         if (context.performed && !_isColliding)
         {
             _playerDirection = context.ReadValue<Vector2>();

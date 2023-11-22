@@ -7,6 +7,8 @@ public class PlayerHurt : MonoBehaviour
     [SerializeField] private float _hurtTime;
     private float _hurtCountdown;
 
+    public Rigidbody2D Rigidbody2DComponent => _rigidbody2D;
+
     public bool isHurt;
     // Start is called before the first frame update
     private void Start()

@@ -14,7 +14,11 @@ public class EnemyAttacking : MonoBehaviour
     [SerializeField] private float _strikingWaitTime;
     private bool _isStriking;
     private float _strikingCountdown;
-    public bool IsStriking => _isStriking;
+    public bool IsStriking
+    {
+        get => _isStriking;
+        set => _isStriking = value;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -101,15 +105,18 @@ public class EnemyAttacking : MonoBehaviour
 
     private IEnumerator HurtTarget()
     {
+        bool isHiveDead = false;
         if (Target.TryGetComponent<Player>(out var player))
         {
             player.PlayerHurt.GetHurt(_enemy.EnemyMovement.EnemyDirection);
         }
         else if (Target.TryGetComponent<Hive>(out var hive))
         {
-            hive.HiveHurt.GetHurt(_enemy.EnemyMovement.EnemyDirection, _damage);
+            isHiveDead = hive.HiveHurt.GetHurt(_enemy.EnemyMovement.EnemyDirection, _damage);
         }
 
+        if (isHiveDead) yield break;
+        
         _isStriking = false;
         _enemy.EnemyAnimator.AnimatorComponent.SetTrigger("Recover");
         yield return new WaitForSeconds(_strikingWaitTime);

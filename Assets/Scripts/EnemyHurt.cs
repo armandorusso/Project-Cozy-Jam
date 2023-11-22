@@ -30,6 +30,8 @@ public class EnemyHurt : MonoBehaviour
             {
                 hurtEffect.EnableObject();
             }
+
+            GameManager.Instance.Enemies.Remove(enemy);
             Destroy(enemyComponent.EnemyAnimator.AnimatorComponent.gameObject);
             Destroy(enemy);
         }
