@@ -149,7 +149,6 @@ public class GameManager : MonoBehaviour
     {
         _frontFenceSprite.sortingOrder = 0;
         _canvasGroup.SetActive(false);
-        
     }
 
     private void OnDestroy()
