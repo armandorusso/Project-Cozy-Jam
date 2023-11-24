@@ -17,7 +17,9 @@ public class BeeAttack : MonoBehaviour
     private bool _isEnabled;
     private bool _isAttackCommenced;
     private int _startingBeeIndex;
+    
     public static Action<GameObject> KillEnemyAction;
+    public static Action<bool> StopAttackingAction;
 
     private void Start()
     {
@@ -79,9 +81,8 @@ public class BeeAttack : MonoBehaviour
 
         CommenceAttack();
         BeePool.RemoveAttackingBeesFromPool(_startingBeeIndex, PlayerTransform);
-        yield return new WaitForSeconds(1.5f);
-        BeePool.MoveAttackingBeesToCongoLine(PlayerTransform);
-        
+        yield return new WaitForSeconds(1f);
+
         if (EnemiesInAttackZone.Count > 0)
         {
             Debug.Log("Enemies detected! Swarm Attack!");
@@ -93,7 +94,10 @@ public class BeeAttack : MonoBehaviour
             EnemiesInAttackZone.Clear();
         }
 
+        BeePool.MoveAttackingBeesToCongoLine(PlayerTransform);
+
         _isAttackCommenced = false;
+        StopAttackingAction?.Invoke(true);
         AttackingBees.Clear();
     }
 
@@ -106,6 +110,7 @@ public class BeeAttack : MonoBehaviour
                 foreach (var bee in AttackingBees)
                 {
                     bee.MoveTowardsEnemyPosition(enemy.transform);
+                    bee.OnBeeAttack(true);
                 }
             }
         }
@@ -119,6 +124,7 @@ public class BeeAttack : MonoBehaviour
                     // Move bee towards enemy position
                     var bee = AttackingBees[index];
                     bee.MoveTowardsEnemyPosition(enemy.transform);
+                    bee.OnBeeAttack(true);
                     index++;
                 }
             }
@@ -141,6 +147,7 @@ public class BeeAttack : MonoBehaviour
             {
                 // Move bees towards enemy position
                 bee.MoveTowardsEnemyPosition(newEnemyPosition);
+                bee.OnBeeAttack(true);
             }
         }
     }

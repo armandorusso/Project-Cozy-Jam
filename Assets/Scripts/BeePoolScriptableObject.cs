@@ -7,7 +7,7 @@ public class BeePoolScriptableObject : ScriptableObject
     public BeeAlly BeeObj;
     public List<BeeAlly> BeePool;
     private List<BeeAlly> _attackingBees;
-    private bool _isAttacking;
+    public bool IsAttacking;
     public int TotalNumberOfBees;
     public int TotalBeesSpawned;
 
@@ -16,11 +16,12 @@ public class BeePoolScriptableObject : ScriptableObject
         BeePool = new List<BeeAlly>(TotalNumberOfBees);
         _attackingBees = new List<BeeAlly>(TotalNumberOfBees);
         TotalBeesSpawned = 0;
+        IsAttacking = false;
     }
     
     public void SpawnBee(Transform playerPosition)
     {
-        if (!_isAttacking && TotalBeesSpawned < TotalNumberOfBees)
+        if (!IsAttacking && TotalBeesSpawned < TotalNumberOfBees)
         {
             var bee = Instantiate(BeeObj, playerPosition.position, Quaternion.identity);
             bee.Index = TotalBeesSpawned;
@@ -42,7 +43,7 @@ public class BeePoolScriptableObject : ScriptableObject
     
     public void RemoveAttackingBeesFromPool(int startingIndex, Transform playerPosition)
     {
-        _isAttacking = true;
+        IsAttacking = true;
         for (var i = startingIndex; i >= 0; i--)
         {
             var bee = BeePool[i];
@@ -61,18 +62,23 @@ public class BeePoolScriptableObject : ScriptableObject
         
         for (var i = 0; i < BeePool.Count; i++)
         {
-            var bee = BeePool[i];
-            bee.Index = i;
-            
-            if (i == 0)
-            {
-                bee.ObjectToFollow = playerPosition;
-            }
-            else
-            {
-                bee.ObjectToFollow = BeePool.Find(x => x.Index == i - 1).transform;
-                bee.transform.position = bee.ObjectToFollow.position;
-            }
+            ModifyFollowee(playerPosition, i, out var bee);
+        }
+    }
+
+    private void ModifyFollowee(Transform playerPosition, int i, out BeeAlly bee)
+    {
+        bee = BeePool[i];
+        bee.Index = i;
+
+        if (i == 0)
+        {
+            bee.ObjectToFollow = playerPosition;
+        }
+        else
+        {
+            bee.ObjectToFollow = BeePool.Find(x => x.Index == i - 1).transform;
+            bee.transform.position = bee.ObjectToFollow.position;
         }
     }
 
@@ -80,7 +86,7 @@ public class BeePoolScriptableObject : ScriptableObject
     {
         foreach (var bee in _attackingBees)
         {
-            var lastBeeIndex = BeePool.Count - 1 <= 0 ? BeePool.Count : BeePool.Count - 1;
+            var lastBeeIndex = BeePool.Count - 1 < 0 ? BeePool.Count : BeePool.Count - 1;
             if (lastBeeIndex == 0)
             {
                 bee.ObjectToFollow = playerPosition;
@@ -97,13 +103,13 @@ public class BeePoolScriptableObject : ScriptableObject
         }
 
         TotalBeesSpawned = BeePool.Count;
-        _isAttacking = false;
+        IsAttacking = false;
         _attackingBees.Clear();
     }
 
     public void RemoveAllBees()
     {
-        _isAttacking = false;
+        IsAttacking = false;
         BeePool.Clear();
     }
 }

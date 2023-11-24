@@ -21,6 +21,7 @@ public class BeeCongoLine : MonoBehaviour
     private Vector2 _playerDirection => _player.PlayerMovement.PlayerDirection;
     private bool _isPlayerHurt => _player.PlayerHurt.isHurt;
     private float _currentTime;
+    private bool _isAttacking => BeePool.IsAttacking;
     
     public static Action<BeeAlly> BeeAttackAction;
     
@@ -42,7 +43,7 @@ public class BeeCongoLine : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (_isPlayerHurt)
+        if (_isPlayerHurt || _isAttacking)
             return;
         
         // Call event to trigger bee attack

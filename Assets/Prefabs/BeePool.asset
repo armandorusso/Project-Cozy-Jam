@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BeeObj: {fileID: 1553019741482466929, guid: aaf772ebd8ccd6245b9f507faa1d3169, type: 3}
   BeePool: []
+  IsAttacking: 0
   TotalNumberOfBees: 10
-  TotalBeesSpawned: 10
+  TotalBeesSpawned: 2

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1553019741482466929}
   - component: {fileID: 4153605541310477687}
   - component: {fileID: 3355109179353505813}
+  - component: {fileID: 2867319895812245562}
   m_Layer: 0
   m_Name: Yellow Bee
   m_TagString: YellowBee
@@ -50,7 +51,9 @@ MonoBehaviour:
   ObjectToFollow: {fileID: 0}
   MovementSpeed: 4
   DistanceBetweenBees: 0.15
+  BeeAC: {fileID: 2867319895812245562}
   PreviousPosition: {x: 0, y: 0}
+  Direction: {x: 0, y: 0}
 --- !u!212 &4153605541310477687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -135,6 +138,27 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.039649665}
   serializedVersion: 2
-  m_Radius: 0.265
+  m_Radius: 0.30464965
+--- !u!95 &2867319895812245562
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46298079082812574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52556e3f4d8cfe143a876aa8296ef904, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
