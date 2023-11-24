@@ -50,6 +50,7 @@ MonoBehaviour:
   Index: 0
   ObjectToFollow: {fileID: 0}
   MovementSpeed: 4
+  AttackSpeed: 1.2
   DistanceBetweenBees: 0.15
   BeeAC: {fileID: 2867319895812245562}
   PreviousPosition: {x: 0, y: 0}
