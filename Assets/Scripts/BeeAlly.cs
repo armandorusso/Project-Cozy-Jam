@@ -23,7 +23,6 @@ public class BeeAlly : MonoBehaviour
     {
         PreviousPosition = ObjectToFollow.transform.position;
         _originalMovementSpeed = MovementSpeed;
-        BeeAttack.StopAttackingAction += OnAttackFinish;
     }
 
     void Update()
@@ -72,16 +71,15 @@ public class BeeAlly : MonoBehaviour
     {
         // Pause before attacking
         _isChargingAttack = true;
-        Direction = Vector2.zero;
         MovementSpeed = 0f;
+        Direction = ObjectToFollow.position - transform.position;
         yield return new WaitForSeconds(0.2f);
-        
+
         // Attack!
         BeeAC.SetBool("IsAttacking", isAttacking);
-        yield return new WaitForSeconds(0.2f);
-        
+        yield return new WaitForSeconds(0.1f);
+
         // Point towards the enemy and speed up
-        Direction = ObjectToFollow.position - transform.position;
         transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg);
         MovementSpeed = _originalMovementSpeed * AttackSpeed;
         yield return new WaitForSeconds(0.8f);
@@ -92,7 +90,7 @@ public class BeeAlly : MonoBehaviour
         MovementSpeed = _originalMovementSpeed;
     }
 
-    private void OnAttackFinish(bool stopAttack)
+    public void OnAttackFinish(bool stopAttack)
     {
         BeeAC.SetBool("IsAttacking", !stopAttack);
         MovementSpeed = _originalMovementSpeed;
@@ -113,6 +111,5 @@ public class BeeAlly : MonoBehaviour
 
     public void OnDestroy()
     {
-        BeeAttack.StopAttackingAction -= OnAttackFinish;
     }
 }

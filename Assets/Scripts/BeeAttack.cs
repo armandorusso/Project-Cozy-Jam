@@ -18,19 +18,20 @@ public class BeeAttack : MonoBehaviour
     private bool _isAttackCommenced;
     private int _startingBeeIndex;
     
-    public static Action<GameObject> KillEnemyAction;
-    public static Action<bool> StopAttackingAction;
+    public static Action<GameObject, BeeCongoLine.BeeType> KillEnemyAction;
 
     private void Start()
     {
         BeeCongoLine.BeeAttackAction += OnBeeAttack;
 
         EnemiesInAttackZone = new List<GameObject>();
+
+        AttackingBees = new List<BeeAlly>();
     }
 
-    private void OnBeeAttack(BeeAlly beeHit)
+    private void OnBeeAttack(BeeAlly beeHit, int poolId)
     {
-        if (!_isAttackCommenced)
+        if (poolId == BeePool.GetInstanceID() && !_isAttackCommenced)
         {
             _isAttackCommenced = true;
             _startingBeeIndex = beeHit.Index;
@@ -78,27 +79,34 @@ public class BeeAttack : MonoBehaviour
             StopCoroutine(DisableHitbox());
             yield break;
         }
-
+        
+        Debug.Log("Enemies detected! Swarm Attack!");
+        
         CommenceAttack();
         BeePool.RemoveAttackingBeesFromPool(_startingBeeIndex, PlayerTransform);
+
+        foreach (var enemy in EnemiesInAttackZone)
+        {
+            KillEnemyAction?.Invoke(enemy, BeePool.BeeType);
+        }
+        
         yield return new WaitForSeconds(1f);
 
-        if (EnemiesInAttackZone.Count > 0)
-        {
-            Debug.Log("Enemies detected! Swarm Attack!");
-            foreach (var enemy in EnemiesInAttackZone)
-            {
-                KillEnemyAction?.Invoke(enemy);
-            }
-
-            EnemiesInAttackZone.Clear();
-        }
-
+        EnemiesInAttackZone.Clear();
         BeePool.MoveAttackingBeesToCongoLine(PlayerTransform);
 
-        _isAttackCommenced = false;
-        StopAttackingAction?.Invoke(true);
+
+        foreach (var bee in AttackingBees)
+        {
+            bee.OnAttackFinish(true);
+        }
+
+        BeePool.IsAttacking = false;
         AttackingBees.Clear();
+        
+        // Delay a bit before attacking again or else an attack can trigger while the bees are catching up to the congo line
+        yield return new WaitForSeconds(0.1f);
+        _isAttackCommenced = false;
     }
 
     private void CommenceAttack()

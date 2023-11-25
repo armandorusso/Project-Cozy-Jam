@@ -6,6 +6,7 @@ public class BeePoolScriptableObject : ScriptableObject
 {
     public BeeAlly BeeObj;
     public List<BeeAlly> BeePool;
+    public BeeCongoLine.BeeType BeeType;
     private List<BeeAlly> _attackingBees;
     public bool IsAttacking;
     public int TotalNumberOfBees;
@@ -86,24 +87,25 @@ public class BeePoolScriptableObject : ScriptableObject
     {
         foreach (var bee in _attackingBees)
         {
+            // BUG: if beepool count is 0, once a bee is added in the pool the next bee uses index 0
             var lastBeeIndex = BeePool.Count - 1 < 0 ? BeePool.Count : BeePool.Count - 1;
-            if (lastBeeIndex == 0)
+            if (BeePool.Count == 0)
             {
                 bee.ObjectToFollow = playerPosition;
                 bee.PreviousPosition = playerPosition.position;
+                bee.Index = lastBeeIndex;
             }
             else
             {
                 bee.ObjectToFollow = BeePool.Find(x => x.Index == lastBeeIndex).transform;
                 bee.PreviousPosition = bee.ObjectToFollow.position;
+                bee.Index = lastBeeIndex + 1;
             }
             
-            bee.Index = lastBeeIndex + 1;
             BeePool.Add(bee.GetComponent<BeeAlly>());
         }
 
         TotalBeesSpawned = BeePool.Count;
-        IsAttacking = false;
         _attackingBees.Clear();
     }
 

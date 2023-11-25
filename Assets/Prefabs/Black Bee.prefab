@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4153605541310477687}
   - component: {fileID: 3355109179353505813}
   - component: {fileID: 2867319895812245562}
-  - component: {fileID: 1754748766089622411}
+  - component: {fileID: 2959610345101551170}
   m_Layer: 0
-  m_Name: Yellow Bee
-  m_TagString: YellowBee
+  m_Name: Black Bee
+  m_TagString: BlackBee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -971965664, guid: 7a1b560ddf3dc6f4b85e2b17a6417e9a, type: 3}
+  m_Sprite: {fileID: -2033607401, guid: 96b5ccf352e54894b9225d7d78d06f04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,7 +153,7 @@ Animator:
   m_GameObject: {fileID: 46298079082812574}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 52556e3f4d8cfe143a876aa8296ef904, type: 2}
+  m_Controller: {fileID: 9100000, guid: baa6df0c24b21f54bb8448e99bb2cdda, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -164,7 +164,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &1754748766089622411
+--- !u!50 &2959610345101551170
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

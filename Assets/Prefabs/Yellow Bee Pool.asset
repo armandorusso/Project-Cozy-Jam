@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe2c18a25ded9064b9f9bcce6b73168b, type: 3}
-  m_Name: BeePool
+  m_Name: Yellow Bee Pool
   m_EditorClassIdentifier: 
   BeeObj: {fileID: 1553019741482466929, guid: aaf772ebd8ccd6245b9f507faa1d3169, type: 3}
   BeePool: []
+  BeeType: 1
   IsAttacking: 0
   TotalNumberOfBees: 10
-  TotalBeesSpawned: 2
+  TotalBeesSpawned: 0

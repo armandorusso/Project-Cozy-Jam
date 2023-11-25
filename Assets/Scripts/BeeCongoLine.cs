@@ -7,6 +7,7 @@ public class BeeCongoLine : MonoBehaviour
 {
     public enum BeeType
     {
+        None,
         YellowBee,
         BlackBee
     }
@@ -23,7 +24,7 @@ public class BeeCongoLine : MonoBehaviour
     private float _currentTime;
     private bool _isAttacking => BeePool.IsAttacking;
     
-    public static Action<BeeAlly> BeeAttackAction;
+    public static Action<BeeAlly, int> BeeAttackAction;
     
     void Start()
     {
@@ -58,7 +59,7 @@ public class BeeCongoLine : MonoBehaviour
                 if (Mathf.Abs(angleBetweenPlayerAndBee) >= AngleAttackThreshold && Mathf.Abs(angleBetweenPlayerAndBee) <= 0.99f)
                 {
                     Debug.Log($"Attack Triggered. Angle: {angleBetweenPlayerAndBee}");
-                    BeeAttackAction?.Invoke(bee);   
+                    BeeAttackAction?.Invoke(bee, BeePool.GetInstanceID());   
                 }
             }
         }
