@@ -16,7 +16,6 @@ public class TrailIntersection : MonoBehaviour
     [SerializeField] private ParticleSystem BeeParticles;
     [SerializeField] private float ForceFieldLifeTime;
     
-
     private float _currentTime;
     private float _activePointLifetime;
 

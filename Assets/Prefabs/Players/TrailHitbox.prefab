@@ -627,7 +627,11 @@ MonoBehaviour:
   AttackLayer:
     serializedVersion: 2
     m_Bits: 1536
-  ForceFieldParticles: {fileID: 1495994504445645267}
+  BeePool: {fileID: 11400000, guid: c0d8340d8ff5ed2448e9069884cd592a, type: 2}
+  TrailHitbox: {fileID: 3176884426249123927}
+  PlayerTransform: {fileID: 0}
+  EnemiesInAttackZone: []
+  AttackingBees: []
 --- !u!50 &8646782854216797650
 Rigidbody2D:
   serializedVersion: 4

@@ -6,12 +6,12 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private PlayerHurt _playerHurt;
-    [SerializeField] private TrailIntersection _trailIntersection;
+    [SerializeField] private BeeCongoLine _beeCongoLine;
 
     public PlayerMovement PlayerMovement => _playerMovement;
     public PlayerHurt PlayerHurt => _playerHurt;
 
-    public TrailIntersection TrailIntersection => _trailIntersection;
+    public BeeCongoLine BeeCongoLine => _beeCongoLine;
     
     [SerializeField] private Animator _animator;
     public Animator AnimatorComponent => _animator;

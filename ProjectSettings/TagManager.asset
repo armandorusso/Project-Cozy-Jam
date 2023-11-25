@@ -7,6 +7,9 @@ TagManager:
   - Yellow Hornet
   - Black Hornet
   - Big Hornet
+  - YellowBee
+  - BlackBee
+  - None
   layers:
   - Default
   - TransparentFX
