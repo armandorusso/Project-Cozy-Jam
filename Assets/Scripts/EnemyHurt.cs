@@ -60,6 +60,10 @@ public class EnemyHurt : MonoBehaviour
             {
                 KillEnemy();
             }
+
+            GameManager.Instance.Enemies.Remove(enemy);
+            Destroy(enemyComponent.EnemyAnimator.AnimatorComponent.gameObject);
+            Destroy(enemy);
         }
     }
 

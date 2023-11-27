@@ -50,6 +50,13 @@ public class GameManager : MonoBehaviour
     public int CurrentEnemiesOnScene;
     private float _spawnCountdown;
 
+    [Header("Props and UI")] [SerializeField]
+    private Animator _deathBackgroundAnimator;
+    [SerializeField] private SpriteRenderer _frontFenceSprite;
+    [SerializeField] private GameObject _canvasGroup;
+
+    public Animator DeathBackgroundAnimator => _deathBackgroundAnimator;
+
     private bool _hasGameStarted;
     public bool HasGameStarted => _hasGameStarted;
 
@@ -103,7 +110,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_hasGameStarted) return;
+        if (!_hasGameStarted || _hiveCharacter.HiveHurt.CurrentHealth <= 0) return;
         
         if (_spawnCountdown > 0)
         {
@@ -130,11 +137,18 @@ public class GameManager : MonoBehaviour
         var enemyPicker = Random.Range(0, _enemyPrefabs.Length);
 
         var hornetBase = Instantiate(_enemyPrefabs[enemyPicker], _enemySpawners[spawnerPicker].position, Quaternion.identity);
+        _enemies.Add(hornetBase);
         var hornetAnimator = hornetBase.transform.GetChild(0);
         hornetAnimator.SetParent(null);
         hornetBase.GetComponent<EnemyAnimator>().SetHornetAnimator(hornetAnimator);
         
         CurrentEnemiesOnScene++;
+    }
+
+    public void ResetSpritesForBackground()
+    {
+        _frontFenceSprite.sortingOrder = 0;
+        _canvasGroup.SetActive(false);
     }
 
     private void OnDestroy()

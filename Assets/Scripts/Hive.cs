@@ -11,6 +11,8 @@ public class Hive : MonoBehaviour
     public Animator AnimatorComponent => _animator;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     public Rigidbody2D Rigidbody => _rigidbody2D;
+    [SerializeField] private SpriteRenderer _spriteRendererComponent;
+    public SpriteRenderer SpriteRendererComponent => _spriteRendererComponent;
     
     // Start is called before the first frame update
     void Start()
