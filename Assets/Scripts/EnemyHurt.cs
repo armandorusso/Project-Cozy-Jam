@@ -48,7 +48,7 @@ public class EnemyHurt : MonoBehaviour
             hurtEffect.EnableObject();
         }
 
-        GameManager.Instance.Enemies.Remove(gameObject);
+        // GameManager.Instance.EnemyWaves.Remove(gameObject);
         Destroy(gameObject.GetComponent<Enemy>().EnemyAnimator.AnimatorComponent.gameObject);
         Destroy(gameObject);
     }
