@@ -6,6 +6,7 @@ public class EnemyAnimator : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private SpriteRenderer _shadowSpriteRenderer;
     [SerializeField] private Animator _animator;
+    [SerializeField] private float SpriteZOffset;
     public Animator AnimatorComponent => _animator;
     public SpriteRenderer SpriteRendererComponent => _spriteRenderer;
     public SpriteRenderer ShadowSpriteRendererComponent => _shadowSpriteRenderer;
@@ -21,7 +22,7 @@ public class EnemyAnimator : MonoBehaviour
     {
         if (_hornetAnimator)
         {
-            _hornetAnimator.position = transform.position;
+            _hornetAnimator.position = transform.position - new Vector3(0.0f, SpriteZOffset, 0.0f);
         }
 
         if (_spriteRenderer && !_enemy.EnemyAttacking.IsStriking)

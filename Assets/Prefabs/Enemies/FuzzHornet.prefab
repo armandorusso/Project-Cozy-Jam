@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5261b25ed819d545abfbfda23e1ddf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackingBeeType: 0
 --- !u!114 &-8645155920491518961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 4560100043375898393}
   _shadowSpriteRenderer: {fileID: 0}
   _animator: {fileID: 3837374576829258334}
+  SpriteZOffset: 0.458
 --- !u!58 &2344178730332811791
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,9 +148,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.458
 --- !u!1001 &7022913899159854086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -183,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748506624304153254, guid: 22db3942f74bd5849bc64d2fed5992dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.458
       objectReference: {fileID: 0}
     - target: {fileID: 8748506624304153254, guid: 22db3942f74bd5849bc64d2fed5992dd, type: 3}
       propertyPath: m_LocalPosition.z

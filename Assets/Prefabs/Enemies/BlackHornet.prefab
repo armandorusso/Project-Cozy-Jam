@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5261b25ed819d545abfbfda23e1ddf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackingBeeType: 0
 --- !u!114 &-2175240572729504248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 6522628926899210386}
   _shadowSpriteRenderer: {fileID: 0}
   _animator: {fileID: 5804195988112408021}
+  SpriteZOffset: 0.538
 --- !u!58 &2344178730332811791
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,7 +148,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.56}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
 --- !u!1001 &495302359508519125
@@ -225,7 +227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 56035081554658060, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.538
       objectReference: {fileID: 0}
     - target: {fileID: 56035081554658060, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
       propertyPath: m_LocalPosition.z
@@ -262,6 +264,10 @@ PrefabInstance:
     - target: {fileID: 5155826822773404365, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
       propertyPath: m_Name
       value: BlackHornetAnimator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5155826822773404365, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8041568628385925938, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
       propertyPath: m_LocalScale.x
