@@ -54,6 +54,7 @@ MonoBehaviour:
   AttackSpeed: 1.2
   DistanceBetweenBees: 0.15
   BeeAC: {fileID: 2867319895812245562}
+  BeeSprite: {fileID: 4153605541310477687}
   PreviousPosition: {x: 0, y: 0}
   Direction: {x: 0, y: 0}
 --- !u!212 &4153605541310477687

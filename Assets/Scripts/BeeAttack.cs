@@ -105,7 +105,7 @@ public class BeeAttack : MonoBehaviour
         AttackingBees.Clear();
         
         // Delay a bit before attacking again or else an attack can trigger while the bees are catching up to the congo line
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.4f);
         _isAttackCommenced = false;
     }
 

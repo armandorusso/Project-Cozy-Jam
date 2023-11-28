@@ -35,7 +35,7 @@ public class EnemyHurt : MonoBehaviour
 
     private IEnumerator DelayDeath()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.128f);
         GameManager.Instance.CurrentEnemiesOnScene--;
         EnemyDeathAction?.Invoke(gameObject);
 
