@@ -627,7 +627,7 @@ MonoBehaviour:
   AttackLayer:
     serializedVersion: 2
     m_Bits: 1536
-  BeePool: {fileID: 11400000, guid: c0d8340d8ff5ed2448e9069884cd592a, type: 2}
+  BeePool: {fileID: 0}
   TrailHitbox: {fileID: 3176884426249123927}
   PlayerTransform: {fileID: 0}
   EnemiesInAttackZone: []

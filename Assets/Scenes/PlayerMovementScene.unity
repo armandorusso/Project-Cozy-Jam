@@ -357,6 +357,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018082401090705044, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: BeePool
+      value: 
+      objectReference: {fileID: 11400000, guid: c0d8340d8ff5ed2448e9069884cd592a, type: 2}
+    - target: {fileID: 1018082401090705044, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1985551298}
+    - target: {fileID: 1018082401090705044, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
       propertyPath: AttackLayer.m_Bits
       value: 1536
       objectReference: {fileID: 0}
@@ -1254,9 +1262,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.057142857
+    width: 0.45714286
+    height: 0.34285715
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1311,6 +1319,7 @@ MonoBehaviour:
   - {fileID: 3896714409148050613, guid: 6fbd0f9fad5c491458218c21902bd157, type: 3}
   - {fileID: 3896714409148050613, guid: 9685675522dcc9049acfafc323280a36, type: 3}
   - {fileID: 3896714409148050613, guid: bf16f3a450ee6a041b5d45599e823171, type: 3}
+  - {fileID: 3896714409148050613, guid: b31b1e71c76affa4db55637f306df4dd, type: 3}
   _enemyAnimatorPrefabs:
   - {fileID: 5155826822773404365, guid: 67550632c07c4f94f9a9dadd0ff87d91, type: 3}
   - {fileID: 4477368432255136615, guid: 22db3942f74bd5849bc64d2fed5992dd, type: 3}
@@ -2757,6 +2766,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617423c7ba4f3274187f844a19acc905, type: 3}
+--- !u!4 &1985551298 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7037991095852253928, guid: dae0cdf5334f7f9458d78c2b6ce0be0e, type: 3}
+  m_PrefabInstance: {fileID: 7225241378534928880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1988518583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,6 +3067,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1018082401090705044, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: BeePool
+      value: 
+      objectReference: {fileID: 11400000, guid: 559148d3dcd101940a198daa788e003d, type: 2}
+    - target: {fileID: 1018082401090705044, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 6606398556531059610}
     - target: {fileID: 4241282758211345307, guid: 4ab2bf6f174027044babe0d5ef708d14, type: 3}
       propertyPath: m_Name
       value: PolygonColliderPlayer1
@@ -3359,6 +3381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cd321ba30965440b9e5708409cb643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &6606398556531059610 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4348180153299184571, guid: 1bdb8798dee33714ebdd88e71b8e0e2a, type: 3}
+  m_PrefabInstance: {fileID: 4658574635499064546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7225241378534928880
 PrefabInstance:
   m_ObjectHideFlags: 0

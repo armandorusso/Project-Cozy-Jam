@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 11d62d4749396334d97d651191202259, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8bf173a1601e6444b9d1b8c119ae8931, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -49,7 +49,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6c7455e4270a7d2448bbc5b306072df7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5edcf33db160eaa4dafd0e5d28ceb6af, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -114,7 +114,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BlackHornetAC
+  m_Name: ExtraHornetAC
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Prepare
@@ -219,7 +219,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: bae62febea866ae42b084d1ec10b977b, type: 2}
+  m_Motion: {fileID: 7400000, guid: f38333c602abbaa4abc301dd19929e49, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
