@@ -42,8 +42,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _maximumEnemiesOnScene;
     [SerializeField] private float _spawnTimerMin;
     [SerializeField] private float _spawnTimerMax;
-    public int CurrentEnemiesOnScene;
-    private float _spawnCountdown;
+    public int CurrentEnemiesOnScene { get; set; }
+    private float _spawnCountdown { get; set; }
 
     [Header("Props and UI")] [SerializeField]
     private Animator _deathBackgroundAnimator;
@@ -56,8 +56,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int EnemyAdditionModifier;
     [SerializeField] public float SpawnTimerModifier;
     [SerializeField] private TextMeshProUGUI _waveText;
-    
-    
+
     public int WaveNumber;
     private List<WaveEnemiesScriptableObject> _waveTypes => WaveTypes.WavesPool;
     private WaveEnemiesScriptableObject _waveDifficulty;
@@ -117,7 +116,16 @@ public class GameManager : MonoBehaviour
 
         _hiveCharacter.AnimatorComponent.SetTrigger("StartGame");
 
-        _waveText.text += WaveNumber.ToString();
+        StartCoroutine(ShowWaveText($"Wave: {WaveNumber}"));
+    }
+
+    private IEnumerator ShowWaveText(string newText)
+    {
+        _waveText.text = newText;
+        _waveText.enabled = true;
+        yield return new WaitForSeconds(2.5f);
+        _waveText.enabled = false;
+        StopCoroutine(ShowWaveText(""));
     }
 
     private void OnEnemyKilled(GameObject enemy)
@@ -137,10 +145,9 @@ public class GameManager : MonoBehaviour
         }
         
         ScoreIncrementedAction?.Invoke(_currentScore);
-        CurrentEnemiesOnScene--;
         _totalEnemiesKilledInWave++;
 
-        if (_totalEnemiesKilledInWave == _totalEnemiesInWave)
+        if (_totalEnemiesKilledInWave == _totalEnemiesInWave && CurrentEnemiesOnScene == 0)
         {
             StartCoroutine(SetUpNextWave());
         }
@@ -153,11 +160,11 @@ public class GameManager : MonoBehaviour
         _spawnTimerMax -= SpawnTimerModifier;
         _maximumEnemiesOnScene += EnemyAdditionModifier;
         WaveNumber++;
-        _waveText.text = $"Wave: {WaveNumber}";
-        
+
         // Little hack to stop the spawning for a few seconds
         CurrentEnemiesOnScene = _maximumEnemiesOnScene;
         yield return new WaitForSeconds(2f);
+        StartCoroutine(ShowWaveText($"Wave: {WaveNumber}"));
         CurrentEnemiesOnScene = 0;
         SetUpWaveDifficulty();
     }
@@ -188,11 +195,11 @@ public class GameManager : MonoBehaviour
     {
         switch (WaveNumber)
         {
-            case < 5: _waveDifficulty = _waveTypes[Random.Range(0, 1)];
+            case < 5: _waveDifficulty = _waveTypes[Random.Range(0, 2)];
                 break;
-            case > 6 and <= 10: _waveDifficulty = _waveTypes[Random.Range(2, 3)];
+            case > 6 and <= 10: _waveDifficulty = _waveTypes[Random.Range(2, 4)];
                 break;
-            case > 10: _waveDifficulty = _waveTypes[Random.Range(3, 4)];
+            case > 10: _waveDifficulty = _waveTypes[Random.Range(3, 5)];
                 break;
         }
         
