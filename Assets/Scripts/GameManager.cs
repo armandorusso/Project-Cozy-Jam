@@ -156,9 +156,16 @@ public class GameManager : MonoBehaviour
     private IEnumerator SetUpNextWave()
     {
         _totalEnemiesKilledInWave = 0;
+        
         _spawnTimerMin -= SpawnTimerModifier;
+        _spawnTimerMin = Mathf.Clamp(_spawnTimerMin, 0.5f, _spawnTimerMin);
+        
         _spawnTimerMax -= SpawnTimerModifier;
+        _spawnTimerMax = Mathf.Clamp(_spawnTimerMax, 1.5f, _spawnTimerMax);
+        
         _maximumEnemiesOnScene += EnemyAdditionModifier;
+        _spawnTimerMax = Mathf.Clamp(_maximumEnemiesOnScene, 5, 20);
+        
         WaveNumber++;
 
         // Little hack to stop the spawning for a few seconds
