@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,8 @@ public class WaveAnnouncementMovement : MonoBehaviour
         _hasNewWaveCommenced = true;
         _startPosition = StartPoint.position;
         _endPosition = EndPoint.position;
+
+        GameManager.StartWaveAnnouncementAnimationAction += OnNewWave;
     }
 
     void Update()
@@ -64,7 +67,24 @@ public class WaveAnnouncementMovement : MonoBehaviour
     private IEnumerator PauseAtMidpoint()
     {
         _hasReachedHalfwayPoint = true;
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSeconds(0.1f);
         _hasReachedHalfwayPoint = false;
+    }
+
+    private void OnNewWave(bool isNewWaveStarted)
+    {
+        _hasNewWaveCommenced = isNewWaveStarted;
+
+        if (_hasNewWaveCommenced)
+        {
+            transform.position = _startPosition;
+            _timeElapsed = 0f;
+            _animationLengthProgress = 0f;
+        }
+    }
+
+    public void OnDestroy()
+    {
+        GameManager.StartWaveAnnouncementAnimationAction -= OnNewWave;
     }
 }

@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
     public bool HasGameStarted => _hasGameStarted;
 
     public static Action<int> ScoreIncrementedAction;
+    public static Action<bool> StartWaveAnnouncementAnimationAction;
 
     void Start()
     {
@@ -105,7 +106,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(3.0f);
+        _waveText.text = $"Wave: {WaveNumber}";
+        StartWaveAnnouncementAnimationAction?.Invoke(true);
+        yield return new WaitForSeconds(3.87f);
         _hasGameStarted = true;
         foreach (var player in _players)
         {
@@ -115,17 +118,7 @@ public class GameManager : MonoBehaviour
         }
 
         _hiveCharacter.AnimatorComponent.SetTrigger("StartGame");
-
-        StartCoroutine(ShowWaveText($"Wave: {WaveNumber}"));
-    }
-
-    private IEnumerator ShowWaveText(string newText)
-    {
-        _waveText.text = newText;
-        _waveText.enabled = true;
-        yield return new WaitForSeconds(2.5f);
-        _waveText.enabled = false;
-        StopCoroutine(ShowWaveText(""));
+        StartWaveAnnouncementAnimationAction?.Invoke(false);
     }
 
     private void OnEnemyKilled(GameObject enemy)
@@ -170,8 +163,12 @@ public class GameManager : MonoBehaviour
 
         // Little hack to stop the spawning for a few seconds
         CurrentEnemiesOnScene = _maximumEnemiesOnScene;
+        StartWaveAnnouncementAnimationAction?.Invoke(true);
+        _waveText.text = $"Wave: ";
+        yield return new WaitForSeconds(1.87f);
+        _waveText.text = $"Wave: {WaveNumber}";
         yield return new WaitForSeconds(2f);
-        StartCoroutine(ShowWaveText($"Wave: {WaveNumber}"));
+        StartWaveAnnouncementAnimationAction?.Invoke(false);
         CurrentEnemiesOnScene = 0;
         SetUpWaveDifficulty();
     }
