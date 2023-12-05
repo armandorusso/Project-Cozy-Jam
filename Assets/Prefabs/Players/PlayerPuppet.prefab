@@ -198,6 +198,7 @@ MonoBehaviour:
   _playerMovement: {fileID: 270572533759393116}
   _playerHurt: {fileID: 7665820926156603588}
   _beeCongoLine: {fileID: 6119806603537981428}
+  InputAction: {fileID: 5409181562966650834}
   _animator: {fileID: 7981175874752668537}
   _spriteRenderer: {fileID: 1720305527670571943}
 --- !u!114 &270572533759393116

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
 using Random = UnityEngine.Random;
 
@@ -49,6 +50,8 @@ public class GameManager : MonoBehaviour
     private Animator _deathBackgroundAnimator;
     [SerializeField] private SpriteRenderer _frontFenceSprite;
     [SerializeField] private GameObject _canvasGroup;
+    [SerializeField] private GameObject _pauseMenu;
+    
 
     [Header("Wave Properties")] 
     [SerializeField] public WavePoolScriptableObject WaveTypes;
@@ -67,7 +70,9 @@ public class GameManager : MonoBehaviour
     public Animator DeathBackgroundAnimator => _deathBackgroundAnimator;
 
     private bool _hasGameStarted;
+    private bool _isPaused;
     public bool HasGameStarted => _hasGameStarted;
+    public bool IsPaused => _isPaused;
 
     public static Action<int> ScoreIncrementedAction;
     public static Action<bool> StartWaveAnnouncementAnimationAction;
@@ -78,6 +83,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartGame());
 
         EnemyHurt.EnemyDeathAction += OnEnemyKilled;
+        ContinueButton.ContinueGameAction += OnContinuePressed;
         
         _highScore = PlayerPrefs.GetInt("HighScore", 0);
         ScoreIncrementedAction?.Invoke(_currentScore);
@@ -108,7 +114,7 @@ public class GameManager : MonoBehaviour
     {
         _waveText.text = $"Wave: {WaveNumber}";
         StartWaveAnnouncementAnimationAction?.Invoke(true);
-        yield return new WaitForSeconds(3.87f);
+        yield return new WaitForSeconds(4.87f);
         _hasGameStarted = true;
         foreach (var player in _players)
         {
@@ -118,7 +124,47 @@ public class GameManager : MonoBehaviour
         }
 
         _hiveCharacter.AnimatorComponent.SetTrigger("StartGame");
+        yield return new WaitForSeconds(4f);
         StartWaveAnnouncementAnimationAction?.Invoke(false);
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+
+        HandlePauseUI();
+    }
+
+    private void OnContinuePressed()
+    {
+        HandlePauseUI();
+    }
+
+    private void HandlePauseUI()
+    {
+        if (!_hasGameStarted)
+            return;
+        
+        if (!_isPaused)
+        {
+            _isPaused = true;
+            _pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            foreach (var player in Players)
+            {
+                player.PlayerMovement.IsMoving = false;
+            }
+        }
+        else
+        {
+            _isPaused = false;
+            _pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+            foreach (var player in Players)
+            {
+                player.PlayerMovement.IsMoving = true;
+            }
+        }
     }
 
     private void OnEnemyKilled(GameObject enemy)
@@ -140,7 +186,7 @@ public class GameManager : MonoBehaviour
         ScoreIncrementedAction?.Invoke(_currentScore);
         _totalEnemiesKilledInWave++;
 
-        if (_totalEnemiesKilledInWave == _totalEnemiesInWave && CurrentEnemiesOnScene == 0)
+        if (_totalEnemiesKilledInWave == _totalEnemiesInWave + 1 && CurrentEnemiesOnScene == 0)
         {
             StartCoroutine(SetUpNextWave());
         }
@@ -158,16 +204,16 @@ public class GameManager : MonoBehaviour
         
         _maximumEnemiesOnScene += EnemyAdditionModifier;
         _spawnTimerMax = Mathf.Clamp(_maximumEnemiesOnScene, 5, 20);
-        
-        WaveNumber++;
+
+        _waveText.text = $"Wave: {WaveNumber}";
 
         // Little hack to stop the spawning for a few seconds
         CurrentEnemiesOnScene = _maximumEnemiesOnScene;
         StartWaveAnnouncementAnimationAction?.Invoke(true);
-        _waveText.text = $"Wave: ";
-        yield return new WaitForSeconds(1.87f);
+        yield return new WaitForSeconds(3.87f);
+        WaveNumber++;
         _waveText.text = $"Wave: {WaveNumber}";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(6f);
         StartWaveAnnouncementAnimationAction?.Invoke(false);
         CurrentEnemiesOnScene = 0;
         SetUpWaveDifficulty();
@@ -220,5 +266,6 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         EnemyHurt.EnemyDeathAction -= OnEnemyKilled;
+        ContinueButton.ContinueGameAction -= OnContinuePressed;
     }
 }
