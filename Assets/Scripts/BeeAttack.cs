@@ -19,6 +19,7 @@ public class BeeAttack : MonoBehaviour
     private int _startingBeeIndex;
     
     public static Action<GameObject, BeeCongoLine.BeeType> KillEnemyAction;
+    public static Action<GameObject> PlayConnectAnimationAction;
 
     private void Start()
     {
@@ -81,7 +82,8 @@ public class BeeAttack : MonoBehaviour
         }
         
         Debug.Log("Enemies detected! Swarm Attack!");
-        
+
+        PlayConnectAnimationAction?.Invoke(PlayerTransform.parent.gameObject);
         CommenceAttack();
         BeePool.RemoveAttackingBeesFromPool(_startingBeeIndex, PlayerTransform);
 

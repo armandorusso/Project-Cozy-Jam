@@ -64,8 +64,8 @@ public class GameManager : MonoBehaviour
     private List<WaveEnemiesScriptableObject> _waveTypes => WaveTypes.WavesPool;
     private WaveEnemiesScriptableObject _waveDifficulty;
     private List<GameObject> _enemiesToSpawn;
-    private int _totalEnemiesInWave;
-    private int _totalEnemiesKilledInWave;
+    public int _totalEnemiesInWave;
+    public int _totalEnemiesKilledInWave;
     
     public Animator DeathBackgroundAnimator => _deathBackgroundAnimator;
 
@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour
         ScoreIncrementedAction?.Invoke(_currentScore);
         _totalEnemiesKilledInWave++;
 
-        if (_totalEnemiesKilledInWave == _totalEnemiesInWave + 1 && CurrentEnemiesOnScene == 0)
+        if (_totalEnemiesKilledInWave >= _totalEnemiesInWave && CurrentEnemiesOnScene == 0)
         {
             StartCoroutine(SetUpNextWave());
         }
@@ -194,8 +194,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SetUpNextWave()
     {
-        _totalEnemiesKilledInWave = 0;
-        
         _spawnTimerMin -= SpawnTimerModifier;
         _spawnTimerMin = Mathf.Clamp(_spawnTimerMin, 0.5f, _spawnTimerMin);
         
@@ -255,6 +253,7 @@ public class GameManager : MonoBehaviour
         
         _enemiesToSpawn = new List<GameObject>(_waveDifficulty.Enemies);
         _totalEnemiesInWave = _enemiesToSpawn.Count;
+        _totalEnemiesKilledInWave = 0;
     }
 
     public void ResetSpritesForBackground()

@@ -24,5 +24,6 @@ public class Player : MonoBehaviour
     {
         if (!_playerMovement) _playerMovement = GetComponent<PlayerMovement>();
         if (!_playerHurt) _playerHurt = GetComponent<PlayerHurt>();
+        if (!_beeCongoLine) _beeCongoLine = GetComponent<BeeCongoLine>();
     }
 }
