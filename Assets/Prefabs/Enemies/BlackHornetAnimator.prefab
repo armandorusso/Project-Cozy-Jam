@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 2629124763372399529, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 01b671b73d4e7054090f3b4ea6573c06, type: 2}
+      objectReference: {fileID: 9100000, guid: 6ec2001ce366aad4f83d10c10e11ea94, type: 2}
     - target: {fileID: 3347628105246351086, guid: e21132c4c0a5e9148bf6176651282f66, type: 3}
       propertyPath: m_FlipX
       value: 0
