@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -23,5 +24,6 @@ public class Player : MonoBehaviour
     {
         if (!_playerMovement) _playerMovement = GetComponent<PlayerMovement>();
         if (!_playerHurt) _playerHurt = GetComponent<PlayerHurt>();
+        if (!_beeCongoLine) _beeCongoLine = GetComponent<BeeCongoLine>();
     }
 }

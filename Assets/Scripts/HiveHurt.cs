@@ -113,8 +113,8 @@ public class HiveHurt : MonoBehaviour
             player.SpriteRendererComponent.sortingOrder = 3;
         }
 
-        // Disable and freeze enemies on all running components
-        foreach (var enemy in GameManager.Instance.Enemies)
+        /*// Disable and freeze enemies on all running components
+        foreach (var enemy in GameManager.Instance.EnemyWaves)
         {
             if (!enemy) continue;
             
@@ -123,7 +123,7 @@ public class HiveHurt : MonoBehaviour
             enemyComponent.EnemyAttacking.IsStriking = false;
             enemyComponent.EnemyAnimator.AnimatorComponent.enabled = false;
             enemyComponent.EnemyAnimator.SpriteRendererComponent.sortingOrder = 1;
-        }
+        }*/
         
         GameManager.Instance.ResetSpritesForBackground();
 

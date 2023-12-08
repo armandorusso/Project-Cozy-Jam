@@ -35,7 +35,7 @@ public class EnemyHurt : MonoBehaviour
 
     private IEnumerator DelayDeath()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.128f);
         GameManager.Instance.CurrentEnemiesOnScene--;
         EnemyDeathAction?.Invoke(gameObject);
 
@@ -48,7 +48,7 @@ public class EnemyHurt : MonoBehaviour
             hurtEffect.EnableObject();
         }
 
-        GameManager.Instance.Enemies.Remove(gameObject);
+        // GameManager.Instance.EnemyWaves.Remove(gameObject);
         Destroy(gameObject.GetComponent<Enemy>().EnemyAnimator.AnimatorComponent.gameObject);
         Destroy(gameObject);
     }

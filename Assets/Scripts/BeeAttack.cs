@@ -19,6 +19,7 @@ public class BeeAttack : MonoBehaviour
     private int _startingBeeIndex;
     
     public static Action<GameObject, BeeCongoLine.BeeType> KillEnemyAction;
+    public static Action<GameObject> PlayConnectAnimationAction;
 
     private void Start()
     {
@@ -81,7 +82,8 @@ public class BeeAttack : MonoBehaviour
         }
         
         Debug.Log("Enemies detected! Swarm Attack!");
-        
+
+        PlayConnectAnimationAction?.Invoke(PlayerTransform.parent.gameObject);
         CommenceAttack();
         BeePool.RemoveAttackingBeesFromPool(_startingBeeIndex, PlayerTransform);
 
@@ -105,7 +107,7 @@ public class BeeAttack : MonoBehaviour
         AttackingBees.Clear();
         
         // Delay a bit before attacking again or else an attack can trigger while the bees are catching up to the congo line
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.4f);
         _isAttackCommenced = false;
     }
 

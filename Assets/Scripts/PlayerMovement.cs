@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     private bool _isColliding;
     private float _collidingCountdown;
     
-    // Start is called before the first frame update
     private void Start()
     {
         _player = GetComponent<Player>();
@@ -45,9 +44,16 @@ public class PlayerMovement : MonoBehaviour
         
         UpdateMovementDirectionSprites();
         _currentSpeed = _movementSpeed;
+
+        BeeAttack.PlayConnectAnimationAction += OnBeeConnect;
     }
 
-    // Update is called once per frame
+    private void OnBeeConnect(GameObject playerObject)
+    {
+        if(playerObject.GetInstanceID() == gameObject.GetInstanceID())
+            _player.AnimatorComponent.Play("Connect");
+    }
+
     private void Update()
     {
         Debug.DrawRay(_followBeePoint.position, PlayerDirection * 0.5f, Color.magenta);

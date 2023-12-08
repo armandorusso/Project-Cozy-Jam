@@ -12,6 +12,8 @@ public class BeeAlly : MonoBehaviour
     [SerializeField] private float AttackSpeed;
     [SerializeField] public float DistanceBetweenBees; // If MovementSpeed and _timeInterval is very high, it will look as though the movement stutters
     [SerializeField] public Animator BeeAC;
+    [SerializeField] public SpriteRenderer BeeSprite;
+    
 
     public Vector2 PreviousPosition;
     public Vector2 Direction;
@@ -28,6 +30,8 @@ public class BeeAlly : MonoBehaviour
     void Update()
     {
         FollowBeeOrPlayer();
+
+        ChangeSpriteDirection();
         
         Debug.DrawRay(transform.position, Direction.normalized * 0.5f, Color.blue);
     }
@@ -60,6 +64,11 @@ public class BeeAlly : MonoBehaviour
             PreviousPosition = ObjectToFollow.transform.position;
             _currentTime = 0f;
         }
+    }
+
+    private void ChangeSpriteDirection()
+    {
+        BeeSprite.flipX = Direction.x < 0;
     }
 
     public void OnBeeAttack(bool isAttacking)
