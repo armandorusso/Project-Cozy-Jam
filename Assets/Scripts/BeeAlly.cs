@@ -20,11 +20,13 @@ public class BeeAlly : MonoBehaviour
     private float _currentTime;
     private bool _isChargingAttack;
     private float _originalMovementSpeed;
+    private GameObject _shadow;
 
     private void Start()
     {
         PreviousPosition = ObjectToFollow.transform.position;
         _originalMovementSpeed = MovementSpeed;
+        _shadow = gameObject.transform.GetChild(0).gameObject;
     }
 
     void Update()
@@ -82,6 +84,7 @@ public class BeeAlly : MonoBehaviour
         _isChargingAttack = true;
         MovementSpeed = 0f;
         Direction = ObjectToFollow.position - transform.position;
+        _shadow.SetActive(false);
         yield return new WaitForSeconds(0.2f);
 
         // Attack!
@@ -94,6 +97,7 @@ public class BeeAlly : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         
         // Reset animation and values
+        _shadow.SetActive(true);
         _isChargingAttack = false;
         transform.rotation = Quaternion.identity;
         MovementSpeed = _originalMovementSpeed;
