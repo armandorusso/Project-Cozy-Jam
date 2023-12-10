@@ -1540,7 +1540,7 @@ MonoBehaviour:
   EnemyAdditionModifier: 1
   SpawnTimerModifier: 0.2
   _waveText: {fileID: 371302716}
-  WaveNumber: 6
+  WaveNumber: 1
   _totalEnemiesInWave: 0
   _totalEnemiesKilledInWave: 0
 --- !u!114 &519420034

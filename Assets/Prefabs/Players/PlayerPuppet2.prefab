@@ -147,6 +147,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: dfaf688f-4bc8-414b-a495-cd39fd0a1271
     m_ActionName: Player 1/Game Over[/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9c9c47d8-6379-4867-ac57-aaabdce8a07d
+    m_ActionName: Player 1/Pause[/Keyboard/escape,/SwitchProControllerHID/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player 2
@@ -167,7 +171,6 @@ MonoBehaviour:
   _playerMovement: {fileID: 5736506541190652264}
   _playerHurt: {fileID: 8214062693175936961}
   _beeCongoLine: {fileID: 3119877383401582838}
-  InputAction: {fileID: 2992856768931688708}
   _animator: {fileID: 7879055908672972677}
   _spriteRenderer: {fileID: 1301134014570152224}
 --- !u!114 &5736506541190652264
@@ -330,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 7075470040136546106}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.394, z: 0}
+  m_LocalPosition: {x: 0, y: 0.054, z: 0}
   m_LocalScale: {x: 1.388, y: 1.388, z: 1.388}
   m_ConstrainProportionsScale: 0
   m_Children: []
