@@ -66,7 +66,7 @@ public class WaveAnnouncementMovement : MonoBehaviour
         float newY = Mathf.Lerp(_startPosition.y, _endPosition.y, linearT) + verticalT;
 
         transform.position = new Vector2(newX, newY);
-        _waveText.transform.position = _mainCamera.WorldToScreenPoint(transform.position) - new Vector3(13.5f, -0.5f, 0f);
+        _waveText.transform.position = _mainCamera.WorldToScreenPoint(transform.position) - new Vector3(200.5f, 5.5f, 0f);
     }
 
     private IEnumerator PauseAtMidpoint()

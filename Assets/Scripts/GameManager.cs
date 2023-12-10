@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartGame()
     {
-        _waveText.text = $"Wave: {WaveNumber}";
+        _waveText.text = $"SWARM - {WaveNumber}";
         StartWaveAnnouncementAnimationAction?.Invoke(true);
         yield return new WaitForSeconds(4.87f);
         _hasGameStarted = true;
@@ -203,14 +203,14 @@ public class GameManager : MonoBehaviour
         _maximumEnemiesOnScene += EnemyAdditionModifier;
         _maximumEnemiesOnScene = Mathf.Clamp(_maximumEnemiesOnScene, 5, 20);
 
-        _waveText.text = $"Wave: {WaveNumber}";
+        _waveText.text = $"SWARM - {WaveNumber}";
 
         // Little hack to stop the spawning for a few seconds
         CurrentEnemiesOnScene = _maximumEnemiesOnScene;
         StartWaveAnnouncementAnimationAction?.Invoke(true);
         yield return new WaitForSeconds(3.87f);
         WaveNumber++;
-        _waveText.text = $"Wave: {WaveNumber}";
+        _waveText.text = $"SWARM - {WaveNumber}";
         yield return new WaitForSeconds(6f);
         StartWaveAnnouncementAnimationAction?.Invoke(false);
         CurrentEnemiesOnScene = 0;
