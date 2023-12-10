@@ -37,20 +37,29 @@ public class EnemyHurt : MonoBehaviour
     {
         yield return new WaitForSeconds(0.128f);
         GameManager.Instance.CurrentEnemiesOnScene--;
-        EnemyDeathAction?.Invoke(gameObject);
 
-        var hurtEffectTransform = _enemy.transform.GetChild(0);
-        hurtEffectTransform.gameObject.SetActive(true);
-        hurtEffectTransform.parent = null;
-        hurtEffectTransform.localScale = Vector3.one;
-        if (hurtEffectTransform.TryGetComponent<HurtEffect>(out var hurtEffect))
+        try
         {
-            hurtEffect.EnableObject();
+            var hurtEffectTransform = _enemy.transform.GetChild(0);
+            hurtEffectTransform.gameObject.SetActive(true);
+            hurtEffectTransform.parent = null;
+            hurtEffectTransform.localScale = Vector3.one;
+            if (hurtEffectTransform.TryGetComponent<HurtEffect>(out var hurtEffect))
+            {
+                hurtEffect.EnableObject();
+            }
         }
-
-        // GameManager.Instance.EnemyWaves.Remove(gameObject);
-        Destroy(gameObject.GetComponent<Enemy>().EnemyAnimator.AnimatorComponent.gameObject);
-        Destroy(gameObject);
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);
+            Debug.Log("Couldn't play the hurt effect");
+        }
+        finally
+        {
+            EnemyDeathAction?.Invoke(gameObject);
+            Destroy(gameObject.GetComponent<Enemy>().EnemyAnimator.AnimatorComponent.gameObject);
+            Destroy(gameObject);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -59,6 +68,7 @@ public class EnemyHurt : MonoBehaviour
         {
             if (col.tag.Equals(_attackingBeeType.ToString()))
             {
+                _isGoingToDie = false;
                 KillEnemy();
             }
         }

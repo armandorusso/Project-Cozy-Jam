@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour
         _spawnTimerMax = Mathf.Clamp(_spawnTimerMax, 1.5f, _spawnTimerMax);
         
         _maximumEnemiesOnScene += EnemyAdditionModifier;
-        _spawnTimerMax = Mathf.Clamp(_maximumEnemiesOnScene, 5, 20);
+        _maximumEnemiesOnScene = Mathf.Clamp(_maximumEnemiesOnScene, 5, 20);
 
         _waveText.text = $"Wave: {WaveNumber}";
 
@@ -243,9 +243,9 @@ public class GameManager : MonoBehaviour
     {
         switch (WaveNumber)
         {
-            case < 5: _waveDifficulty = _waveTypes[Random.Range(0, 2)];
+            case <= 5: _waveDifficulty = _waveTypes[Random.Range(0, 2)];
                 break;
-            case > 6 and <= 10: _waveDifficulty = _waveTypes[Random.Range(2, 4)];
+            case >= 6 and <= 10: _waveDifficulty = _waveTypes[Random.Range(2, 4)];
                 break;
             case > 10: _waveDifficulty = _waveTypes[Random.Range(3, 5)];
                 break;

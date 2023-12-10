@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WaveAnnouncementMovement : MonoBehaviour
@@ -10,15 +11,18 @@ public class WaveAnnouncementMovement : MonoBehaviour
     [SerializeField] public Transform StartPoint;
     [SerializeField] public Transform EndPoint;
     [SerializeField] private float AnimationLength;
+    [SerializeField] private TextMeshProUGUI _waveText;
+    [SerializeField] private Camera _mainCamera;
     
-    
+
+
     private bool _hasNewWaveCommenced;
     private bool _hasReachedHalfwayPoint;
     private float _timeElapsed;
     private float _animationLengthProgress;
     private Vector2 _startPosition;
     private Vector2 _endPosition;
-    
+
     void Start()
     {
         _hasNewWaveCommenced = true;
@@ -62,6 +66,7 @@ public class WaveAnnouncementMovement : MonoBehaviour
         float newY = Mathf.Lerp(_startPosition.y, _endPosition.y, linearT) + verticalT;
 
         transform.position = new Vector2(newX, newY);
+        _waveText.transform.position = _mainCamera.WorldToScreenPoint(transform.position) - new Vector3(13.5f, -0.5f, 0f);
     }
 
     private IEnumerator PauseAtMidpoint()

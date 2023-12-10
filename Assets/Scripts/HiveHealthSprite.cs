@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HiveHealthSprite : MonoBehaviour
 {
     [SerializeField] public Sprite[] HiveHealthIcons;
-    [SerializeField] public SpriteRenderer HiveHealthSpriteRenderer;
+    [SerializeField] public Image HiveHealthImage;
     
     void Start()
     {
@@ -19,7 +20,7 @@ public class HiveHealthSprite : MonoBehaviour
         var damageDifference = maxHealth - currentHealth;
 
         var spriteIndex = damageDifference / partitionSize;
-        HiveHealthSpriteRenderer.sprite = HiveHealthIcons[spriteIndex];
+        HiveHealthImage.sprite = HiveHealthIcons[spriteIndex];
     }
 
     private void OnDestroy()
