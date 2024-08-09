@@ -243,11 +243,11 @@ public class GameManager : MonoBehaviour
     {
         switch (WaveNumber)
         {
-            case <= 2: _waveDifficulty = _waveTypes[Random.Range(0, 2)];
+            case <= 1: _waveDifficulty = _waveTypes[Random.Range(0, 0)];
                 break;
-            case >= 3 and <= 7: _waveDifficulty = _waveTypes[Random.Range(2, 4)];
+            case >= 2 and <= 7: _waveDifficulty = _waveTypes[Random.Range(1, 2)];
                 break;
-            case > 7: _waveDifficulty = _waveTypes[Random.Range(3, 5)];
+            case > 7: _waveDifficulty = _waveTypes[Random.Range(3, 4)];
                 break;
         }
         

@@ -86,7 +86,7 @@ MonoBehaviour:
   _damage: 10
   _attackRange: 2
   _strikingMovementSpeed: 3
-  _strikingWaitTime: 0.5
+  _strikingWaitTime: 0.25
 --- !u!114 &996927857635547485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5261b25ed819d545abfbfda23e1ddf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackingBeeType: 0
+  _attackingBeeType: 2
 --- !u!114 &-2175240572729504248
 MonoBehaviour:
   m_ObjectHideFlags: 0

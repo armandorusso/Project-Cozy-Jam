@@ -86,7 +86,7 @@ MonoBehaviour:
   _damage: 10
   _attackRange: 2
   _strikingMovementSpeed: 3
-  _strikingWaitTime: 0.5
+  _strikingWaitTime: 0.25
 --- !u!114 &570575883321832720
 MonoBehaviour:
   m_ObjectHideFlags: 0
