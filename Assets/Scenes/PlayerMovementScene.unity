@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 97087828}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.580017, y: 7.649994, z: -0.09431359}
+  m_LocalPosition: {x: -14.58, y: 7.649994, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -598,7 +598,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &323128239
 RectTransform:
@@ -3114,7 +3114,7 @@ Transform:
   m_GameObject: {fileID: 1216195037}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -814.58, y: -440.41, z: 0}
+  m_LocalPosition: {x: -814.58, y: -440.41, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3162,120 +3162,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0.012897458
-      outSlope: 0.012897458
-      tangentMode: 0
+      value: 1
+      inSlope: -12
+      outSlope: -12
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.10551311
-    - serializedVersion: 3
-      time: 0.051985294
-      value: -0.39590675
-      inSlope: 11.67579
-      outSlope: 11.67579
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.11054181
-    - serializedVersion: 3
-      time: 0.1339682
-      value: -0.88886684
-      inSlope: 7.97939
-      outSlope: 7.97939
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.24840647
       outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.2690541
-      value: -1.7326314
-      inSlope: 15.171711
-      outSlope: 15.171711
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.14041932
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.3676651
-      value: -2.5246491
-      inSlope: 3.4281268
-      outSlope: 3.4281268
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.11749266
-    - serializedVersion: 3
-      time: 0.4115394
-      value: -3.0952473
-      inSlope: 15.988285
-      outSlope: 15.988285
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.05015489
     - serializedVersion: 3
       time: 0.5
       value: -5
-      inSlope: 0.20151734
-      outSlope: 0.20151734
-      tangentMode: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.60352904
-      value: -3.944995
-      inSlope: -6.1377544
-      outSlope: -6.1377544
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.065457486
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.7132662
-      value: -3.0329082
-      inSlope: -4.2099004
-      outSlope: -4.2099004
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.061611507
-    - serializedVersion: 3
-      time: 0.8276563
-      value: -2.1439211
-      inSlope: -9.437745
-      outSlope: -9.437745
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.042971153
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.91838545
-      value: -1.1790282
-      inSlope: -11.300033
-      outSlope: -11.300033
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.06174886
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.97028744
-      value: -0.43275517
-      inSlope: -16.745722
-      outSlope: -16.745722
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.053419326
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      value: 1
+      inSlope: 12
+      outSlope: 12
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -3346,7 +3256,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: -1298560311, guid: 29a695bd84b4c6c4aa56de75018af0d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3736,7 +3646,7 @@ Transform:
   m_GameObject: {fileID: 1543603042}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.58002, y: 7.649994, z: -0.09431359}
+  m_LocalPosition: {x: 14.58, y: 7.649994, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
